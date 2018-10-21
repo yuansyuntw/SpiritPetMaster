@@ -36,14 +36,22 @@ namespace SpiritPetMaster
 
         public void NextPetView()
         {
-            current_pet_data = PlayerData.instance.PetViewGetNextPetData();
-            UpdatePetView( RIGHT );
+            Pet new_pet_data = PlayerData.instance.PetViewGetNextPetData();
+            if(new_pet_data != current_pet_data)
+            {
+                current_pet_data = new_pet_data;
+                UpdatePetView(RIGHT);
+            }
         }
 
         public void LeftPetView()
         {
-            current_pet_data = PlayerData.instance.PetViewGetLastPetData();
-            UpdatePetView( LEFT );
+            Pet new_pet_data = PlayerData.instance.PetViewGetLastPetData();
+            if (new_pet_data != current_pet_data)
+            {
+                current_pet_data = new_pet_data;
+                UpdatePetView(LEFT);
+            }
         }
 
         void UpdatePetView(int _update_effect)
