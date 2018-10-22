@@ -6,7 +6,8 @@ namespace SpiritPetMaster
 {
     public class Pet
     {
-        public int PetID;
+        public int PetID;       //寵物種類代號
+        public Sprite PetSprite;
         public string Name;
         public int Level;
         public float Mood;

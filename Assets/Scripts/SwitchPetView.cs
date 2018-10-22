@@ -10,13 +10,13 @@ namespace SpiritPetMaster
 {
     public class SwitchPetView : MonoBehaviour
     {
-        [Header("Pet View Object")]
-        public Transform PetView;
+        [Header("Prefabs")]
+        public GameObject PetView;
 
-        [Header("Pet View Entering Points")]
-        public Transform RightEnterPoint;
-        public Transform LeftEnterPoint;
-        public float EnteringTime = 3f;
+        [Header("Pet View Translating")]
+        public int ViewWidth = 1000;
+        public float TranslatingTime = 3f;
+        public Transform PetViewParent;
 
         [Header("Pet Information UI")]
         public Text PetName;
@@ -32,46 +32,77 @@ namespace SpiritPetMaster
 
         #region private
         Pet current_pet_data;
+        List<Pet> current_pets_data;
+        List<GameObject> pet_views = new List<GameObject>();
+        int current_view_index = 0;
         #endregion
 
         public void NextPetView()
         {
-            Pet new_pet_data = PlayerData.instance.PetViewGetNextPetData();
-            if(new_pet_data != current_pet_data)
+            if(current_view_index + 1 < current_pets_data.Count)
             {
-                current_pet_data = new_pet_data;
-                UpdatePetView(RIGHT);
+                current_view_index++;
+                FocusPet(current_view_index);
             }
         }
 
         public void LeftPetView()
         {
-            Pet new_pet_data = PlayerData.instance.PetViewGetLastPetData();
-            if (new_pet_data != current_pet_data)
+            if(current_view_index - 1 >= 0)
             {
-                current_pet_data = new_pet_data;
-                UpdatePetView(LEFT);
+                current_view_index--;
+                FocusPet(current_view_index);
             }
         }
 
-        void UpdatePetView(int _update_effect)
+        public void FocusPet(int _view_index)
         {
-            /*
-            PetName.text = current_pet_data.Name;
-            PetMood.value = current_pet_data.Mood;
-            */
+            PetViewParent.DOMoveX(-_view_index*ViewWidth, TranslatingTime);
+        }
 
-            if(_update_effect == RIGHT)
+        void UpdatePetView(List<Pet> _player_pets)
+        {
+            current_pets_data = _player_pets;
+            current_view_index = 0;
+
+            /* Destroy a old pet view*/
+            if (pet_views.Count > 0)
             {
-                PetView.position = RightEnterPoint.position;
-                PetView.DOMove(Vector3.zero, EnteringTime);
-            }
-            else
-            {
-                PetView.position = LeftEnterPoint.position;
-                PetView.DOMove(Vector3.zero, EnteringTime);
+                for (int i = 0; i < pet_views.Count; i++)
+                {
+                    Destroy(pet_views[i]);
+                }
             }
 
+            /* Add a new pet view */
+            Vector3 original = Vector3.zero;
+            for(int i = 0; i < current_pets_data.Count; i++)
+            {
+                Vector3 new_view_pos = original + new Vector3(i*ViewWidth, 0, 0);
+                Debug.LogFormat("view x' pos[{0}] = {1}", i, new_view_pos.x);
+                GameObject _new_pet_view = Instantiate(PetView, new_view_pos, Quaternion.identity, PetViewParent);
+
+                PetView _pet_view = _new_pet_view.GetComponent<PetView>();
+                if(current_pets_data[i].PetSprite != null)
+                {
+                    _pet_view.PetImage.sprite = current_pets_data[i].PetSprite;
+                }
+
+                pet_views.Add(_new_pet_view);
+            }
+
+            Debug.LogFormat("now pet count: {0}", current_pets_data.Count);
+        }
+
+        void Start()
+        {
+            if(PetViewParent == null)
+            {
+                PetViewParent = Instantiate(new GameObject("PetViewParent"), transform).GetComponent<Transform>();
+            }
+
+            List<Pet> _player_pets = PlayerData.instance.PetViewGetPets();
+            UpdatePetView(_player_pets);
         }
     }
 }

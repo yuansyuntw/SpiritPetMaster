@@ -16,6 +16,12 @@ namespace SpiritPetMaster
         #endregion
 
         #region public function
+        public List<Pet> PetViewGetPets()
+        {
+            return OwnPets;
+        }
+
+
         public Pet PetViewGetCurrentPetData()
         {
             Debug.LogFormat("current pet view index: {0}/{1}", currentPetViewIndex, OwnPets.Count);
@@ -61,16 +67,18 @@ namespace SpiritPetMaster
                     Destroy(this);
                 }
             }
+
+            /* DEBUG */
+            int DEBUG_PET_NUMBER = 5;
+            for (int i = 0; i < DEBUG_PET_NUMBER; i++)
+            {
+                OwnPets.Add(new Pet());
+            }
         }
 
         void Start()
         {
-            /* DEBUG */
-            int DEBUG_PET_NUMBER = 5;
-            for(int i = 0; i < DEBUG_PET_NUMBER; i++)
-            {
-                OwnPets.Add(new Pet());
-            }
+            
         }
 
         
