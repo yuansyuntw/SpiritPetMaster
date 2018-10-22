@@ -69,10 +69,10 @@ namespace SpiritPetMaster
             }
 
             /* DEBUG */
-            int DEBUG_PET_NUMBER = 5;
+            int DEBUG_PET_NUMBER = 3;
             for (int i = 0; i < DEBUG_PET_NUMBER; i++)
             {
-                OwnPets.Add(new Pet());
+                OwnPets.Add(new Pet(i));
             }
         }
 

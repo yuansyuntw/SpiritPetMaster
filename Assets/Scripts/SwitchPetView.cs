@@ -19,8 +19,7 @@ namespace SpiritPetMaster
         public Transform PetViewParent;
 
         [Header("Pet Information UI")]
-        public Text PetName;
-        public Slider PetMood;
+        public PetInformation PetInfoController;
 
 
         #region GOBAL VARIABLE
@@ -32,7 +31,7 @@ namespace SpiritPetMaster
 
         #region private
         Pet current_pet_data;
-        List<Pet> current_pets_data;
+        List<Pet> current_pets_data = new List<Pet>();
         List<GameObject> pet_views = new List<GameObject>();
         int current_view_index = 0;
         #endregion
@@ -57,7 +56,12 @@ namespace SpiritPetMaster
 
         public void FocusPet(int _view_index)
         {
+            /* Move pet view */
             PetViewParent.DOMoveX(-_view_index*ViewWidth, TranslatingTime);
+
+            /* Update pet information controller */
+            Debug.LogFormat("now view index: {0}/{1}", _view_index, current_pets_data.Count);
+            PetInfoController.AssignPet(current_pets_data[_view_index]);
         }
 
         void UpdatePetView(List<Pet> _player_pets)
@@ -83,10 +87,7 @@ namespace SpiritPetMaster
                 GameObject _new_pet_view = Instantiate(PetView, new_view_pos, Quaternion.identity, PetViewParent);
 
                 PetView _pet_view = _new_pet_view.GetComponent<PetView>();
-                if(current_pets_data[i].PetSprite != null)
-                {
-                    _pet_view.PetImage.sprite = current_pets_data[i].PetSprite;
-                }
+                _pet_view.PetData = current_pets_data[i];
 
                 pet_views.Add(_new_pet_view);
             }
