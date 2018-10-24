@@ -76,8 +76,17 @@ namespace SpiritPetMaster
             PetViewParent.DOMoveX(-_view_index*ViewWidth, TranslatingTime);
 
             /* Update pet information controller */
-            Debug.LogFormat("now view index: {0}/{1}", _view_index, current_pets_data.Count);
-            PetInfoController.AssignPet(current_pets_data[_view_index]);
+            Debug.LogFormat("now view index: {0}/{1}", _view_index+1, current_pets_data.Count);
+
+            if (current_pets_data.Count > 0)
+            {
+                PetInfoController.AssignPet(current_pets_data[_view_index]);
+            }
+            else
+            {
+                /* Clear the pet information */
+                PetInfoController.AssignPet(null);
+            }
         }
 
 
@@ -88,7 +97,7 @@ namespace SpiritPetMaster
             current_pets_data = _player_pets;
             current_view_index = 0;
 
-            /* Destroy a old pet view*/
+            /* Destroy a old pet view */
             if (pet_views.Count > 0)
             {
                 for (int i = 0; i < pet_views.Count; i++)
@@ -99,10 +108,10 @@ namespace SpiritPetMaster
 
             /* Add a new pet view */
             Vector3 original = Vector3.zero;
-            for(int i = 0; i < current_pets_data.Count; i++)
+            PetViewParent.transform.position = original;
+            for (int i = 0; i < current_pets_data.Count; i++)
             {
                 Vector3 new_view_pos = original + new Vector3(i*ViewWidth, 0, 0);
-                //Debug.LogFormat("view x' pos[{0}] = {1}", i, new_view_pos.x);
                 GameObject _new_pet_view = Instantiate(PetView, new_view_pos, Quaternion.identity, PetViewParent);
 
                 PetView _pet_view = _new_pet_view.GetComponent<PetView>();
@@ -112,7 +121,7 @@ namespace SpiritPetMaster
             }
 
             /* Reset the pet view postition */
-            FocusPet(0);
+            FocusPet(current_view_index);
 
             Debug.LogFormat("now pet count: {0}", current_pets_data.Count);
         }

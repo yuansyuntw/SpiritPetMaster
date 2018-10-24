@@ -12,7 +12,9 @@ namespace SpiritPetMaster
 
         [Header("UI")]
         public Text PetName;
+        public Text PetLevel;
         public Slider PetMood;
+        public Slider PetHunger;
 
         public Pet CurrentPet;
 
@@ -27,7 +29,16 @@ namespace SpiritPetMaster
             if(CurrentPet != null)
             {
                 PetName.text = CurrentPet.PetName;
+                PetLevel.text = "LV." + CurrentPet.Level;
                 PetMood.value = CurrentPet.Mood;
+                PetHunger.value = CurrentPet.Hunger;
+            }
+            else
+            {
+                PetName.text = "";
+                PetLevel.text = "";
+                PetMood.value = 0;
+                PetHunger.value = 0;
             }
         }
 
