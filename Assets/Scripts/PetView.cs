@@ -10,13 +10,18 @@ namespace SpiritPetMaster
     {
         public Image PetImage;
 
+        [Header("Pet Data")]
         public Pet PetData;
 
         void Start()
         {
-            if(PetData.PetSprite != null)
+            if(PetData.PetSpriteName != null)
             {
-                PetImage.sprite = PetData.PetSprite;
+                var sprite = Resources.LoadAll(PetData.PetSpriteName, typeof(Sprite));
+                if (sprite.Length > 0)
+                {
+                    PetImage.sprite = (Sprite)sprite[0];
+                }
             }
         }
 

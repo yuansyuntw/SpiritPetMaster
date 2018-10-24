@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace SpiritPetMaster
 {
-    public class Pet : MonoBehaviour
+    [System.Serializable]
+    public class Pet
     {
         public int PetID;               //寵物種類代號
 
@@ -14,7 +15,7 @@ namespace SpiritPetMaster
 
         public int Level = 1;
         public int Mood = 0;
-        public int Hunger = 10;
+        public int Hunger = 1;
 
         public Pet(int _id)
         {

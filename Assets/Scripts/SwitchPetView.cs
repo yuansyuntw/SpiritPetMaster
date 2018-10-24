@@ -4,6 +4,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Events;
 
 
 namespace SpiritPetMaster
@@ -22,6 +23,7 @@ namespace SpiritPetMaster
         public PetInformation PetInfoController;
 
 
+
         #region GOBAL VARIABLE
 
         const int LEFT = 0;
@@ -29,12 +31,22 @@ namespace SpiritPetMaster
 
         #endregion
 
+
+
+
         #region private
+
         Pet current_pet_data;
         List<Pet> current_pets_data = new List<Pet>();
         List<GameObject> pet_views = new List<GameObject>();
         int current_view_index = 0;
+        UnityAction PlayerDataUpdateEvetns;
+
         #endregion
+
+
+
+        #region public api
 
         public void NextPetView()
         {
@@ -45,6 +57,8 @@ namespace SpiritPetMaster
             }
         }
 
+
+
         public void LeftPetView()
         {
             if(current_view_index - 1 >= 0)
@@ -53,6 +67,8 @@ namespace SpiritPetMaster
                 FocusPet(current_view_index);
             }
         }
+
+
 
         public void FocusPet(int _view_index)
         {
@@ -64,8 +80,11 @@ namespace SpiritPetMaster
             PetInfoController.AssignPet(current_pets_data[_view_index]);
         }
 
-        void UpdatePetView(List<Pet> _player_pets)
+
+
+        public void UpdatePetView()
         {
+            List<Pet> _player_pets = PlayerData.instance.PetViewGetPets();
             current_pets_data = _player_pets;
             current_view_index = 0;
 
@@ -83,7 +102,7 @@ namespace SpiritPetMaster
             for(int i = 0; i < current_pets_data.Count; i++)
             {
                 Vector3 new_view_pos = original + new Vector3(i*ViewWidth, 0, 0);
-                Debug.LogFormat("view x' pos[{0}] = {1}", i, new_view_pos.x);
+                //Debug.LogFormat("view x' pos[{0}] = {1}", i, new_view_pos.x);
                 GameObject _new_pet_view = Instantiate(PetView, new_view_pos, Quaternion.identity, PetViewParent);
 
                 PetView _pet_view = _new_pet_view.GetComponent<PetView>();
@@ -95,6 +114,8 @@ namespace SpiritPetMaster
             Debug.LogFormat("now pet count: {0}", current_pets_data.Count);
         }
 
+        #endregion
+
         void Start()
         {
             if(PetViewParent == null)
@@ -102,8 +123,15 @@ namespace SpiritPetMaster
                 PetViewParent = Instantiate(new GameObject("PetViewParent"), transform).GetComponent<Transform>();
             }
 
-            List<Pet> _player_pets = PlayerData.instance.PetViewGetPets();
-            UpdatePetView(_player_pets);
+            PlayerDataUpdateEvetns += UpdatePetView;
+            PlayerData.instance.RegistePlayerDataUpdateEvents(PlayerDataUpdateEvetns);
+
+            UpdatePetView();
+        }
+
+        void OnDestroy()
+        {
+            PlayerData.instance.RemovePlayerDataUpdateEvents(PlayerDataUpdateEvetns);
         }
     }
 }
