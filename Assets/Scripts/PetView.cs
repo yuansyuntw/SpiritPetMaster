@@ -14,10 +14,10 @@ namespace SpiritPetMaster
 
         void Start()
         {
-            if(PetData.PetSprite != null)
-            {
-                PetImage.sprite = PetData.PetSprite;
-            }
+            // if(PetData.PetSprite != null)
+            // {
+            //     PetImage.sprite = PetData.PetSprite;
+            // }
         }
 
         public void OnMouseDown()

@@ -26,7 +26,7 @@ namespace SpiritPetMaster
         {
             if(CurrentPet != null)
             {
-                PetName.text = CurrentPet.Name;
+                // PetName.text = CurrentPet.Name;
                 PetMood.value = CurrentPet.Mood;
             }
         }
