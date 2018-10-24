@@ -111,6 +111,9 @@ namespace SpiritPetMaster
                 pet_views.Add(_new_pet_view);
             }
 
+            /* Reset the pet view postition */
+            FocusPet(0);
+
             Debug.LogFormat("now pet count: {0}", current_pets_data.Count);
         }
 
@@ -123,6 +126,7 @@ namespace SpiritPetMaster
                 PetViewParent = Instantiate(new GameObject("PetViewParent"), transform).GetComponent<Transform>();
             }
 
+            /* Registe the update pet view events to the plater data */
             PlayerDataUpdateEvetns += UpdatePetView;
             PlayerData.instance.RegistePlayerDataUpdateEvents(PlayerDataUpdateEvetns);
 
@@ -131,6 +135,7 @@ namespace SpiritPetMaster
 
         void OnDestroy()
         {
+            /* Remove the update pet view events from the player data */
             PlayerData.instance.RemovePlayerDataUpdateEvents(PlayerDataUpdateEvetns);
         }
     }

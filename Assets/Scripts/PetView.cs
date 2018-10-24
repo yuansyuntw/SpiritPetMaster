@@ -9,6 +9,7 @@ namespace SpiritPetMaster
     public class PetView : MonoBehaviour
     {
         public Image PetImage;
+        public int IncreateTouchMood = 1;
 
         [Header("Pet Data")]
         public Pet PetData;
@@ -27,9 +28,9 @@ namespace SpiritPetMaster
 
         public void OnMouseDown()
         {
-            PetData.Mood++;
+            PetData.Mood += IncreateTouchMood;
             PetInformation.instance.UpdateInfo();
-            Debug.LogFormat("Click");
+            //Debug.LogFormat("Click");
         }
 
         public void OnMouseEnter()
