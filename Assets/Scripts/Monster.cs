@@ -16,6 +16,7 @@ namespace SpiritMonsterMaster
         //public float maxMP = 100;
         //public float MPRecover = 0.005f;
         public float HPRecover = 0.005f;
+        public int Monsterfire, Monsterwater, Monsterwind;
 
 
         public Monster(int _id)

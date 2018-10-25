@@ -106,6 +106,10 @@ public class Pet01_Controller : Pet {
         if (other.gameObject.CompareTag("Monster"))
         {
             HP -= 10;
+            float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
+            float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
+            rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
+            //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
             animator.SetInteger("Hitted", 1);
         }
        else animator.SetInteger("Hitted", 0);

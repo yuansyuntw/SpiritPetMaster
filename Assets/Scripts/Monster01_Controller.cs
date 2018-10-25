@@ -9,7 +9,8 @@ public class Monster01_Controller : Monster {
     private Animator animator;
     private Rigidbody2D rb;
     private int Dir = 1;
-    private float HP, Dist;
+    private float HP, Distx, timer;
+    private int hitted = 0;
 
     public GameObject Player;
     public Slider MonsterHP;
@@ -23,16 +24,35 @@ public class Monster01_Controller : Monster {
         rb = GetComponent<Rigidbody2D>();
         Dir = -1;
         HP = maxHP;
+        timer = 2.5f;
     }
 	
 	void Update () {
-        Dist = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
-        float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Dist;
+        Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
+        float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         //move
-        if (Dist < 3) {  
+        if (Distx < 5 || hitted == 1) {  
             float moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
+        }
+        else
+        {
+            if(timer > 0)
+            {
+                float moveZ = -1 * speed;
+                moveZ *= Time.deltaTime;
+                transform.Translate(moveZ, 0, 0);
+            }
+            else 
+            {
+                float moveZ = 1 * speed;
+                moveZ *= Time.deltaTime;
+                transform.Translate(moveZ, 0, 0);
+                
+            }
+            if (timer < -2.5f)timer = 2.5f;
+            timer -= Time.deltaTime;
         }
 
         //animation
@@ -64,12 +84,30 @@ public class Monster01_Controller : Monster {
     {
         if (other.gameObject.CompareTag("PetAttack"))
         {
-            HP -= 50;
+            //屬性相剋
+            if (Monsterfire == 1)
+            {
+                if(other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
+                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
+            }
+            else if (Monsterwater == 1)
+            {
+                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
+                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
+            }
+            else if (Monsterwind == 1)
+            {
+                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1f;
+            }
+
             animator.SetInteger("Hitted", 1);
-            Debug.Log(other.tag + HP);
+            hitted = 1;
         }
         else animator.SetInteger("Hitted", 0);
 
-        Debug.Log(other.name);
     }
 }
