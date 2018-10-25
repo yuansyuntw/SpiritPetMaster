@@ -108,7 +108,7 @@ namespace SpiritPetMaster
 
             /* Add a new pet view */
             Vector3 original = Vector3.zero;
-            PetViewParent.transform.position = original;
+            PetViewParent.transform.position = original; // Reset the pet view postion
             for (int i = 0; i < current_pets_data.Count; i++)
             {
                 Vector3 new_view_pos = original + new Vector3(i*ViewWidth, 0, 0);
