@@ -83,8 +83,11 @@ namespace SpiritPetMaster
         public void NewPet(int _id)
         {
             Pet pet = new Pet(_id);
+            /* 圖片名稱 */
             pet.PetSpriteName = _id.ToString();
             pet.PetName = _id.ToString();
+            /* 可自訂義文檔名稱 */
+            pet.PetTalkingFilename = "pet" + _id.ToString() + "_taking_content";
             OwnPets.Add(pet);
 
             SaveAndReloadPlayerData();
@@ -152,6 +155,7 @@ namespace SpiritPetMaster
                 pets_id += id + " ";
 
                 Save<string>(PlayerName, id, "pet_image_name", OwnPets[i].PetSpriteName);
+                Save<string>(PlayerName, id, "pet_taking_filename", OwnPets[i].PetTalkingFilename);
                 Save<string>(PlayerName, id, "pet_name", OwnPets[i].PetName);
                 Save<int>(PlayerName, id, "pet_level", OwnPets[i].Level);
                 Save<int>(PlayerName, id, "pet_mood", OwnPets[i].Mood);
@@ -200,6 +204,7 @@ namespace SpiritPetMaster
                     int.TryParse(ids[i], out id);
                     Pet pet = new Pet(id);
                     pet.PetSpriteName = Load<string>(PlayerName, ids[i], "pet_image_name");
+                    pet.PetTalkingFilename = Load<string>(PlayerName, ids[i], "pet_taking_filename");
                     pet.PetName = Load<string>(PlayerName, ids[i], "pet_name");
                     pet.Level = Load<int>(PlayerName, ids[i], "pet_level");
                     pet.Mood = Load<int>(PlayerName, ids[i], "pet_mood");

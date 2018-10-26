@@ -66,13 +66,13 @@ namespace SpiritPetMaster
             if(current_view_index + 1 < current_pets_data.Count)
             {
                 current_view_index++;
+
+                /* Closing the pet information */
+                FreePetView();
+
+                /* Moving the pet view */
+                FocusPetView(pet_views[current_view_index]);
             }
-
-            /* Closing the pet information */
-            FreePetView();
-
-            /* Moving the pet view */
-            FocusPetView(pet_views[current_view_index]);
         }
 
 
@@ -82,32 +82,52 @@ namespace SpiritPetMaster
             if(current_view_index - 1 >= 0)
             {
                 current_view_index--;
+
+                /* Closing the pet information */
+                FreePetView();
+
+                /* Moving the pet view */
+                FocusPetView(pet_views[current_view_index]);
+            }
+        }
+
+
+        
+        public void TouchPetView(PetView _touched_pet)
+        {
+            /* Player want to focus a pet */
+            if(current_focus_pet == null)
+            {
+                FocusPetView(_touched_pet);
             }
 
-            /* Closing the pet information */
-            FreePetView();
+            /* Player is interactive with the touched pet */
+            if(current_focus_pet == _touched_pet)
+            {
+                _touched_pet.IncreateMood();
+            }
 
-            /* Moving the pet view */
-            FocusPetView(pet_views[current_view_index]);
+            /* Player is clicking other pet*/
+            if(current_focus_pet != _touched_pet)
+            {
+                FreePetView();
+            }
         }
 
 
 
         public void FocusPetView(PetView _focus_pet)
         {
-            if(current_focus_pet == null)
-            {
-                /* Moveing camera */
-                current_focus_pet = _focus_pet;
-                Vector3 pos = current_focus_pet.transform.position;
-                if (pos.y < 0) pos.y = 0;
-                camera_transform.DOMove(pos, 1.5f);
+            /* Moveing camera */
+            current_focus_pet = _focus_pet;
+            Vector3 pos = current_focus_pet.transform.position;
+            if (pos.y < 0) pos.y = 0;
+            camera_transform.DOMove(pos, 1.5f);
 
-                /* Showing the pet information */
-                InformationUI.SetActive(true);
-                Pet pet = current_focus_pet.PetData;
-                PetInformation.instance.AssignPet(pet);
-            }
+            /* Showing the pet information */
+            InformationUI.SetActive(true);
+            Pet pet = current_focus_pet.PetData;
+            PetInformation.instance.AssignPet(pet);
         }
 
 

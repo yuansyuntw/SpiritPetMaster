@@ -27,12 +27,38 @@ namespace SpiritPetMaster
             PetViewCollider = GetComponent<Collider2D>();
             PetSprite = GetComponent<SpriteRenderer>();
 
-            if (PetData.PetSpriteName != null)
+            /* Loading the image of the pet */
+            if (PetData.PetSpriteName != "")
             {
-                var sprite = Resources.LoadAll(PetData.PetSpriteName, typeof(Sprite));
-                if (sprite.Length > 0)
+                var sprite = Resources.Load(PetData.PetSpriteName, typeof(Sprite));
+                if (sprite != null)
                 {
-                    PetSprite.sprite= (Sprite)sprite[0];
+                    PetSprite.sprite= (Sprite)sprite;
+                }
+            }
+
+            /* Loading the taking of th pet */
+            if(PetData.PetTalkingFilename != "")
+            {
+                TextAsset text = Resources.Load(PetData.PetTalkingFilename) as TextAsset;
+                if(text != null)
+                {
+                    Debug.LogFormat("{0}: {1}", PetData.PetTalkingFilename, text.text);
+                    /*
+                    PetTakingContents content = JsonUtility.FromJson<PetTakingContents>(text.text);
+                    if (content != null)
+                    {
+                        PetData.PetTakingContents = content.contents;
+                    }
+                    else
+                    {
+                        Debug.LogFormat("can't parse the json file");
+                    }
+                    */
+                }
+                else
+                {
+                    Debug.LogFormat("not found taking file: {0}", PetData.PetTalkingFilename);
                 }
             }
         }
@@ -46,7 +72,7 @@ namespace SpiritPetMaster
                 MouseDownEvents.Invoke();
 
                 /* Moveing the pet view */
-                PetViewController.instance.FocusPetView(this);
+                PetViewController.instance.TouchPetView(this);
             }
         }
 
