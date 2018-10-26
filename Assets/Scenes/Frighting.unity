@@ -672,7 +672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 180}
+  m_AnchoredPosition: {x: -800, y: 500}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &289544680
@@ -950,7 +950,8 @@ MonoBehaviour:
   Attacknum: 5
   animator: {fileID: 658993448}
   Player: {fileID: 1118217801}
-  MonsterHP: {fileID: 1082348481}
+  HPBar: {fileID: 1869556435743230, guid: d94a3295a8ec80e4b8568c5e9dc07b5d, type: 2}
+  MonsterHP: {fileID: 0}
 --- !u!61 &447409511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1595,7 +1596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 180}
+  m_AnchoredPosition: {x: -500, y: 500}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717527840
@@ -1939,7 +1940,8 @@ MonoBehaviour:
   Attacknum: 5
   animator: {fileID: 658993448}
   Player: {fileID: 1118217801}
-  MonsterHP: {fileID: 1082348481}
+  HPBar: {fileID: 1869556435743230, guid: d94a3295a8ec80e4b8568c5e9dc07b5d, type: 2}
+  MonsterHP: {fileID: 0}
 --- !u!61 &812061100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2495,8 +2497,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 984613405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.348, y: 11.29, z: 0}
-  m_LocalScale: {x: 4.1917896, y: -0.14857984, z: 0.51952}
+  m_LocalPosition: {x: -1.59, y: 11.29, z: 0}
+  m_LocalScale: {x: 4.881212, y: -0.17301673, z: 0.60496527}
   m_Children: []
   m_Father: {fileID: 705985721}
   m_RootOrder: 23
@@ -2802,7 +2804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -190}
+  m_AnchoredPosition: {x: 100, y: -500}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082348481
@@ -3385,7 +3387,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411396879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28edbf5956103584da1c0ae0428608b2, type: 3}
   m_Name: 
@@ -3404,6 +3406,7 @@ MonoBehaviour:
   Attacknum: 10
   animator: {fileID: 658993448}
   Player: {fileID: 1118217801}
+  HPBar: {fileID: 0}
   MonsterHP: {fileID: 1082348481}
 --- !u!50 &1411396883
 Rigidbody2D:
@@ -3425,6 +3428,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1411396884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411396879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1cebdcea4e9014d81fac4913f26df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MonsterID: 0
+  MonsterSprite: {fileID: 21300000, guid: 2af244bbe1db5ee469bb5f4e5a4dc453, type: 3}
+  Name: 
+  Level: 0
+  speed: 2
+  maxHP: 100
+  HPRecover: 0.01
+  Monsterfire: 0
+  Monsterwater: 0
+  Monsterwind: 1
+  warning: 5
+  Attacknum: 10
+  animator: {fileID: 658993448}
+  Player: {fileID: 1118217801}
+  MonsterHP: {fileID: 1082348481}
 --- !u!1 &1674334573
 GameObject:
   m_ObjectHideFlags: 0

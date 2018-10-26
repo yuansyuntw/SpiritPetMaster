@@ -71,9 +71,9 @@ public class Boss01_Controller : Monster
         }
 
         //jump
-        if ((rb.velocity.y < -0.5f && timerJump > 1f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning))
+        if ((rb.velocity.y < -0.5f && timerJump > 2f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning))
         {
-            rb.AddForce(Vector3.up * 350.0f);
+            rb.AddForce(Vector3.up * 100.0f);
             animator.SetInteger("Jump", 1);
             timerJump = 0;
         }
