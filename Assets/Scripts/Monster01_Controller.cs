@@ -34,9 +34,10 @@ public class Monster01_Controller : Monster {
         HP = maxHP;
         timer = 2.5f;
 
-        GameObject NewHP = Instantiate(HPBar, transform.position, Quaternion.identity);
-        NewHP.transform.SetParent(gameObject.transform);
-        MonsterHP = NewHP.GetComponent<Slider>();
+        //GameObject NewHP = Instantiate(HPBar, transform.position, Quaternion.identity);
+        //NewHP.transform.SetParent(gameObject.transform);
+        //MonsterHP = NewHP.GetComponent<Slider>();
+        HPBar = gameObject.transform.GetChild(0).gameObject;
     }
 	
 	void Update () {
@@ -101,8 +102,10 @@ public class Monster01_Controller : Monster {
         //HP UI
         if(hitted == 1)
         {
-            MonsterHP.gameObject.SetActive(true);
-            MonsterHP.value = HP / maxHP;
+            //MonsterHP.gameObject.SetActive(true);
+            //MonsterHP.value = HP / maxHP;
+            HPBar.transform.GetChild(0).gameObject.transform.localPosition = new Vector3( (1 - (HP / maxHP)) * -18.4f, 0, 0);
+            Debug.Log((1 - (HP / maxHP)) * -18.4f + " " + (HP / maxHP));
         }
         
         
