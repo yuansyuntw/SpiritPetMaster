@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using SpiritMonsterMaster;
 
-public class Monster01_Controller : Monster {
+public class Boss01_Controller : Monster
+{
     [SerializeField]
     private Animator animator;
     private Rigidbody2D rb;
@@ -13,15 +14,16 @@ public class Monster01_Controller : Monster {
     private int hitted = 0;
 
     public GameObject Player;
-    public GameObject HPBar;
     public Slider MonsterHP;
 
-    public Monster01_Controller(int _id) : base(_id)
+
+    public Boss01_Controller(int _id) : base(_id)
     {
 
     }
 
-    void Start () {
+    void Start()
+    {
         //change to read file here 
         //warning = 5f;
         //Attacknum = 10;
@@ -33,44 +35,43 @@ public class Monster01_Controller : Monster {
         Dir = -1;
         HP = maxHP;
         timer = 2.5f;
-
-        GameObject NewHP = Instantiate(HPBar, transform.position, Quaternion.identity);
-        NewHP.transform.SetParent(gameObject.transform);
-        MonsterHP = NewHP.GetComponent<Slider>();
+        MonsterHP.gameObject.SetActive(false);
     }
-	
-	void Update () {
-        if(Mathf.Abs(rb.velocity.y) < 0.2f)timerJump += Time.deltaTime;
+
+    void Update()
+    {
+        if (Mathf.Abs(rb.velocity.y) < 0.2f) timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         //move
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning / 2)) {  //follow Player
+        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning / 2))
+        {  //follow Player
             float moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
         }
         else
         {
-            if(timer > 0)
+            if (timer > 0)
             {
                 float moveZ = -1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
             }
-            else 
+            else
             {
                 float moveZ = 1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
-                
+
             }
-            if (timer < -2.5f)timer = 2.5f;
+            if (timer < -2.5f) timer = 2.5f;
             timer -= Time.deltaTime;
         }
 
         //jump
-        if ((rb.velocity.y < -0.5f && timerJump > 1f) || (Player.transform.position.y - gameObject.transform.position.y > warning/2 && Distx < warning))
+        if ((rb.velocity.y < -0.5f && timerJump > 1f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning))
         {
             rb.AddForce(Vector3.up * 350.0f);
             animator.SetInteger("Jump", 1);
@@ -98,14 +99,15 @@ public class Monster01_Controller : Monster {
         }
 
         //HP UI
-        if(hitted == 1)
+        if (hitted == 1 )
         {
             MonsterHP.gameObject.SetActive(true);
             MonsterHP.value = HP / maxHP;
         }
-        
-        
-        if(HP <= 0) {
+
+
+        if (HP <= 0)
+        {
             animator.SetInteger("Dead", 1);
             Destroy(gameObject);
         }
@@ -119,7 +121,7 @@ public class Monster01_Controller : Monster {
             //屬性相剋
             if (Monsterfire == 1)
             {
-                if(other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
+                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
                 else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
                 else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
             }

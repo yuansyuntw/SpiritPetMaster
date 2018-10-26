@@ -23,6 +23,16 @@ public class Pet01_Controller : Pet {
     }
 
     void Start () {
+        //change to read file here 
+        speed = 2;
+        maxHP = 100;
+        maxMP = 100;
+        MPRecover = 0.01f;
+        HPRecover = 0.01f;
+        PetfireAttack = 100;
+        PetwaterAttack = 100;
+        PetwindAttack = 100;
+
         rb = GetComponent<Rigidbody2D>();
         Dir = 1;
         MP = maxMP;
@@ -33,6 +43,13 @@ public class Pet01_Controller : Pet {
     {
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
+
+        if(HP <= 0)
+        {
+            HP = 0;
+            animator.SetInteger("Dead", 0);
+            return;
+        }
 
         //move
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -81,7 +98,7 @@ public class Pet01_Controller : Pet {
         PlayerMP.value = MP / maxMP;
 
         //attack
-        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 >= 0)
+        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0)
         {
             MP -= 10;
             Quaternion rot;
@@ -105,7 +122,7 @@ public class Pet01_Controller : Pet {
     {
         if (other.gameObject.CompareTag("Monster"))
         {
-            HP -= 10;
+            HP -= other.gameObject.GetComponent<Monster01_Controller>().Attacknum;
             float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
