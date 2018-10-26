@@ -40,7 +40,7 @@ public class Boss01_Controller : Monster
 
     void Update()
     {
-        if (Mathf.Abs(rb.velocity.y) < 0.2f) timerJump += Time.deltaTime;
+        if (Mathf.Abs(rb.velocity.y) < 0.05f) timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
@@ -71,9 +71,9 @@ public class Boss01_Controller : Monster
         }
 
         //jump
-        if ((rb.velocity.y < -0.5f && timerJump > 2f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning))
+        if ((rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning && timerJump > 0.5f))
         {
-            rb.AddForce(Vector3.up * 100.0f);
+            rb.AddForce(Vector3.up * 900.0f);
             animator.SetInteger("Jump", 1);
             timerJump = 0;
         }

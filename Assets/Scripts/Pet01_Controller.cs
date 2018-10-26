@@ -57,9 +57,9 @@ public class Pet01_Controller : Pet {
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space) && timerJump > 0.25f)
+        if (Input.GetKeyDown(KeyCode.Space) && timerJump > 1f)
         {
-            rb.AddForce(Vector3.up * 150.0f);
+            rb.AddForce(Vector3.up * 350.0f);
             //transform.Translate(Vector3.up * 10.0f);
             timerJump = 0;
             animator.SetInteger("Jump", 1);
