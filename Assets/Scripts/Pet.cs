@@ -4,12 +4,8 @@ using UnityEngine;
 
 namespace SpiritPetMaster
 {
-<<<<<<< HEAD
     [System.Serializable]
-    public class Pet
-=======
     public class Pet : MonoBehaviour
->>>>>>> fighting
     {
         public int PetID;                       //寵物種類代號
         public string PetName;

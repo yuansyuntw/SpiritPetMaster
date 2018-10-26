@@ -24,7 +24,6 @@ namespace SpiritPetMaster
 
         void Start()
         {
-<<<<<<< HEAD
             PetViewCollider = GetComponent<Collider2D>();
             PetSprite = GetComponent<SpriteRenderer>();
 
@@ -62,12 +61,6 @@ namespace SpiritPetMaster
                     Debug.LogFormat("not found taking file: {0}", PetData.PetTalkingFilename);
                 }
             }
-=======
-            // if(PetData.PetSprite != null)
-            // {
-            //     PetImage.sprite = PetData.PetSprite;
-            // }
->>>>>>> animation
         }
 
 

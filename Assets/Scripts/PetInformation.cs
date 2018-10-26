@@ -37,12 +37,8 @@ namespace SpiritPetMaster
         {
             if(CurrentPet != null)
             {
-<<<<<<< HEAD
                 PetName.text = CurrentPet.PetName;
                 PetLevel.text = "LV." + CurrentPet.Level;
-=======
-                // PetName.text = CurrentPet.Name;
->>>>>>> animation
                 PetMood.value = CurrentPet.Mood;
                 PetHunger.value = CurrentPet.Hunger;
 
