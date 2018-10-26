@@ -11,6 +11,8 @@ namespace SpiritPetMaster
 {
     public class SwitchPetView : MonoBehaviour
     {
+        static public SwitchPetView instance;
+
         [Header("Pet View Translating")]
         public int ViewWidth = 50;
         public float ViewMovingSpeed = 2.5f;
@@ -35,6 +37,7 @@ namespace SpiritPetMaster
 
         Transform camera_transform;
         int camera_moving_direction;
+        PetView current_focus_pet;
 
         #endregion
 
@@ -63,15 +66,45 @@ namespace SpiritPetMaster
 
 
 
-        public void FocusPet(int _view_index)
+        public void FocusPet(PetView _focus_pet)
         {
-            
+            if(current_focus_pet != _focus_pet)
+            {
+                current_focus_pet = _focus_pet;
+                Vector3 pos = current_focus_pet.transform.position;
+                pos.y = 0;
+                camera_transform.DOMove(pos, 1.5f);
+            }
+        }
+
+
+
+        public void FreePet()
+        {
+            current_focus_pet = null;
         }
 
         #endregion
 
 
         #region life cycle
+
+        void Awake()
+        {
+            if(SwitchPetView.instance == null)
+            {
+                SwitchPetView.instance = this;
+            }
+            else
+            {
+                if(SwitchPetView.instance != this)
+                {
+                    Destroy(this);
+                }
+            }
+        }
+
+
 
         void Start()
         {
