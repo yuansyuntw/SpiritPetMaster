@@ -192,10 +192,6 @@ namespace SpiritPetMaster
                 string pets_id = Load<string>(PlayerName, "pets_id");
                 Debug.LogFormat("pets id: {0}", pets_id);
                 string[] ids = pets_id.Split(' ');
-                for(int i=0;i<ids.Length-1;i++)
-                {
-                    Debug.LogFormat("pet[{0}] id = {1}", i, ids[i]);
-                }
 
                 /* Loading all of the player's pet */
                 for (int i = 0; i < ids.Length-1; i++)

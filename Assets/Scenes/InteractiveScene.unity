@@ -680,28 +680,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 3
+  - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 636118583}
-          m_MethodName: StopPetView
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 636118583}
+        - m_Target: {fileID: 409355677}
           m_MethodName: RightPetView
           m_Mode: 1
           m_Arguments:
@@ -1398,13 +1381,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 409355675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43010547dfb839c419376a7f5ac6e2fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0676e9b3ab2767640a5a00bec5da083b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ContainerWidth: 50
   ContainerHeight: 50
   PetViewPrefab: {fileID: 1191177169943202, guid: ec891656c90253349bce300364a0a2e4,
     type: 2}
+  ViewWidth: 50
+  ViewMovingSpeed: 2.5
+  InformationUI: {fileID: 568241009}
+  PetInfoController: {fileID: 183347604}
 --- !u!1 &425926852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,7 +1982,6 @@ GameObject:
   - component: {fileID: 636118586}
   - component: {fileID: 636118585}
   - component: {fileID: 636118584}
-  - component: {fileID: 636118583}
   m_Layer: 5
   m_Name: CameraController
   m_TagString: Untagged
@@ -2023,20 +2009,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &636118583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 636118581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec4af40018b2a2740b3dc20e3f69ea21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ViewWidth: 50
-  ViewMovingSpeed: 5
-  PetInfoController: {fileID: 183347604}
 --- !u!114 &636118584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2265,28 +2237,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 3
+  - eventID: 4
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 636118583}
-          m_MethodName: StopPetView
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 636118583}
+        - m_Target: {fileID: 409355677}
           m_MethodName: LeftPetView
           m_Mode: 1
           m_Arguments:

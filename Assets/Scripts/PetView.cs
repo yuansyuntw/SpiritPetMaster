@@ -45,7 +45,7 @@ namespace SpiritPetMaster
                 MouseDownEvents.Invoke();
 
                 /* Moveing the pet view */
-                SwitchPetView.instance.FocusPet(this);
+                PetViewController.instance.FocusPet(this);
             }
         }
 
