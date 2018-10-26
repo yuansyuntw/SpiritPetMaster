@@ -11,13 +11,9 @@ namespace SpiritPetMaster
 {
     public class SwitchPetView : MonoBehaviour
     {
-        [Header("Prefabs")]
-        public GameObject PetView;
-
         [Header("Pet View Translating")]
-        public int ViewWidth = 1000;
-        public float TranslatingTime = 3f;
-        public Transform PetViewParent;
+        public int ViewWidth = 50;
+        public float ViewMovingSpeed = 2.5f;
 
         [Header("Pet Information UI")]
         public PetInformation PetInfoController;
@@ -26,7 +22,8 @@ namespace SpiritPetMaster
 
         #region GOBAL VARIABLE
 
-        const int LEFT = 0;
+        const int STOP = 0;
+        const int LEFT = -1;
         const int RIGHT = 1;
 
         #endregion
@@ -36,11 +33,8 @@ namespace SpiritPetMaster
 
         #region private
 
-        Pet current_pet_data;
-        List<Pet> current_pets_data = new List<Pet>();
-        List<GameObject> pet_views = new List<GameObject>();
-        int current_view_index = 0;
-        UnityAction PlayerDataUpdateEvetns;
+        Transform camera_transform;
+        int camera_moving_direction;
 
         #endregion
 
@@ -48,105 +42,67 @@ namespace SpiritPetMaster
 
         #region public api
 
-        public void NextPetView()
+        public void RightPetView()
         {
-            if(current_view_index + 1 < current_pets_data.Count)
-            {
-                current_view_index++;
-                FocusPet(current_view_index);
-            }
+            camera_moving_direction = RIGHT;
         }
 
 
 
         public void LeftPetView()
         {
-            if(current_view_index - 1 >= 0)
-            {
-                current_view_index--;
-                FocusPet(current_view_index);
-            }
+            camera_moving_direction = LEFT;
+        }
+
+
+
+        public void StopPetView()
+        {
+            camera_moving_direction = STOP;
         }
 
 
 
         public void FocusPet(int _view_index)
         {
-            /* Move pet view */
-            PetViewParent.DOMoveX(-_view_index*ViewWidth, TranslatingTime);
-
-            /* Update pet information controller */
-            Debug.LogFormat("now view index: {0}/{1}", _view_index+1, current_pets_data.Count);
-
-            if (current_pets_data.Count > 0)
-            {
-                PetInfoController.AssignPet(current_pets_data[_view_index]);
-            }
-            else
-            {
-                /* Clear the pet information */
-                PetInfoController.AssignPet(null);
-            }
-        }
-
-
-
-        public void UpdatePetView()
-        {
-            List<Pet> _player_pets = PlayerData.instance.PetViewGetPets();
-            current_pets_data = _player_pets;
-            current_view_index = 0;
-
-            /* Destroy a old pet view */
-            if (pet_views.Count > 0)
-            {
-                for (int i = 0; i < pet_views.Count; i++)
-                {
-                    Destroy(pet_views[i]);
-                }
-            }
-
-            /* Add a new pet view */
-            Vector3 original = Vector3.zero;
-            PetViewParent.transform.position = original; // Reset the pet view postion
-            for (int i = 0; i < current_pets_data.Count; i++)
-            {
-                Vector3 new_view_pos = original + new Vector3(i*ViewWidth, 0, 0);
-                GameObject _new_pet_view = Instantiate(PetView, new_view_pos, Quaternion.identity, PetViewParent);
-
-                PetView _pet_view = _new_pet_view.GetComponent<PetView>();
-                _pet_view.PetData = current_pets_data[i];
-
-                pet_views.Add(_new_pet_view);
-            }
-
-            /* Reset the pet view postition */
-            FocusPet(current_view_index);
-
-            Debug.LogFormat("now pet count: {0}", current_pets_data.Count);
+            
         }
 
         #endregion
 
+
+        #region life cycle
+
         void Start()
         {
-            if(PetViewParent == null)
-            {
-                PetViewParent = Instantiate(new GameObject("PetViewParent"), transform).GetComponent<Transform>();
-            }
-
-            /* Registe the update pet view events to the plater data */
-            PlayerDataUpdateEvetns += UpdatePetView;
-            PlayerData.instance.RegistePlayerDataUpdateEvents(PlayerDataUpdateEvetns);
-
-            UpdatePetView();
+            /* Get the transform of the main camera */
+            camera_transform = Camera.main.transform;
         }
 
-        void OnDestroy()
+
+
+        void Update()
         {
-            /* Remove the update pet view events from the player data */
-            PlayerData.instance.RemovePlayerDataUpdateEvents(PlayerDataUpdateEvetns);
+            
+            if(camera_moving_direction == LEFT)
+            {
+                /* Moving camera for left */
+                if(camera_transform.position.x > -1 * ViewWidth * 0.8f)
+                {
+                    camera_transform.Translate(-1 * camera_transform.right * ViewMovingSpeed * Time.deltaTime);
+                }
+            }
+            else if(camera_moving_direction == RIGHT)
+            {
+                /* Moving camera for right */
+                if(camera_transform.position.x < ViewWidth * 0.8f)
+                {
+                    camera_transform.Translate(camera_transform.right * ViewMovingSpeed * Time.deltaTime);
+                }
+            }
         }
+
+        #endregion
     }
 }
 
