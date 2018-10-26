@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61027896049336778}
   - component: {fileID: 50208544247783258}
   - component: {fileID: 114595614912982468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PetView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   MoodIncreatedRate: 10
+  TouchLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   PetData:
     PetID: 0
     PetSpriteName: 

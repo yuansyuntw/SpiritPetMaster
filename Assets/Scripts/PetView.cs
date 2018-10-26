@@ -11,6 +11,7 @@ namespace SpiritPetMaster
     {
         public UnityEvent MouseDownEvents;
         public int MoodIncreatedRate = 1;
+        public LayerMask TouchLayer;
 
         [Header("Pet Data")]
         public Pet PetData;
@@ -45,7 +46,7 @@ namespace SpiritPetMaster
                 MouseDownEvents.Invoke();
 
                 /* Moveing the pet view */
-                PetViewController.instance.FocusPet(this);
+                PetViewController.instance.FocusPetView(this);
             }
         }
 
@@ -68,7 +69,7 @@ namespace SpiritPetMaster
             {
                 Vector3 w_point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector2 mouse_pos = new Vector2(w_point.x, w_point.y);
-                if (PetViewCollider == Physics2D.OverlapPoint(mouse_pos))
+                if (PetViewCollider == Physics2D.OverlapPoint(mouse_pos, TouchLayer))
                 {
                     result = true;
                 }

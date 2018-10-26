@@ -67,7 +67,12 @@ namespace SpiritPetMaster
             {
                 current_view_index++;
             }
-            FocusPet(pet_views[current_view_index]);
+
+            /* Closing the pet information */
+            FreePetView();
+
+            /* Moving the pet view */
+            FocusPetView(pet_views[current_view_index]);
         }
 
 
@@ -78,30 +83,41 @@ namespace SpiritPetMaster
             {
                 current_view_index--;
             }
-            FocusPet(pet_views[current_view_index]);
+
+            /* Closing the pet information */
+            FreePetView();
+
+            /* Moving the pet view */
+            FocusPetView(pet_views[current_view_index]);
         }
 
 
 
-        public void FocusPet(PetView _focus_pet)
+        public void FocusPetView(PetView _focus_pet)
         {
-            if (current_focus_pet != _focus_pet)
+            if(current_focus_pet == null)
             {
-                /* Closing the pet information */
-                InformationUI.SetActive(false);
-
+                /* Moveing camera */
                 current_focus_pet = _focus_pet;
                 Vector3 pos = current_focus_pet.transform.position;
-                if(pos.y<0) pos.y = 0;
+                if (pos.y < 0) pos.y = 0;
                 camera_transform.DOMove(pos, 1.5f);
-            }
-            else
-            {
+
                 /* Showing the pet information */
                 InformationUI.SetActive(true);
                 Pet pet = current_focus_pet.PetData;
                 PetInformation.instance.AssignPet(pet);
             }
+        }
+
+
+
+        public void FreePetView()
+        {
+            /* Closing the pet information */
+            InformationUI.SetActive(false);
+
+            current_focus_pet = null;
         }
 
 
