@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - PetView
   - 
   - 
   - 
@@ -41,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1540474781
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pet
+    uniqueID: 1660848513
+    locked: 0
+  - name: UI
+    uniqueID: 2880687269
     locked: 0
