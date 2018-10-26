@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 114583652}
   - component: {fileID: 114583651}
   - component: {fileID: 114583650}
+  - component: {fileID: 114583653}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -341,9 +342,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1460261369}
-        m_MethodName: NewPet
-        m_Mode: 3
+      - m_Target: {fileID: 114583653}
+        m_MethodName: New
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -388,6 +389,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 114583648}
   m_CullTransparentMesh: 0
+--- !u!114 &114583653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114583648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a42d3ee932164b8dfe0b4f2f90d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PetKing: 2
+  PetName: "\u9F20"
 --- !u!1 &163240470
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,18 +636,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PetName: {fileID: 559987582}
   PetLevel: {fileID: 2090746283}
-  PetTalking: {fileID: 425926854}
   PetMood: {fileID: 3576888}
   PetHunger: {fileID: 753445356}
-  CurrentPet:
-    PetID: 0
-    PetName: 
-    Level: 0
-    Mood: 0
-    Hunger: 0
-    PetSpriteName: 
-    PetTalkingFilename: 
-    PetTakingContents: []
+  TakingBox: {fileID: 515125148}
+  PetTalking: {fileID: 425926854}
+  CurrentPet: {fileID: 0}
 --- !u!1 &188143299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &568241010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3567,7 +3574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerName: Test
   OwnPets: []
-  currentPetViewIndex: 0
 --- !u!1 &1533557912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,6 +3585,7 @@ GameObject:
   - component: {fileID: 1533557916}
   - component: {fileID: 1533557915}
   - component: {fileID: 1533557914}
+  - component: {fileID: 1533557917}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3643,9 +3650,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1460261369}
-        m_MethodName: NewPet
-        m_Mode: 3
+      - m_Target: {fileID: 1533557917}
+        m_MethodName: New
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3690,6 +3697,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1533557912}
   m_CullTransparentMesh: 0
+--- !u!114 &1533557917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1533557912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a42d3ee932164b8dfe0b4f2f90d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PetKing: 0
+  PetName: "\u679C\u6C41\u6A5F"
 --- !u!1 &1552291814
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3796,7 @@ GameObject:
   - component: {fileID: 1610363361}
   - component: {fileID: 1610363360}
   - component: {fileID: 1610363359}
+  - component: {fileID: 1610363362}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -3840,9 +3861,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1460261369}
-        m_MethodName: NewPet
-        m_Mode: 3
+      - m_Target: {fileID: 1610363362}
+        m_MethodName: New
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3887,6 +3908,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610363357}
   m_CullTransparentMesh: 0
+--- !u!114 &1610363362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610363357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93a42d3ee932164b8dfe0b4f2f90d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PetKing: 1
+  PetName: "\u5927\u5634\u9CE5"
 --- !u!1 &1665411954
 GameObject:
   m_ObjectHideFlags: 0

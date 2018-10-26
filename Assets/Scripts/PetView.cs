@@ -7,30 +7,32 @@ using UnityEngine.Events;
 
 namespace SpiritPetMaster
 {
-    public class PetView : MonoBehaviour
+    public class PetView : Pet
     {
         public UnityEvent MouseDownEvents;
         public int MoodIncreatedRate = 1;
         public LayerMask TouchLayer;
 
-        [Header("Pet Data")]
-        public Pet PetData;
-
         #region private
+
         SpriteRenderer PetSprite;
         Collider2D PetViewCollider;
+
         #endregion
+
 
 
         void Start()
         {
+            LoadData();
+
             PetViewCollider = GetComponent<Collider2D>();
             PetSprite = GetComponent<SpriteRenderer>();
 
             /* Loading the image of the pet */
-            if (PetData.PetSpriteName != "")
+            if (this.PetSpriteName != "")
             {
-                var sprite = Resources.Load(PetData.PetSpriteName, typeof(Sprite));
+                var sprite = Resources.Load(this.PetSpriteName, typeof(Sprite));
                 if (sprite != null)
                 {
                     PetSprite.sprite= (Sprite)sprite;
@@ -38,27 +40,26 @@ namespace SpiritPetMaster
             }
 
             /* Loading the taking of th pet */
-            if(PetData.PetTalkingFilename != "")
+            if(this.PetTalkingFilename != "")
             {
-                TextAsset text = Resources.Load(PetData.PetTalkingFilename) as TextAsset;
+                TextAsset text = Resources.Load(this.PetTalkingFilename) as TextAsset;
                 if(text != null)
                 {
-                    Debug.LogFormat("{0}: {1}", PetData.PetTalkingFilename, text.text);
-                    /*
+                    //Debug.LogFormat("{0}: {1}", this.PetTalkingFilename, text.text);
                     PetTakingContents content = JsonUtility.FromJson<PetTakingContents>(text.text);
                     if (content != null)
                     {
-                        PetData.PetTakingContents = content.contents;
+                        this.PetTakingContents = content.contents;
                     }
                     else
                     {
                         Debug.LogFormat("can't parse the json file");
                     }
-                    */
+                    
                 }
                 else
                 {
-                    Debug.LogFormat("not found taking file: {0}", PetData.PetTalkingFilename);
+                    Debug.LogFormat("not found taking file: {0}", this.PetTalkingFilename);
                 }
             }
         }
@@ -78,10 +79,18 @@ namespace SpiritPetMaster
 
 
 
+        void OnDisable()
+        {
+            SaveData();
+        }
+
+
+
         public void IncreateMood()
         {
-            PetData.Mood += MoodIncreatedRate;
+            this.Mood += MoodIncreatedRate;
             PetInformation.instance.UpdateInfo();
+            PetInformation.instance.ChangeTakingContent();
         }
 
 
