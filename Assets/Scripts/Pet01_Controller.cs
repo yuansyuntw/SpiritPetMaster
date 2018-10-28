@@ -11,55 +11,57 @@ public class Pet01_Controller : Pet {
     private float timerJump = 0.6f;
     private int Dir = 1;
     private float timerRecover = 0;
+    private float timerAttackfire = 0;
     private float HP, MP;
 
     public GameObject Attackfire;
     public Slider PlayerHP, PlayerMP;
-    
+    public GameStageController gamestage;
 
-    public Pet01_Controller(int _id) : base(_id)
-    {
-        
-    }
+
 
     void Start () {
         //change to read file here 
-        speed = 2;
-        maxHP = 100;
-        maxMP = 100;
+        //LoadPet(0);
+        Speed = 2;
+        MaxHP = 100;
+        MaxMP = 100;
         MPRecover = 0.01f;
         HPRecover = 0.01f;
         PetfireAttack = 100;
         PetwaterAttack = 100;
         PetwindAttack = 100;
+        
 
         rb = GetComponent<Rigidbody2D>();
         Dir = 1;
-        MP = maxMP;
-        HP = maxHP;
+        MP = MaxMP;
+        HP = MaxHP;
     }
 
     void FixedUpdate()
     {
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
+        timerAttackfire += Time.deltaTime;
 
-        if(HP <= 0)
+        if (HP <= 0)
         {
             HP = 0;
             animator.SetInteger("Dead", 0);
+            gamestage.Gameover = 2;//lose
             return;
         }
 
         //move
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveZ = moveHorizontal * speed;
+        float moveZ = moveHorizontal * Speed;
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.J) && timerJump > 0.25f)
+        if (Input.GetKeyDown(KeyCode.Space) && timerJump > 1f)
         {
-            rb.AddForce(Vector3.up * 150.0f);
+            rb.AddForce(Vector3.up * 350.0f);
             //transform.Translate(Vector3.up * 10.0f);
             timerJump = 0;
             animator.SetInteger("Jump", 1);
@@ -88,17 +90,17 @@ public class Pet01_Controller : Pet {
         //MPHP Recover
         if(timerRecover > 1)
         {
-            if (MP + MP * MPRecover < maxMP) MP +=  MP * MPRecover;
-            if (HP + HP * HPRecover < maxHP) HP += HP * HPRecover;
+            if (MP + MP * MPRecover < MaxMP) MP +=  MP * MPRecover;
+            if (HP + HP * HPRecover < MaxHP) HP += HP * HPRecover;
             timerRecover = 0;
         }
 
         //MPHP UI
-        PlayerHP.value = HP / maxHP;
-        PlayerMP.value = MP / maxMP;
+        PlayerHP.value = HP / MaxHP;
+        PlayerMP.value = MP / MaxMP;
 
         //attack
-        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0)
+        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 1f)
         {
             MP -= 10;
             Quaternion rot;
@@ -109,6 +111,7 @@ public class Pet01_Controller : Pet {
             fires.GetComponent<Attack_far>().Attacknum = PetfireAttack * 0.1f;
             fires.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetInteger("Fire", 1);
+            timerAttackfire = 0;
         }
         else animator.SetInteger("Fire", 0);
 
@@ -131,7 +134,6 @@ public class Pet01_Controller : Pet {
         }
        else animator.SetInteger("Hitted", 0);
 
-        Debug.Log(other.collider.name);
     }
 
 }

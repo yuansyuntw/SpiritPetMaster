@@ -15,6 +15,7 @@ public class Boss01_Controller : Monster
 
     public GameObject Player;
     public Slider MonsterHP;
+    public GameStageController gamestage;
 
 
     public Boss01_Controller(int _id) : base(_id)
@@ -40,12 +41,18 @@ public class Boss01_Controller : Monster
 
     void Update()
     {
-        if (Mathf.Abs(rb.velocity.y) < 0.2f) timerJump += Time.deltaTime;
+        if(gamestage.Gameover == 2)
+        {
+            animator.SetInteger("BossWin", 1);
+            return;
+        }
+
+        if (Mathf.Abs(rb.velocity.y) < 0.05f) timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         //move
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning / 2))
+        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f))
         {  //follow Player
             float moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
@@ -71,9 +78,9 @@ public class Boss01_Controller : Monster
         }
 
         //jump
-        if ((rb.velocity.y < -0.5f && timerJump > 1f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning))
+        if ((rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning && timerJump > 0.5f))
         {
-            rb.AddForce(Vector3.up * 350.0f);
+            rb.AddForce(Vector3.up * 900.0f);
             animator.SetInteger("Jump", 1);
             timerJump = 0;
         }
@@ -109,6 +116,7 @@ public class Boss01_Controller : Monster
         if (HP <= 0)
         {
             animator.SetInteger("Dead", 1);
+            gamestage.Gameover = 1;//win
             Destroy(gameObject);
         }
     }

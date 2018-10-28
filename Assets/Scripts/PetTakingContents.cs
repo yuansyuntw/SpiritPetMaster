@@ -7,6 +7,6 @@ namespace SpiritPetMaster
     [System.Serializable]
     public class PetTakingContents
     {
-        public string contents;
+        public string[] contents;
     }
 }

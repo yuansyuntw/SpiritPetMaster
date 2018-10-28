@@ -13,9 +13,13 @@ namespace SpiritPetMaster
         [Header("UI")]
         public Text PetName;
         public Text PetLevel;
-        public Text PetTalking;
+        
         public Slider PetMood;
         public Slider PetHunger;
+
+        [Header("Talking Box")]
+        public GameObject TakingBox;
+        public Text PetTalking;
 
         [Header("Pet Data")]
         public Pet CurrentPet;
@@ -30,6 +34,8 @@ namespace SpiritPetMaster
         {
             CurrentPet = _pet;
 
+            TakingBox.SetActive(false);
+
             UpdateInfo();
         }
 
@@ -37,17 +43,10 @@ namespace SpiritPetMaster
         {
             if(CurrentPet != null)
             {
-                PetName.text = CurrentPet.PetName;
+                PetName.text = CurrentPet.Name;
                 PetLevel.text = "LV." + CurrentPet.Level;
                 PetMood.value = CurrentPet.Mood;
                 PetHunger.value = CurrentPet.Hunger;
-
-                /* Showing a pet taking content */
-                string[] pet_taking_contents = CurrentPet.PetTakingContents;
-                if ((pet_taking_contents != null) && (pet_taking_contents.Length>0))
-                {
-                    PetTalking.text = pet_taking_contents[Random.Range(0, pet_taking_contents.Length)];
-                }
             }
             else
             {
@@ -55,6 +54,23 @@ namespace SpiritPetMaster
                 PetLevel.text = "";
                 PetMood.value = 0;
                 PetHunger.value = 0;
+                Debug.LogFormat("not found current pet");
+            }
+            
+        }
+
+        public void ChangeTakingContent()
+        {
+            /* Showing a pet taking content */
+            string[] pet_taking_contents = CurrentPet.PetTakingContents;
+            if ((pet_taking_contents != null) && (pet_taking_contents.Length > 0))
+            {
+                TakingBox.SetActive(true);
+                PetTalking.text = pet_taking_contents[Random.Range(0, pet_taking_contents.Length)];
+            }
+            else
+            {
+                TakingBox.SetActive(false);
             }
         }
 
