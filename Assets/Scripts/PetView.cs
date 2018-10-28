@@ -16,6 +16,7 @@ namespace SpiritPetMaster
         #region private
 
         SpriteRenderer PetSprite;
+        Animator PetAnimator;
         Collider2D PetViewCollider;
 
         #endregion
@@ -28,6 +29,7 @@ namespace SpiritPetMaster
 
             PetViewCollider = GetComponent<Collider2D>();
             PetSprite = GetComponent<SpriteRenderer>();
+            PetAnimator = GetComponent<Animator>();
 
             /* Loading the image of the pet */
             if (this.PetSpriteName != "")
@@ -37,6 +39,24 @@ namespace SpiritPetMaster
                 {
                     PetSprite.sprite= (Sprite)sprite;
                 }
+            }
+
+            /* Loading the animator of the pet */
+            if(this.PetAnimatorName != "")
+            {
+                var controller = (RuntimeAnimatorController)Resources.Load(this.PetAnimatorName, typeof(RuntimeAnimatorController));
+                if(controller != null)
+                {
+                    PetAnimator.runtimeAnimatorController = controller;
+                }
+                else
+                {
+                    Debug.LogFormat("pet animator not found: {0}", this.PetAnimatorName);
+                }
+            }
+            else
+            {
+                Debug.LogFormat("pet animator not set: {0}", this.PetAnimatorName);
             }
 
             /* Loading the taking of th pet */
