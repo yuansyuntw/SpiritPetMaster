@@ -48,12 +48,12 @@ namespace SpiritPetMaster
         PetView current_focus_pet;
 
         Pet current_pet_data;
-        List<Pet> current_pets_data = new List<Pet>();
-        List<PetView> pet_views = new List<PetView>();
+        List<PetView> pets_view_data = new List<PetView>();
         int current_view_index = 0;
         UnityAction player_update_date_events;
 
-        float PET_VIEWS_POS_RANGE = 0.9f; 
+        float PET_VIEWS_POS_RANGE = 0.9f;
+        int PET_ID_RANGER = 1000;
 
         #endregion
 
@@ -63,15 +63,18 @@ namespace SpiritPetMaster
 
         public void RightPetView()
         {
-            if(current_view_index + 1 < current_pets_data.Count)
+            if(current_view_index + 1 < pets_view_data.Count)
             {
                 current_view_index++;
+            }
 
+            if((current_view_index < pets_view_data.Count) && (current_view_index >= 0))
+            {
                 /* Closing the pet information */
                 FreePetView();
 
                 /* Moving the pet view */
-                FocusPetView(pet_views[current_view_index]);
+                FocusPetView(pets_view_data[current_view_index]);
             }
         }
 
@@ -82,12 +85,15 @@ namespace SpiritPetMaster
             if(current_view_index - 1 >= 0)
             {
                 current_view_index--;
+            }
 
+            if ((current_view_index < pets_view_data.Count) && (current_view_index >= 0))
+            {
                 /* Closing the pet information */
                 FreePetView();
 
                 /* Moving the pet view */
-                FocusPetView(pet_views[current_view_index]);
+                FocusPetView(pets_view_data[current_view_index]);
             }
         }
 
@@ -126,8 +132,9 @@ namespace SpiritPetMaster
 
             /* Showing the pet information */
             InformationUI.SetActive(true);
-            Pet pet = current_focus_pet.PetData;
+            Pet pet = current_focus_pet;
             PetInformation.instance.AssignPet(pet);
+            //Debug.LogFormat("{0}: {1}", current_focus_pet, pet);
         }
 
 
@@ -142,41 +149,69 @@ namespace SpiritPetMaster
 
 
 
+        public void NewPetView(int _kind, string _name)
+        {
+            /* Random a id */
+            int id;
+            do
+            {
+                id = Random.Range(0, PET_ID_RANGER);
+            } while (!CheckID(id));
+
+            /* A insatnced position in background*/
+            Vector3 new_view_pos = Vector3.zero + new Vector3(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE), 0);
+
+            /* Instantiate PetView prefab and load it data by it's id */
+            GameObject _new_pet_view = Instantiate(PetViewPrefab, new_view_pos, Quaternion.identity, transform);
+            PetView _pet_view = _new_pet_view.GetComponent<PetView>();
+            _pet_view.NewPet(id, _kind, _name);
+
+            pets_view_data.Add(_pet_view);
+
+            PlayerData.instance.SavePlayerData();
+        }
+
+
+
         public void UpdatePetView()
         {
-            List<Pet> _player_pets = PlayerData.instance.PetViewGetPets();
-            current_pets_data = _player_pets;
+            string[] _petids = PlayerData.instance.GetPetsId();
             current_view_index = 0;
 
             /* Destroy a old pet view */
-            if (pet_views.Count > 0)
+            if (pets_view_data.Count > 0)
             {
-                for (int i = 0; i < pet_views.Count; i++)
+                for (int i = 0; i < pets_view_data.Count; i++)
                 {
-                    Destroy(pet_views[i].gameObject);
+                    Destroy(pets_view_data[i].gameObject);
                 }
             }
-            pet_views.Clear();
+            pets_view_data.Clear();
 
             /* Add a new pet view */
-            if (PetViewPrefab != null)
+            if ((_petids != null) && (PetViewPrefab != null))
             {
-                Vector3 original = Vector3.zero;
-                for (int i = 0; i < current_pets_data.Count; i++)
+                for (int i = 0; i < _petids.Length; i++)
                 {
-                    Vector3 new_view_pos = original + new Vector3(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE), 0);
+                    int id;
+                    int.TryParse(_petids[i], out id);
 
+                    /* A insatnced position in background*/
+                    Vector3 new_view_pos = Vector3.zero + new Vector3(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE), 0);
+
+                    /* Instantiate PetView prefab and load it data by it's id */
                     GameObject _new_pet_view = Instantiate(PetViewPrefab, new_view_pos, Quaternion.identity, transform);
-
                     PetView _pet_view = _new_pet_view.GetComponent<PetView>();
-                    _pet_view.PetData = current_pets_data[i];
+                    _pet_view.LoadPet(id);
 
-                    pet_views.Add(_pet_view);
-
+                    pets_view_data.Add(_pet_view);
                 }
             }
 
-            Debug.LogFormat("now pet count: {0}", current_pets_data.Count);
+            /* Set back the PlayerDaata, waitting next time to save */
+            PlayerData.instance.SetPetViews(pets_view_data);
+
+            Debug.LogFormat("now pet count: {0}", pets_view_data.Count);
         }
 
         #endregion
@@ -206,10 +241,6 @@ namespace SpiritPetMaster
             /* Get the transform of the main camera */
             camera_transform = Camera.main.transform;
 
-            /* Registe the update pet view events to the plater data */
-            player_update_date_events += UpdatePetView;
-            PlayerData.instance.RegistePlayerDataUpdateEvents(player_update_date_events);
-
             UpdatePetView();
         }
 
@@ -238,10 +269,27 @@ namespace SpiritPetMaster
 
         void OnDisable()
         {
-            /* Remove the update pet view events from the player data */
-            PlayerData.instance.RemovePlayerDataUpdateEvents(player_update_date_events);
+
         }
 
         #endregion
+
+
+
+        bool CheckID(int _id)
+        {
+            bool result = true;
+
+            for (int i = 0; i < pets_view_data.Count; i++)
+            {
+                if (_id == pets_view_data[i].ID)
+                {
+                    result = false;
+                }
+            }
+
+            return result;
+        }
+        
     }
 }

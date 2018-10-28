@@ -17,10 +17,6 @@ public class Pet01_Controller : Pet {
     public Slider PlayerHP, PlayerMP;
     
 
-    public Pet01_Controller(int _id) : base(_id)
-    {
-        
-    }
 
     void Start () {
         //change to read file here 
