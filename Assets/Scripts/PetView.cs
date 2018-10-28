@@ -115,6 +115,14 @@ namespace SpiritPetMaster
 
 
 
+        public void IncreateHunger(int _value)
+        {
+            this.Hunger += _value;
+            PetInformation.instance.UpdateInfo();
+        }
+
+
+
         bool CheckTouched()
         {
             bool result = false;

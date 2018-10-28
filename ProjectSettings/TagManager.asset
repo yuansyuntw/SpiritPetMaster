@@ -7,6 +7,8 @@ TagManager:
   - Fly
   - PetAttack
   - Monster
+  - Food
+  - PetView
   layers:
   - Default
   - TransparentFX
