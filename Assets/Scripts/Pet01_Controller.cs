@@ -20,6 +20,7 @@ public class Pet01_Controller : Pet {
 
 
 
+
     void Start () {
         //change to read file here 
         //LoadPet(0);
@@ -55,6 +56,7 @@ public class Pet01_Controller : Pet {
 
         //move
         float moveHorizontal = Input.GetAxis("Horizontal");
+        animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         float moveZ = moveHorizontal * Speed;
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
@@ -64,27 +66,31 @@ public class Pet01_Controller : Pet {
             rb.AddForce(Vector3.up * 350.0f);
             //transform.Translate(Vector3.up * 10.0f);
             timerJump = 0;
-            animator.SetInteger("Jump", 1);
+            animator.SetBool("isJumping", true);
         }
-        else animator.SetInteger("Jump", 0);
+        else animator.SetBool("isJumping", false);
 
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+        if(moveHorizontal * transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector2 ( -transform.localScale.x, transform.localScale.y);
+        }
         if (moveHorizontal < 0 && currentVelocity.x <= 0)
         {
-            animator.SetInteger("DirectionX", -1);
+            // animator.SetInteger("DirectionX", -1);
             Dir = -1;
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x - 0.1f, currentVelocity.y);// for ice
         }
         else if (moveHorizontal > 0 && currentVelocity.x >= 0)
         {
             Dir = 1;
-            animator.SetInteger("DirectionX", 1);
+            // animator.SetInteger("DirectionX", 1);
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x + 0.1f, currentVelocity.y);// for ice
         }
         else
         {
-            animator.SetInteger("DirectionX", 0);
+            // animator.SetInteger("DirectionX", 0);
         }
 
         //MPHP Recover
@@ -110,10 +116,10 @@ public class Pet01_Controller : Pet {
             fires.GetComponent<Attack_far>().fire = 1;
             fires.GetComponent<Attack_far>().Attacknum = PetfireAttack * 0.1f;
             fires.GetComponent<Attack_far>().AttackDir = Dir;
-            animator.SetInteger("Fire", 1);
+            animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
         }
-        else animator.SetInteger("Fire", 0);
+        else animator.SetBool("isAttacking", false);
 
 
 
@@ -130,9 +136,9 @@ public class Pet01_Controller : Pet {
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
             //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
-            animator.SetInteger("Hitted", 1);
+            // animator.SetInteger("Hitted", 1);
         }
-       else animator.SetInteger("Hitted", 0);
+    //    else animator.SetInteger("Hitted", 0);
 
     }
 

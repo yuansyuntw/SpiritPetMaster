@@ -50,6 +50,7 @@ public class Monster01_Controller : Monster {
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
+        animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
         if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f)) {  //follow Player
             float moveZ = moveHorizontal * speed;
@@ -79,29 +80,29 @@ public class Monster01_Controller : Monster {
         if ((rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning/2 && Distx < warning && timerJump > 0.5f))
         {
             rb.AddForce(Vector3.up * 850.0f);
-            animator.SetInteger("Jump", 1);
+            animator.SetBool("isJumping", true);
             timerJump = 0;
             Debug.Log("jump");
         }
-        else animator.SetInteger("Jump", 0);
+        else animator.SetBool("isJumping", false);
 
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         if (moveHorizontal < 0 && currentVelocity.x <= 0)
         {
-            animator.SetInteger("DirectionX", -1);
+            // animator.SetInteger("DirectionX", -1);
             Dir = -1;
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x - 0.1f, currentVelocity.y);// for ice
         }
         else if (moveHorizontal > 0 && currentVelocity.x >= 0)
         {
             Dir = 1;
-            animator.SetInteger("DirectionX", 1);
+            // animator.SetInteger("DirectionX", 1);
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x + 0.1f, currentVelocity.y);// for ice
         }
         else
         {
-            animator.SetInteger("DirectionX", 0);
+            // animator.SetInteger("DirectionX", 0);
         }
 
         //HP UI
@@ -114,7 +115,7 @@ public class Monster01_Controller : Monster {
         
         
         if(HP <= 0) {
-            animator.SetInteger("Dead", 1);
+            // animator.SetInteger("Dead", 1);
             Destroy(gameObject);
         }
     }
@@ -143,12 +144,12 @@ public class Monster01_Controller : Monster {
                 else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
                 else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1f;
             }
-            animator.SetInteger("Hitted", 1);
+            // animator.SetInteger("Hitted", 1);
             hitted = 1;
             other.GetComponent<Attack_far>().hitted = 1;
             Destroy(other);
         }
-        else animator.SetInteger("Hitted", 0);
+        // else animator.SetInteger("Hitted", 0);
 
     }
 }
