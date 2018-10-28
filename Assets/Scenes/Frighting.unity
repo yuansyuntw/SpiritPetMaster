@@ -3870,32 +3870,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4394043916320050, guid: e333f712e0f4cd54694dff55e08610dc,
     type: 2}
   m_PrefabInternal: {fileID: 380248543}
---- !u!114 &1411396882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1411396879}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28edbf5956103584da1c0ae0428608b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MonsterID: 0
-  MonsterSprite: {fileID: 21300000, guid: 2af244bbe1db5ee469bb5f4e5a4dc453, type: 3}
-  Name: 
-  Level: 0
-  speed: 1
-  maxHP: 100
-  HPRecover: 0.01
-  Monsterfire: 0
-  Monsterwater: 0
-  Monsterwind: 1
-  warning: 5
-  Attacknum: 10
-  animator: {fileID: 1411396885}
-  Player: {fileID: 1118217801}
-  gamestage: {fileID: 1942658202}
 --- !u!50 &1411396883
 Rigidbody2D:
   serializedVersion: 4
@@ -3942,7 +3916,7 @@ MonoBehaviour:
   animator: {fileID: 1411396885}
   Player: {fileID: 1118217801}
   MonsterHP: {fileID: 1082348481}
-  gamestage: {fileID: 0}
+  gamestage: {fileID: 1942658202}
 --- !u!95 &1411396885
 Animator:
   serializedVersion: 3
