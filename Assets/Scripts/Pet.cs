@@ -17,9 +17,9 @@ namespace SpiritPetMaster
         public string PetTalkingFilename;       //寵物說話檔案位置
         public string[] PetTakingContents;      //寵物說話內容
 
-        public float speed = 1;
-        public float maxHP = 100;
-        public float maxMP = 100;
+        public float Speed = 1;
+        public float MaxHP = 100;
+        public float MaxMP = 100;
         public float MPRecover = 0.005f;
         public float HPRecover = 0.005f;
         public int PetfireAttack = 100;
@@ -83,7 +83,17 @@ namespace SpiritPetMaster
             PlayerData.instance.SaveData<int>(petid, "pet_level", Level);
             PlayerData.instance.SaveData<int>(petid, "pet_mood", Mood);
             PlayerData.instance.SaveData<int>(petid, "pet_hunger", Hunger);
-        }
+
+            PlayerData.instance.SaveData<string>(petid, "pet_speed", Speed.ToString());
+            PlayerData.instance.SaveData<string>(petid, "pet_maxHP", MaxHP.ToString());
+            PlayerData.instance.SaveData<string>(petid, "pet_maxMP", MaxMP.ToString());
+            PlayerData.instance.SaveData<string>(petid, "pet_mPRecover", MPRecover.ToString());
+            PlayerData.instance.SaveData<string>(petid, "pet_hPRecover", HPRecover.ToString());
+            PlayerData.instance.SaveData<int>(petid, "pet_petfireAttack", PetfireAttack);
+            PlayerData.instance.SaveData<int>(petid, "pet_petwaterAttack", PetwaterAttack);
+            PlayerData.instance.SaveData<int>(petid, "pet_petwindAttack", PetwindAttack);
+        
+    }
 
 
 

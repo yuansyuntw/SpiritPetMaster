@@ -8,6 +8,7 @@ public class Attack_far : MonoBehaviour {
     public float Attacknum = 0;
     public int AttackDir = 1;
     public float maxDis = 5;
+    public int hitted = 0;
 
     private float Orix, Disx = 0;
 	void Start () {
@@ -18,6 +19,6 @@ public class Attack_far : MonoBehaviour {
 	void Update () {
         gameObject.transform.position += new Vector3(0.2f * AttackDir, 0, 0);
         Disx = Mathf.Abs(Orix - gameObject.transform.position.x);
-        if (Disx > maxDis) Destroy(gameObject);
+        if (Disx > maxDis || hitted ==1) Destroy(gameObject);
     }
 }

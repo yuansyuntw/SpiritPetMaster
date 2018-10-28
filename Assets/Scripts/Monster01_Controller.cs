@@ -11,10 +11,10 @@ public class Monster01_Controller : Monster {
     private int Dir = 1;
     private float HP, Distx, timer, timerJump;
     private int hitted = 0;
+    private GameObject HPBar;
 
     public GameObject Player;
-    public GameObject HPBar;
-    public Slider MonsterHP;
+    public GameStageController gamestage;
 
     public Monster01_Controller(int _id) : base(_id)
     {
@@ -41,12 +41,17 @@ public class Monster01_Controller : Monster {
     }
 	
 	void Update () {
-        if(Mathf.Abs(rb.velocity.y) < 0.05f)timerJump += Time.deltaTime;
+        if (gamestage.Gameover == 2)
+        {
+            return;
+        }
+
+        if (Mathf.Abs(rb.velocity.y) < 0.05f)timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         //move
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning / 2)) {  //follow Player
+        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f)) {  //follow Player
             float moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
@@ -105,7 +110,6 @@ public class Monster01_Controller : Monster {
             //MonsterHP.gameObject.SetActive(true);
             //MonsterHP.value = HP / maxHP;
             HPBar.transform.GetChild(0).gameObject.transform.localPosition = new Vector3( (1 - (HP / maxHP)) * -18.4f, 0, 0);
-            Debug.Log((1 - (HP / maxHP)) * -18.4f + " " + (HP / maxHP));
         }
         
         
@@ -139,9 +143,10 @@ public class Monster01_Controller : Monster {
                 else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
                 else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1f;
             }
-
             animator.SetInteger("Hitted", 1);
             hitted = 1;
+            other.GetComponent<Attack_far>().hitted = 1;
+            Destroy(other);
         }
         else animator.SetInteger("Hitted", 0);
 
