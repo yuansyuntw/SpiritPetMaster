@@ -245,6 +245,7 @@ namespace SpiritPetMaster
             camera_transform = Camera.main.transform;
 
             UpdatePetView();
+            RightPetView();
         }
 
 
