@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodSprite: {fileID: 21300000, guid: a958c8d5aa5dc8c4da191d5a9d2e270b, type: 3}
-  AddHunger: 50
+  AddHunger: 5
 --- !u!212 &212250987535594364
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -52,9 +52,9 @@ namespace SpiritPetMaster
             ID = _id;
             Kind = _kind;
             Name = _name;
-            PetSpriteName = "Monster" + Kind.ToString() + "/idle/idle";
-            PetAnimatorName = "Monster" + Kind.ToString() + "/idle/animator_controller";
-             PetTalkingFilename = "pet_taking" + Kind.ToString();
+            PetSpriteName = "Pet" + Kind.ToString() + "/idle/idle1";
+            PetAnimatorName = "Pet" + Kind.ToString() + "/pet" + Kind.ToString();
+            PetTalkingFilename = "pet_taking" + Kind.ToString();
 
             SaveData();
         }

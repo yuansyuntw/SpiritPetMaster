@@ -122,8 +122,8 @@ MonoBehaviour:
   Kind: 0
   Name: 
   Level: 1
-  Mood: 90
-  Hunger: 90
+  Mood: 10
+  Hunger: 10
   PetSpriteName: 
   PetAnimatorName: 
   PetTalkingFilename: 
@@ -141,7 +141,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  MoodIncreatedRate: 10
+  MoodIncreatedRate: 5
   TouchLayer:
     serializedVersion: 2
     m_Bits: 1024

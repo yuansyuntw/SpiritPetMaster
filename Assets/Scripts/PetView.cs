@@ -109,6 +109,11 @@ namespace SpiritPetMaster
         public void IncreateMood()
         {
             this.Mood += MoodIncreatedRate;
+            if(this.Mood > 100)
+            {
+                this.Mood = 100;
+            }
+            PetAnimator.SetFloat("Mood", this.Mood);
             PetInformation.instance.UpdateInfo();
             PetInformation.instance.ChangeTakingContent();
         }
@@ -118,6 +123,11 @@ namespace SpiritPetMaster
         public void IncreateHunger(int _value)
         {
             this.Hunger += _value;
+            if(this.Hunger > 100)
+            {
+                this.Hunger = 100;
+            }
+            PetAnimator.SetTrigger("isEating");
             PetInformation.instance.UpdateInfo();
         }
 
