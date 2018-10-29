@@ -35,3 +35,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.meta
+
+ProjectSettings/ProjectVersion.txt
+Assets/Resources/DOTweenSettings.asset

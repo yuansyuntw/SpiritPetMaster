@@ -1101,7 +1101,7 @@ Animator:
   m_GameObject: {fileID: 447409509}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eaeee9a71713090498de95d749939945, type: 2}
+  m_Controller: {fileID: 9100000, guid: f17104e128caee44290fe31a0ab91b13, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2224,7 +2224,7 @@ Animator:
   m_GameObject: {fileID: 812061098}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eaeee9a71713090498de95d749939945, type: 2}
+  m_Controller: {fileID: 9100000, guid: f17104e128caee44290fe31a0ab91b13, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4000,7 +4000,11 @@ MonoBehaviour:
   animator: {fileID: 1411396885}
   Player: {fileID: 1118217801}
   MonsterHP: {fileID: 1082348481}
+<<<<<<< HEAD
   gamestage: {fileID: 1942658203}
+=======
+  gamestage: {fileID: 1942658202}
+>>>>>>> origin/animation
 --- !u!95 &1411396885
 Animator:
   serializedVersion: 3
@@ -4563,7 +4567,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942658200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42dd541b811b654bbeb165ccf0f9187, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f0da7179d7d00d49a3b23ab361796d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1942658203
