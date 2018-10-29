@@ -13,7 +13,8 @@ namespace SpiritPetMaster
         public int Mood = 90;
         public int Hunger = 90;
 
-        public string PetSpriteName;            //圖片資料
+        public string PetSpriteName;            //寵物圖片
+        public string PetAnimatorName;          //寵物動畫名稱
         public string PetTalkingFilename;       //寵物說話檔案位置
         public string[] PetTakingContents;      //寵物說話內容
 
@@ -51,7 +52,8 @@ namespace SpiritPetMaster
             ID = _id;
             Kind = _kind;
             Name = _name;
-            PetSpriteName = "pet_image" + Kind.ToString();
+            PetSpriteName = "Pet" + Kind.ToString() + "/idle/idle1";
+            PetAnimatorName = "Pet" + Kind.ToString() + "/pet" + Kind.ToString();
             PetTalkingFilename = "pet_taking" + Kind.ToString();
 
             SaveData();
@@ -63,6 +65,7 @@ namespace SpiritPetMaster
         {
             string petid = ID.ToString();
             PetSpriteName = PlayerData.instance.LoadData<string>(petid, "pet_image_name");
+            PetAnimatorName = PlayerData.instance.LoadData<string>(petid, "pet_animator_name");
             PetTalkingFilename = PlayerData.instance.LoadData<string>(petid, "pet_taking_filename");
             Name = PlayerData.instance.LoadData<string>(petid, "pet_name");
             Kind = PlayerData.instance.LoadData<int>(petid, "pet_kind");
@@ -77,6 +80,7 @@ namespace SpiritPetMaster
         {
             string petid = ID.ToString();
             PlayerData.instance.SaveData<string>(petid, "pet_image_name", PetSpriteName);
+            PlayerData.instance.SaveData<string>(petid, "pet_animator_name", PetAnimatorName);
             PlayerData.instance.SaveData<string>(petid, "pet_taking_filename", PetTalkingFilename);
             PlayerData.instance.SaveData<string>(petid, "pet_name", Name);
             PlayerData.instance.SaveData<int>(petid, "pet_king", Kind);

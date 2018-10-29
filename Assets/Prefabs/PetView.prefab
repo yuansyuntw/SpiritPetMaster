@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 61027896049336778}
   - component: {fileID: 50208544247783258}
   - component: {fileID: 114595614912982468}
+  - component: {fileID: 95199073764749664}
   m_Layer: 10
   m_Name: PetView
-  m_TagString: Untagged
+  m_TagString: PetView
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,8 +80,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -88,6 +89,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.66, y: 3.95}
   m_EdgeRadius: 0
+--- !u!95 &95199073764749664
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191177169943202}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114595614912982468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,22 +118,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82a094ea84bf0f4e9152f471445e3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
+  Kind: 0
+  Name: 
+  Level: 1
+  Mood: 10
+  Hunger: 10
+  PetSpriteName: 
+  PetAnimatorName: 
+  PetTalkingFilename: 
+  PetTakingContents: []
+  Speed: 1
+  MaxHP: 100
+  MaxMP: 100
+  MPRecover: 0.005
+  HPRecover: 0.005
+  PetfireAttack: 100
+  PetwaterAttack: 100
+  PetwindAttack: 100
   MouseDownEvents:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  MoodIncreatedRate: 10
+  MoodIncreatedRate: 5
   TouchLayer:
     serializedVersion: 2
     m_Bits: 1024
-  PetData:
-    PetID: 0
-    PetSpriteName: 
-    PetName: 
-    Level: 0
-    Mood: 0
-    Hunger: 0
 --- !u!212 &212756324313395322
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,7 +185,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

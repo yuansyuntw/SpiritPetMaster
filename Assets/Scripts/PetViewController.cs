@@ -201,8 +201,11 @@ namespace SpiritPetMaster
 
                     /* Instantiate PetView prefab and load it data by it's id */
                     GameObject _new_pet_view = Instantiate(PetViewPrefab, new_view_pos, Quaternion.identity, transform);
-                    PetView _pet_view = _new_pet_view.GetComponent<PetView>();
+                    PetView _pet_view = _new_pet_view.GetComponent<PetView>();                
                     _pet_view.LoadPet(id);
+
+                    Animator _pet_animator = _new_pet_view.GetComponent<Animator>();
+
 
                     pets_view_data.Add(_pet_view);
                 }
@@ -242,6 +245,7 @@ namespace SpiritPetMaster
             camera_transform = Camera.main.transform;
 
             UpdatePetView();
+            RightPetView();
         }
 
 
