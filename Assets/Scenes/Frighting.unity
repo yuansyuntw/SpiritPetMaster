@@ -1071,7 +1071,7 @@ MonoBehaviour:
   Attacknum: 5
   animator: {fileID: 447409513}
   Player: {fileID: 1118217801}
-  gamestage: {fileID: 1942658203}
+  gamestage: {fileID: 1942658202}
 --- !u!50 &447409512
 Rigidbody2D:
   serializedVersion: 4
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   Attacknum: 5
   animator: {fileID: 812061102}
   Player: {fileID: 1118217801}
-  gamestage: {fileID: 1942658203}
+  gamestage: {fileID: 1942658202}
 --- !u!50 &812061101
 Rigidbody2D:
   serializedVersion: 4
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   Attackfire: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
   PlayerHP: {fileID: 289544680}
   PlayerMP: {fileID: 717527840}
-  gamestage: {fileID: 1942658203}
+  gamestage: {fileID: 1942658202}
 --- !u!4 &1118217803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4675954415004836, guid: ba91827772c36b440ab61f47c756e0f7,
@@ -3403,7 +3403,7 @@ Animator:
   m_GameObject: {fileID: 1118217801}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aad943a46a97e3a46ba463b81a2957af, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9b00965700d90db488b39039dfcf2d96, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3447,7 +3447,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7856413ac23d6340bbb3d3f6ef1a350, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3c2d9a1790656a46a433dfcc7b78858, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3971,7 +3971,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: a5cc123ee3c77984e93e5b0f4953bfdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 582aaeec9cca3f64c91bbb01c28728fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4051,7 +4051,7 @@ MonoBehaviour:
   animator: {fileID: 1411396885}
   Player: {fileID: 1118217801}
   MonsterHP: {fileID: 1082348481}
-  gamestage: {fileID: 1942658203}
+  gamestage: {fileID: 1942658202}
 --- !u!95 &1411396885
 Animator:
   serializedVersion: 3
@@ -4584,7 +4584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942658201}
-  - component: {fileID: 1942658203}
+  - component: {fileID: 1942658202}
   m_Layer: 0
   m_Name: GameStageController
   m_TagString: Untagged
@@ -4605,7 +4605,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1942658203
+--- !u!114 &1942658202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4613,7 +4613,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942658200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7e406d41da59f849b1476cad0582ff2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f0da7179d7d00d49a3b23ab361796d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Gameover: 0
