@@ -13,6 +13,8 @@ public class Pet01_Controller : Pet {
     private float timerRecover = 0;
     private float timerAttackfire = 0;
     private float HP, MP;
+    private bool isJump = false;
+    private bool isDoubleJump = false;
 
     public GameObject Attackfire;
     public Slider PlayerHP, PlayerMP;
@@ -23,7 +25,7 @@ public class Pet01_Controller : Pet {
 
     void Start () {
         //change to read file here 
-        //LoadPet(0);
+        //LoadPet(502);
         Speed = 2;
         MaxHP = 100;
         MaxMP = 100;
@@ -38,7 +40,9 @@ public class Pet01_Controller : Pet {
         Dir = 1;
         MP = MaxMP;
         HP = MaxHP;
-    }
+        isJump = false;
+        isDoubleJump = false;
+}
 
     void FixedUpdate()
     {
@@ -61,12 +65,31 @@ public class Pet01_Controller : Pet {
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space) && timerJump > 1f)
+        if (Input.GetKeyDown(KeyCode.Space) /*&& timerJump > 1f*/)
         {
-            rb.AddForce(Vector3.up * 350.0f);
+            if (!isJump)//如果还在跳跃中，则不重复执行 
+            {
+                rb.AddForce(Vector3.up * 250f);
+                isJump = true;
+                animator.SetBool("isJumping", true);
+            }
+            else
+            {
+                if (isDoubleJump)//判断是否在二段跳  
+                {
+                    return;//否则不能二段跳  
+                }
+                else
+                {
+                    isDoubleJump = true;
+                    rb.AddForce(Vector3.up * 250f);
+                    animator.SetBool("isJumping", true);
+                }
+            }
+            /*rb.AddForce(Vector3.up * 350.0f);
             //transform.Translate(Vector3.up * 10.0f);
             timerJump = 0;
-            animator.SetBool("isJumping", true);
+            animator.SetBool("isJumping", true);*/
         }
         else animator.SetBool("isJumping", false);
 
@@ -138,8 +161,20 @@ public class Pet01_Controller : Pet {
             //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
             // animator.SetInteger("Hitted", 1);
         }
-    //    else animator.SetInteger("Hitted", 0);
-
+        else if (other.gameObject.CompareTag("Boss"))
+        {
+            HP -= other.gameObject.GetComponent<Boss01_Controller>().Attacknum;
+            float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
+            float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
+            rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
+            //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
+            // animator.SetInteger("Hitted", 1);
+        }
+        else if (other.gameObject.CompareTag("Plane")) {//碰撞的是Plane  
+            isJump = false;
+            isDoubleJump = false;
+        }
+ //    else animator.SetInteger("Hitted", 0);
     }
 
 }
