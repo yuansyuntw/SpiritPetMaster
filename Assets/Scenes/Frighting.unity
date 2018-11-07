@@ -860,7 +860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1837153500598690, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
       propertyPath: m_TagString
-      value: Monster
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 1837153500598690, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
       propertyPath: m_Name
@@ -3359,7 +3359,7 @@ MonoBehaviour:
   Speed: 1
   MaxHP: 100
   MaxMP: 100
-  MPRecover: 0.01
+  MPRecover: 0.1
   HPRecover: 0.01
   PetfireAttack: 100
   PetwaterAttack: 100
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   Attackfire: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
   PlayerHP: {fileID: 289544680}
   PlayerMP: {fileID: 717527840}
-  gamestage: {fileID: 0}
+  gamestage: {fileID: 1942658203}
 --- !u!4 &1118217803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4675954415004836, guid: ba91827772c36b440ab61f47c756e0f7,
