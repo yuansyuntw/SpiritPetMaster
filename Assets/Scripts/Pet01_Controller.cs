@@ -119,7 +119,8 @@ public class Pet01_Controller : Pet {
             // animator.SetInteger("DirectionX", 0);
         }
         isFalling = currentVelocity.y < -0.1f ? true : false;//jump falling
-        if(isFalling) animator.SetInteger("isFalling", 1);
+        if(isFalling) animator.SetInteger("isFalling", animator.GetInteger("isFalling")+1);
+        else animator.SetInteger("isFalling", 0);
 
         //MPHP Recover
         if (timerRecover > 1)
@@ -164,6 +165,8 @@ public class Pet01_Controller : Pet {
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
             StartCoroutine("Damage");
+            animator.SetBool("isDamaged", true);
+            //animator.SetBool("isDamaged", false);
             // animator.SetInteger("Hitted", 1);
         }
         else if (other.gameObject.CompareTag("Boss"))
@@ -173,7 +176,9 @@ public class Pet01_Controller : Pet {
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
             StartCoroutine("Damage");
-            // animator.SetInteger("Hitted", 1);
+            animator.SetBool("isDamaged", true);
+            animator.SetBool("Damaging", false);
+            
         }
         else if (other.gameObject.CompareTag("Plane")) {//碰撞的是Plane  
             isJump = false;
@@ -184,6 +189,8 @@ public class Pet01_Controller : Pet {
 
     IEnumerator Damage()//無敵
     {
+
+        animator.SetBool("Damaging", true);
         gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
         int count = 10;
         while (count > 0)
@@ -194,6 +201,8 @@ public class Pet01_Controller : Pet {
             yield return new WaitForSeconds(0.05f);
             count--;
         }
+        animator.SetBool("Damaging", false);
+        animator.SetBool("isDamaged", false);
         gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
