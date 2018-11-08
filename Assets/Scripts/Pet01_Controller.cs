@@ -15,6 +15,7 @@ public class Pet01_Controller : Pet {
     private float HP, MP;
     private bool isJump = false;
     private bool isDoubleJump = false;
+    private bool isFalling = false;
 
     public GameObject Attackfire;
     public Slider PlayerHP, PlayerMP;
@@ -65,7 +66,7 @@ public class Pet01_Controller : Pet {
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space) /*&& timerJump > 1f*/)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!isJump)//如果还在跳跃中，则不重复执行 
             {
@@ -93,6 +94,8 @@ public class Pet01_Controller : Pet {
         }
         else animator.SetBool("isJumping", false);
 
+        
+
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         if(moveHorizontal * transform.localScale.x < 0)
@@ -115,9 +118,11 @@ public class Pet01_Controller : Pet {
         {
             // animator.SetInteger("DirectionX", 0);
         }
+        isFalling = currentVelocity.y < -0.1f ? true : false;//jump falling
+        if(isFalling) animator.SetInteger("isFalling", 1);
 
         //MPHP Recover
-        if(timerRecover > 1)
+        if (timerRecover > 1)
         {
             if (MP + MP * MPRecover < MaxMP) MP +=  MP * MPRecover;
             if (HP + HP * HPRecover < MaxHP) HP += HP * HPRecover;
@@ -158,7 +163,7 @@ public class Pet01_Controller : Pet {
             float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
-            //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
+            StartCoroutine("Damage");
             // animator.SetInteger("Hitted", 1);
         }
         else if (other.gameObject.CompareTag("Boss"))
@@ -167,7 +172,7 @@ public class Pet01_Controller : Pet {
             float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
-            //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
+            StartCoroutine("Damage");
             // animator.SetInteger("Hitted", 1);
         }
         else if (other.gameObject.CompareTag("Plane")) {//碰撞的是Plane  
@@ -176,6 +181,22 @@ public class Pet01_Controller : Pet {
         }
  //    else animator.SetInteger("Hitted", 0);
     }
+
+    IEnumerator Damage()//無敵
+    {
+        gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
+        int count = 10;
+        while (count > 0)
+        {
+            GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0);
+            yield return new WaitForSeconds(0.05f);
+            GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.05f);
+            count--;
+        }
+        gameObject.layer = LayerMask.NameToLayer("Default");
+    }
+
 
 }
 

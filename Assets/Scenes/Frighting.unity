@@ -458,7 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173150307}
   - component: {fileID: 173150308}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HPBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -902,6 +902,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837153500598690, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894473696575476, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764773235297638, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398440564520508, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692964846447654, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493011598919070, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395531732641808, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599951306501550, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983973071551220, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159768679925234, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
   m_IsPrefabAsset: 0
@@ -1105,6 +1145,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837153500598690, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894473696575476, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764773235297638, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398440564520508, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493011598919070, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395531732641808, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692964846447654, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599951306501550, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159768679925234, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983973071551220, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
   m_IsPrefabAsset: 0
@@ -1252,7 +1332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447409935}
   - component: {fileID: 447409936}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,6 +2393,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837153500598690, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894473696575476, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764773235297638, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398440564520508, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493011598919070, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1395531732641808, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599951306501550, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692964846447654, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159768679925234, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983973071551220, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
   m_IsPrefabAsset: 0
@@ -2891,7 +3011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 873868280}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2985,7 +3105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908750505}
   - component: {fileID: 908750506}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3487,7 +3607,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1551228326456274, guid: ba91827772c36b440ab61f47c756e0f7, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1330926407497366, guid: ba91827772c36b440ab61f47c756e0f7, type: 2}
       propertyPath: m_IsActive
@@ -3528,6 +3648,10 @@ Prefab:
     - target: {fileID: 4675954415004836, guid: ba91827772c36b440ab61f47c756e0f7, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.46513996
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553394608689126, guid: ba91827772c36b440ab61f47c756e0f7, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba91827772c36b440ab61f47c756e0f7, type: 2}
@@ -3854,7 +3978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1279454785}
   - component: {fileID: 1279454786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HPBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4458,7 +4582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723644794}
   - component: {fileID: 1723644795}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4531,7 +4655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1734862449}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5471,7 +5595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075001315}
   - component: {fileID: 2075001316}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
