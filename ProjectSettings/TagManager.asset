@@ -9,6 +9,7 @@ TagManager:
   - Monster
   - Food
   - PetView
+  - Boss
   layers:
   - Default
   - TransparentFX

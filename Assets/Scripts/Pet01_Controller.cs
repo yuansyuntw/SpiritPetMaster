@@ -138,7 +138,17 @@ public class Pet01_Controller : Pet {
             //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
             // animator.SetInteger("Hitted", 1);
         }
-    //    else animator.SetInteger("Hitted", 0);
+
+        if(other.gameObject.CompareTag("Boss"))
+        {
+            HP -= other.gameObject.GetComponent<Boss01_Controller>().Attacknum;
+            float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
+            float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
+            rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
+            //rb.AddForce(new Vector3(1,0,0) * moveHorizontal * 10);
+            // animator.SetInteger("Hitted", 1);
+        }
+        //    else animator.SetInteger("Hitted", 0);
 
     }
 
