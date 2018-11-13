@@ -12,12 +12,13 @@ public class Pet01_Controller : Pet {
     private int Dir = 1;
     private float timerRecover = 0;
     private float timerAttackfire = 0;
+    private float timerAttack = 0;
     private float HP, MP;
     private bool isJump = false;
     private bool isDoubleJump = false;
     private bool isFalling = false;
 
-    public GameObject Attackfire;
+    public GameObject Attackfire, Attack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
 
@@ -25,8 +26,9 @@ public class Pet01_Controller : Pet {
 
 
     void Start () {
-        //change to read file here 
-        //LoadPet(502);
+        //change to read file here
+        //NewPet(524, 1, "01");
+        //LoadPet(524);
         Speed = 2;
         MaxHP = 100;
         MaxMP = 100;
@@ -50,6 +52,7 @@ public class Pet01_Controller : Pet {
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
         timerAttackfire += Time.deltaTime;
+        timerAttack += Time.deltaTime;
 
         if (HP <= 0)
         {
@@ -142,6 +145,7 @@ public class Pet01_Controller : Pet {
             if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
             else rot = Quaternion.Euler(0, 0, -45);
             GameObject fires =  Instantiate(Attackfire, transform.position, rot);
+            fires.GetComponent<Attack_far>().far = 1;
             fires.GetComponent<Attack_far>().fire = 1;
             fires.GetComponent<Attack_far>().Attacknum = PetfireAttack * 0.1f;
             fires.GetComponent<Attack_far>().AttackDir = Dir;
@@ -150,7 +154,19 @@ public class Pet01_Controller : Pet {
         }
         else animator.SetBool("isAttacking", false);
 
-
+        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 1f)
+        {
+            GameObject attacks = Instantiate(Attack);
+            attacks.transform.SetParent(this.transform);
+            attacks.transform.localScale = new Vector3(2, 1, 1);
+            attacks.transform.localPosition = new Vector3(2f, 0, 0);
+            attacks.GetComponent<Attack_far>().far = 0;
+            attacks.GetComponent<Attack_far>().Attacknum = (PetfireAttack + PetwaterAttack + PetwindAttack)/ 3 * 0.1f;
+            attacks.GetComponent<Attack_far>().AttackDir = Dir;
+            animator.SetBool("isAttacking", true);
+            timerAttack = 0;
+        }
+        else animator.SetBool("isAttacking", false);
 
 
     }

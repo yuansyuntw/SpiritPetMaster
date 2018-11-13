@@ -128,21 +128,24 @@ public class Monster01_Controller : Monster {
             //屬性相剋
             if (Monsterfire == 1)
             {
-                if(other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
+                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
                 else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
                 else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                else HP -= other.GetComponent<Attack_far>().Attacknum;
             }
             else if (Monsterwater == 1)
             {
                 if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
                 else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
                 else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                else HP -= other.GetComponent<Attack_far>().Attacknum;
             }
             else if (Monsterwind == 1)
             {
                 if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
                 else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
                 else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1f;
+                else HP -= other.GetComponent<Attack_far>().Attacknum;
             }
             // animator.SetInteger("Hitted", 1);
             hitted = 1;
