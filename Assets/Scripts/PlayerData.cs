@@ -14,7 +14,6 @@ namespace SpiritPetMaster
         #region Private Save Data    
         [SerializeField]
         List<PetView> OwnPets = new List<PetView>();
-        int current_focus_petid;
         #endregion
 
         #region public function
@@ -83,21 +82,8 @@ namespace SpiritPetMaster
             /* Save all of the id of pet */
             Save<int>(PlayerName, "pet_count", OwnPets.Count);
             Save<string>(PlayerName, "pets_id", pets_id);
-            Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
 
             Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
-        }
-
-        public void SavePlayeFocusPetId(int _petid)
-        {
-            current_focus_petid = _petid;
-            SavePlayerData();
-        }
-
-
-        public int GetPlayerFocusPetId()
-        {
-            return Load<int>(PlayerName, "current_focus_petid");
         }
         #endregion
 

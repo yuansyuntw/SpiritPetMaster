@@ -6,10 +6,10 @@ namespace SpiritPetMaster
 {
     public class Food : MonoBehaviour
     {
+        public Sprite FoodSprite;
         public int AddHunger;
 
         string PetTag = "PetView";
-        string FoodTag = "Food";
         AudioSource sound;
 
 
@@ -41,14 +41,8 @@ namespace SpiritPetMaster
                 pet.IncreateHunger(AddHunger);
 
                 if(sound != null)   sound.Play();
-
             }
-
-            // If it is touching other food, not to destroy itself.
-            if (!collider.CompareTag(FoodTag))
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
 }
