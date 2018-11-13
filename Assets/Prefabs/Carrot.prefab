@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 212250987535594364}
   - component: {fileID: 58195872230511866}
   - component: {fileID: 50046062024709860}
-  - component: {fileID: 114408428866457828}
+  - component: {fileID: 114468550593643912}
   m_Layer: 0
   m_Name: Carrot
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.56
---- !u!114 &114408428866457828
+--- !u!114 &114468550593643912
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,11 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1948120411962946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443b240b1d709fb4a86ae2f117c8c114, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dd5c4bee66c6f542963cbacb29d8188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodSprite: {fileID: 21300000, guid: a958c8d5aa5dc8c4da191d5a9d2e270b, type: 3}
-  AddHunger: 5
+  AddHunger: 10
 --- !u!212 &212250987535594364
 SpriteRenderer:
   m_ObjectHideFlags: 1
