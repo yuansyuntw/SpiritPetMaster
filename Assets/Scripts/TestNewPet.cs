@@ -6,12 +6,12 @@ namespace SpiritPetMaster
 {
     public class TestNewPet : MonoBehaviour
     {
-        public int PetKing;
+        public string PetKind;
         public string PetName;
 
         public void New()
         {
-            PetViewController.instance.NewPetView(PetKing, PetName);
+            PetViewController.instance.NewPetView(PetKind, PetName);
         }
 
     }

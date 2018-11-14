@@ -7,7 +7,7 @@ namespace SpiritPetMaster
     public class Pet : MonoBehaviour
     {
         public int ID;                          //寵物代號(唯一)
-        public int Kind;                        //寵物種類
+        public string Kind;                        //寵物種類
         public string Name;
         public int Level = 1;
         public int Mood = 90;
@@ -47,13 +47,13 @@ namespace SpiritPetMaster
 
 
 
-        public void NewPet(int _id, int _kind, string _name)
+        public void NewPet(int _id, string _kind, string _name)
         {
             ID = _id;
             Kind = _kind;
             Name = _name;
-            PetSpriteName = "Pet" + Kind.ToString() + "/idle/idle1";
-            PetAnimatorName = "Pet" + Kind.ToString() + "/pet" + Kind.ToString();
+            PetSpriteName = Kind.ToString() + "/idle/idle1";
+            PetAnimatorName = Kind.ToString() + "/" + Kind.ToString();
             PetTalkingFilename = "pet_taking" + Kind.ToString();
 
             SaveData();
@@ -68,7 +68,7 @@ namespace SpiritPetMaster
             PetAnimatorName = PlayerData.instance.LoadData<string>(petid, "pet_animator_name");
             PetTalkingFilename = PlayerData.instance.LoadData<string>(petid, "pet_taking_filename");
             Name = PlayerData.instance.LoadData<string>(petid, "pet_name");
-            Kind = PlayerData.instance.LoadData<int>(petid, "pet_kind");
+            Kind = PlayerData.instance.LoadData<string>(petid, "pet_kind");
             Level = PlayerData.instance.LoadData<int>(petid, "pet_level");
             Mood = PlayerData.instance.LoadData<int>(petid, "pet_mood");
             Hunger = PlayerData.instance.LoadData<int>(petid, "pet_hunger");
@@ -83,7 +83,7 @@ namespace SpiritPetMaster
             PlayerData.instance.SaveData<string>(petid, "pet_animator_name", PetAnimatorName);
             PlayerData.instance.SaveData<string>(petid, "pet_taking_filename", PetTalkingFilename);
             PlayerData.instance.SaveData<string>(petid, "pet_name", Name);
-            PlayerData.instance.SaveData<int>(petid, "pet_king", Kind);
+            PlayerData.instance.SaveData<string>(petid, "pet_kind", Kind);
             PlayerData.instance.SaveData<int>(petid, "pet_level", Level);
             PlayerData.instance.SaveData<int>(petid, "pet_mood", Mood);
             PlayerData.instance.SaveData<int>(petid, "pet_hunger", Hunger);

@@ -152,7 +152,7 @@ namespace SpiritPetMaster
 
 
 
-        public void NewPetView(int _kind, string _name)
+        public void NewPetView(string _kind, string _name)
         {
             /* Random a id */
             int id;
