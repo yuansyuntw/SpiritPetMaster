@@ -27,7 +27,7 @@ public class Attack_far : MonoBehaviour {
         else
         {
             timer += Time.deltaTime;
-            if (timer > 1f) Destroy(gameObject);
+            if (timer > 0.8f) Destroy(gameObject);
         }
     }
 }

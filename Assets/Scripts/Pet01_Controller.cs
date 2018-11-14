@@ -13,7 +13,7 @@ public class Pet01_Controller : Pet {
     private float timerRecover = 0;
     private float timerAttackfire = 0;
     private float timerAttack = 0;
-    private float HP, MP;
+    public float HP, MP;
     private bool isJump = false;
     private bool isDoubleJump = false;
     private bool isFalling = false;
@@ -21,6 +21,7 @@ public class Pet01_Controller : Pet {
     public GameObject Attackfire, Attack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
+    public float force = 250f;
 
 
 
@@ -73,7 +74,7 @@ public class Pet01_Controller : Pet {
         {
             if (!isJump)//如果还在跳跃中，则不重复执行 
             {
-                rb.AddForce(Vector3.up * 250f);
+                rb.AddForce(Vector3.up * force);
                 isJump = true;
                 animator.SetBool("isJumping", true);
             }
@@ -86,7 +87,7 @@ public class Pet01_Controller : Pet {
                 else
                 {
                     isDoubleJump = true;
-                    rb.AddForce(Vector3.up * 250f);
+                    rb.AddForce(Vector3.up * force);
                     animator.SetBool("isJumping", true);
                 }
             }
@@ -154,7 +155,7 @@ public class Pet01_Controller : Pet {
         }
         else animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 1f)
+        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.8f)
         {
             GameObject attacks = Instantiate(Attack);
             attacks.transform.SetParent(this.transform);

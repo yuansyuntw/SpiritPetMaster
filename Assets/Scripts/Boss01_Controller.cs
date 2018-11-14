@@ -16,6 +16,7 @@ public class Boss01_Controller : Monster
     public GameObject Player;
     public Slider MonsterHP;
     public GameStageController gamestage;
+    public GameObject HurtText;
 
 
     public Boss01_Controller(int _id) : base(_id)
@@ -53,9 +54,10 @@ public class Boss01_Controller : Monster
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
+        float moveZ;
         if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f))
         {  //follow Player
-            float moveZ = moveHorizontal * speed;
+            moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
         }
@@ -63,13 +65,13 @@ public class Boss01_Controller : Monster
         {
             if (timer > 0)
             {
-                float moveZ = -1 * speed;
+                moveZ = -1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
             }
             else
             {
-                float moveZ = 1 * speed;
+                moveZ = 1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
 
@@ -89,13 +91,17 @@ public class Boss01_Controller : Monster
 
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        if (moveHorizontal < 0 && currentVelocity.x <= 0)
+        if (moveZ * transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+        if (moveZ < 0 && currentVelocity.x <= 0)
         {
             // animator.SetInteger("DirectionX", -1);
             Dir = -1;
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x - 0.1f, currentVelocity.y);// for ice
         }
-        else if (moveHorizontal > 0 && currentVelocity.x >= 0)
+        else if (moveZ > 0 && currentVelocity.x >= 0)
         {
             Dir = 1;
             // animator.SetInteger("DirectionX", 1);
@@ -128,26 +134,45 @@ public class Boss01_Controller : Monster
         if (other.gameObject.CompareTag("PetAttack"))
         {
             //屬性相剋
+            float HurtNum;
             if (Monsterfire == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
-                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else HP -= other.GetComponent<Attack_far>().Attacknum;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum;
+                HP -= HurtNum;
+
+                GameObject text = GameObject.Instantiate(HurtText);
+                text.transform.parent = GameObject.Find("Canvas").transform;
+                text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0, 20, 0);
+                text.GetComponent<Text>().text = other.GetComponent<Attack_far>().Attacknum.ToString();
             }
             else if (Monsterwater == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
-                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else HP -= other.GetComponent<Attack_far>().Attacknum;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum;
+                HP -= HurtNum;
+
+                GameObject text = GameObject.Instantiate(HurtText);
+                text.transform.parent = GameObject.Find("Canvas").transform;
+                text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0, 20, 0);
+                text.GetComponent<Text>().text = other.GetComponent<Attack_far>().Attacknum.ToString();
             }
             else if (Monsterwind == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1f;
-                else HP -= other.GetComponent<Attack_far>().Attacknum;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum;
+                HP -= HurtNum;
+
+                GameObject text = GameObject.Instantiate(HurtText);
+                text.transform.parent = GameObject.Find("Canvas").transform;
+                text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0, 20, 0);
+                text.GetComponent<Text>().text = other.GetComponent<Attack_far>().Attacknum.ToString();
             }
 
             // animator.SetInteger("Hitted", 1);
