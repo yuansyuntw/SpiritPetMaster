@@ -820,7 +820,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1528,7 +1528,7 @@ MonoBehaviour:
   animator: {fileID: 447409513}
   Player: {fileID: 1118217801}
   gamestage: {fileID: 1942658203}
-  HurtText: {fileID: 1148949217639596, guid: d076e9d01633da0438f40e3b491d6e46, type: 2}
+  HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
 --- !u!212 &447409511
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   animator: {fileID: 812061102}
   Player: {fileID: 1118217801}
   gamestage: {fileID: 1942658203}
-  HurtText: {fileID: 1148949217639596, guid: d076e9d01633da0438f40e3b491d6e46, type: 2}
+  HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
 --- !u!212 &812061100
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4199,6 +4199,7 @@ MonoBehaviour:
   PlayerMP: {fileID: 717527840}
   gamestage: {fileID: 1942658203}
   force: 250
+  HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
 --- !u!4 &1118217803
 Transform:
   m_ObjectHideFlags: 0
@@ -4207,7 +4208,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1118217801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.893, y: -1.863, z: 0.07345217}
+  m_LocalPosition: {x: -0.57, y: -1.863, z: 0.07345217}
   m_LocalScale: {x: 0.46513996, y: 0.46513996, z: 0.46513996}
   m_Children:
   - {fileID: 885134211}
@@ -5024,8 +5025,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22, y: 0.19}
-  m_Size: {x: 2, y: 1.25}
+  m_Offset: {x: 0.22, y: -0.16}
+  m_Size: {x: 2, y: 2.74}
   m_Direction: 0
 --- !u!50 &1411396883
 Rigidbody2D:
@@ -5074,7 +5075,7 @@ MonoBehaviour:
   Player: {fileID: 1118217801}
   MonsterHP: {fileID: 1082348481}
   gamestage: {fileID: 1942658203}
-  HurtText: {fileID: 1148949217639596, guid: d076e9d01633da0438f40e3b491d6e46, type: 2}
+  HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
 --- !u!95 &1411396885
 Animator:
   serializedVersion: 3
@@ -5099,7 +5100,7 @@ CapsuleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411396879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0

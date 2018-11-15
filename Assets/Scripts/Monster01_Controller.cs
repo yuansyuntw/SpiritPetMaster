@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SpiritMonsterMaster;
+using TMPro;
 
 public class Monster01_Controller : Monster {
     [SerializeField]
@@ -39,6 +40,7 @@ public class Monster01_Controller : Monster {
         //NewHP.transform.SetParent(gameObject.transform);
         //MonsterHP = NewHP.GetComponent<Slider>();
         HPBar = gameObject.transform.GetChild(0).gameObject;
+        Random.seed = System.Guid.NewGuid().GetHashCode();
     }
 	
 	void Update () {
@@ -132,47 +134,39 @@ public class Monster01_Controller : Monster {
         if (other.gameObject.CompareTag("PetAttack"))
         {
             //屬性相剋
-            float HurtNum;
+            float HurtNum = 0;
+            int i = Random.Range(0, (int)(other.GetComponent<Attack_far>().Attacknum * 0.5f));
             if (Monsterfire == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1;
-                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else HurtNum = other.GetComponent<Attack_far>().Attacknum;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 0.8f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
                 HP -= HurtNum;
-
-                GameObject text = GameObject.Instantiate(HurtText);
-                text.transform.parent = GameObject.Find("Canvas").transform;
-                text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0, 20, 0);
-                text.GetComponent<Text>().text = other.GetComponent<Attack_far>().Attacknum.ToString();
-
             }
             else if (Monsterwater == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1;
-                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else HurtNum = other.GetComponent<Attack_far>().Attacknum;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 0.8f;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
                 HP -= HurtNum;
-
-                GameObject text = GameObject.Instantiate(HurtText);
-                text.transform.parent = GameObject.Find("Canvas").transform;
-                text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0, 20, 0);
-                text.GetComponent<Text>().text = other.GetComponent<Attack_far>().Attacknum.ToString();
+                
             }
             else if (Monsterwind == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = other.GetComponent<Attack_far>().Attacknum * 1f;
-                else HurtNum = other.GetComponent<Attack_far>().Attacknum;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 0.8f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
                 HP -= HurtNum;
-
-                GameObject text = GameObject.Instantiate(HurtText);
-                text.transform.parent = GameObject.Find("Canvas").transform;
-                text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(0, 20, 0);
-                text.GetComponent<Text>().text = other.GetComponent<Attack_far>().Attacknum.ToString();
             }
+
+            GameObject text = GameObject.Instantiate(HurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = ((int)HurtNum).ToString();
+
             // animator.SetInteger("Hitted", 1);
             hitted = 1;
             other.GetComponent<Attack_far>().hitted = 1;

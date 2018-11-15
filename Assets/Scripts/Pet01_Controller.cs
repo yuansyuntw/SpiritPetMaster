@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SpiritPetMaster;
+using TMPro;
 
 public class Pet01_Controller : Pet {
     [SerializeField]
@@ -22,8 +23,7 @@ public class Pet01_Controller : Pet {
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
     public float force = 250f;
-
-
+    public GameObject HurtText;
 
 
     void Start () {
@@ -46,7 +46,8 @@ public class Pet01_Controller : Pet {
         HP = MaxHP;
         isJump = false;
         isDoubleJump = false;
-}
+        Random.seed = System.Guid.NewGuid().GetHashCode();
+    }
 
     void FixedUpdate()
     {
@@ -177,26 +178,37 @@ public class Pet01_Controller : Pet {
     {
         if (other.gameObject.CompareTag("Monster"))
         {
-            HP -= other.gameObject.GetComponent<Monster01_Controller>().Attacknum;
+            int HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(HurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(80, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = HurtNum.ToString();
+            //back
             float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
             animator.SetBool("isDamaged", true);
             animator.SetBool("Damaging", false);
+            gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
-            //animator.SetBool("isDamaged", false);
-            // animator.SetInteger("Hitted", 1);
         }
         else if (other.gameObject.CompareTag("Boss"))
         {
-            HP -= other.gameObject.GetComponent<Boss01_Controller>().Attacknum;
+            int HurtNum = (int)other.gameObject.GetComponent<Boss01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Boss01_Controller>().Attacknum * 0.5f));
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(HurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(80, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = HurtNum.ToString();
+            //back
             float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = (new Vector2(1, 0) * moveHorizontal * 3);
             animator.SetBool("isDamaged", true);
             animator.SetBool("Damaging", false);
+            gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
-            
         }
         else if (other.gameObject.CompareTag("Plane")) {//碰撞的是Plane  
             isJump = false;
