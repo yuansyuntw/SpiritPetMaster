@@ -22,7 +22,7 @@ public class Pet01_Controller : Pet {
     public GameObject Attackfire, Attack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
-    public float force = 250f;
+    public float force;
     public GameObject HurtText;
 
 
@@ -30,7 +30,7 @@ public class Pet01_Controller : Pet {
         //change to read file here
         //NewPet(524, 1, "01");
         //LoadPet(524);
-        Speed = 2;
+        //Speed = 2;
         MaxHP = 100;
         MaxMP = 100;
         MPRecover = 0.01f;

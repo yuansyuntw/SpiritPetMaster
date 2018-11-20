@@ -17,6 +17,9 @@ public class Monster01_Controller : Monster {
     public GameObject Player;
     public GameStageController gamestage;
     public GameObject HurtText;
+    public GameObject NewHPBar;
+    public float force;
+    public float size;
 
     public Monster01_Controller(int _id) : base(_id)
     {
@@ -39,7 +42,12 @@ public class Monster01_Controller : Monster {
         //GameObject NewHP = Instantiate(HPBar, transform.position, Quaternion.identity);
         //NewHP.transform.SetParent(gameObject.transform);
         //MonsterHP = NewHP.GetComponent<Slider>();
-        HPBar = gameObject.transform.GetChild(0).gameObject;
+        HPBar = Instantiate(NewHPBar);
+        HPBar.transform.SetParent(gameObject.transform);
+        HPBar.transform.localScale = new Vector3(size, size, 1);
+        HPBar.transform.localPosition = new Vector3(0, 0.1f, 0);
+        //HPBar = gameObject.transform.GetChild(0).gameObject;
+        animator = this.GetComponent<Animator>();
         Random.seed = System.Guid.NewGuid().GetHashCode();
     }
 	
@@ -56,7 +64,7 @@ public class Monster01_Controller : Monster {
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
         float moveZ;
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f)) {  //follow Player
+        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning)) {  //follow Player
             moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
@@ -81,9 +89,9 @@ public class Monster01_Controller : Monster {
         }
 
         //jump
-        if ((rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning/2 && Distx < warning && timerJump > 0.5f))
+        if (timerJump > 1f ||(rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning/2 && Distx < warning && timerJump > 0.5f))
         {
-            rb.AddForce(Vector3.up * 850.0f);
+            rb.AddForce(Vector3.up * force);
             animator.SetBool("isJumping", true);
             timerJump = 0;
             Debug.Log("jump");
