@@ -19,10 +19,12 @@ public class GameStageController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Gameover == 1)
+        {
             Stage.text = "Win";
-        else if (Gameover == 2)
+        } 
+        else if (Gameover == 2) {
             Stage.text = "Lose";
-
+        }
         if (Gameover != 0)
         {
             timergameover += Time.deltaTime;

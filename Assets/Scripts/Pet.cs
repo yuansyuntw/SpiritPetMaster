@@ -26,6 +26,7 @@ namespace SpiritPetMaster
         public int PetfireAttack = 100;
         public int PetwaterAttack = 100;
         public int PetwindAttack = 100;
+        public float Exp;
 
 
 
@@ -72,6 +73,16 @@ namespace SpiritPetMaster
             Level = PlayerData.instance.LoadData<int>(petid, "pet_level");
             Mood = PlayerData.instance.LoadData<int>(petid, "pet_mood");
             Hunger = PlayerData.instance.LoadData<int>(petid, "pet_hunger");
+
+            Speed = PlayerData.instance.LoadData<float>(petid, "pet_speed");
+            MaxHP = PlayerData.instance.LoadData<float>(petid, "pet_maxHP");
+            MaxMP = PlayerData.instance.LoadData<float>(petid, "pet_maxMP");
+            MPRecover = PlayerData.instance.LoadData<float>(petid, "pet_mPRecover");
+            HPRecover = PlayerData.instance.LoadData<float>(petid, "pet_hPRecover");
+            PetfireAttack = PlayerData.instance.LoadData<int>(petid, "pet_petfireAttack");
+            PetwaterAttack = PlayerData.instance.LoadData<int>(petid, "pet_petwaterAttack");
+            PetwindAttack = PlayerData.instance.LoadData<int>(petid, "pet_petwindAttack");
+            Exp = PlayerData.instance.LoadData<float>(petid, "pet_exp");
         }
 
 
@@ -88,16 +99,17 @@ namespace SpiritPetMaster
             PlayerData.instance.SaveData<int>(petid, "pet_mood", Mood);
             PlayerData.instance.SaveData<int>(petid, "pet_hunger", Hunger);
 
-            PlayerData.instance.SaveData<string>(petid, "pet_speed", Speed.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_maxHP", MaxHP.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_maxMP", MaxMP.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_mPRecover", MPRecover.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_hPRecover", HPRecover.ToString());
+            PlayerData.instance.SaveData<float>(petid, "pet_speed", Speed);
+            PlayerData.instance.SaveData<float>(petid, "pet_maxHP", MaxHP);
+            PlayerData.instance.SaveData<float>(petid, "pet_maxMP", MaxMP);
+            PlayerData.instance.SaveData<float>(petid, "pet_mPRecover", MPRecover);
+            PlayerData.instance.SaveData<float>(petid, "pet_hPRecover", HPRecover);
             PlayerData.instance.SaveData<int>(petid, "pet_petfireAttack", PetfireAttack);
             PlayerData.instance.SaveData<int>(petid, "pet_petwaterAttack", PetwaterAttack);
             PlayerData.instance.SaveData<int>(petid, "pet_petwindAttack", PetwindAttack);
-        
-    }
+            PlayerData.instance.SaveData<float>(petid, "pet_exp", Exp);
+
+        }
 
 
 

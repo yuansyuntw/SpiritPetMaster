@@ -32,14 +32,19 @@ public class Pet01_Controller : Pet {
         //NewPet(524, 1, "01");
         //LoadPet(524);
         //Speed = 2;
-        MaxHP = 100;
-        MaxMP = 100;
+
+        LoadPet(PlayerData.instance.GetPlayerFocusPetId());
+
+        /*Speed = 5;
+        MaxHP = 200;
+        MaxMP = 200;
         MPRecover = 0.01f;
         HPRecover = 0.01f;
         PetfireAttack = 100;
         PetwaterAttack = 100;
-        PetwindAttack = 100;
-        
+        PetwindAttack = 100;*/
+
+        SaveData();
 
         rb = GetComponent<Rigidbody2D>();
         Dir = 1;
@@ -52,6 +57,12 @@ public class Pet01_Controller : Pet {
 
     void FixedUpdate()
     {
+        if (gamestage.Gameover == 1)//win
+        {
+            SaveData();
+            return;
+        }
+
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
         timerAttackfire += Time.deltaTime;
@@ -91,6 +102,8 @@ public class Pet01_Controller : Pet {
                 else if(timerJump > 0.2f)
                 {
                     isDoubleJump = true;
+                    rb.velocity = Vector2.zero;
+                    rb.angularVelocity = 0;
                     rb.AddForce(Vector3.up * force);
                     animator.SetBool("isJumping", true);
                     Debug.Log("DoubleJump");
@@ -102,9 +115,11 @@ public class Pet01_Controller : Pet {
             timerJump = 0;
             animator.SetBool("isJumping", true);*/
         }
-        else animator.SetBool("isJumping", false);
+        //else animator.SetBool("isJumping", false);
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
+        if(timerJump > 0.2f) animator.SetBool("isJumping", false);
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
         {
             Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
             Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
@@ -255,7 +270,7 @@ public class Pet01_Controller : Pet {
 
         //animator.SetBool("Damaging", true);
         gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
-        int count = 10;
+        int count = 15;
         while (count > 0)
         {
             GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0);
