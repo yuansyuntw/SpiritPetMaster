@@ -30,9 +30,9 @@ public class Monster01_Controller : Monster {
         //change to read file here 
         //warning = 5f;
         //Attacknum = 10;
-        speed = 1.5f;
+        //speed = 1.5f;
         //maxHP = 100;
-        Monsterwind = 1;
+        //Monsterwind = 1;
 
         rb = GetComponent<Rigidbody2D>();
         Dir = -1;
@@ -91,10 +91,10 @@ public class Monster01_Controller : Monster {
         //jump
         if (timerJump > 1f ||(rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning/2 && Distx < warning && timerJump > 0.5f))
         {
-            rb.AddForce(Vector3.up * force);
+            if(timerJump > 1f) rb.AddForce(Vector3.up * force/2);
+            else rb.AddForce(Vector3.up * force);
             animator.SetBool("isJumping", true);
             timerJump = 0;
-            Debug.Log("jump");
         }
         else animator.SetBool("isJumping", false);
 

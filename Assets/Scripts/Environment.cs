@@ -20,7 +20,7 @@ public class Environment : MonoBehaviour {
         }
         else
         {
-            Player.GetComponent<Pet01_Controller>().force = 500f;
+            //Player.GetComponent<Pet01_Controller>().force = 500f;
         }
     }
 	

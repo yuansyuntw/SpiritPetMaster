@@ -18,6 +18,7 @@ public class Pet01_Controller : Pet {
     private bool isJump = false;
     private bool isDoubleJump = false;
     private bool isFalling = false;
+    private GameObject Plane;
 
     public GameObject Attackfire, Attack;
     public Slider PlayerHP, PlayerMP;
@@ -71,13 +72,15 @@ public class Pet01_Controller : Pet {
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && timerJump > 0.2f)
         {
             if (!isJump)//如果还在跳跃中，则不重复执行 
             {
                 rb.AddForce(Vector3.up * force);
                 isJump = true;
                 animator.SetBool("isJumping", true);
+                Debug.Log("Jump");
+                timerJump = 0;
             }
             else
             {
@@ -85,11 +88,13 @@ public class Pet01_Controller : Pet {
                 {
                     return;//否则不能二段跳  
                 }
-                else
+                else if(timerJump > 0.2f)
                 {
                     isDoubleJump = true;
                     rb.AddForce(Vector3.up * force);
                     animator.SetBool("isJumping", true);
+                    Debug.Log("DoubleJump");
+                    timerJump = 0;
                 }
             }
             /*rb.AddForce(Vector3.up * 350.0f);
@@ -99,7 +104,12 @@ public class Pet01_Controller : Pet {
         }
         else animator.SetBool("isJumping", false);
 
-        
+        if(Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
+        {
+            Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
+            Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
+            Debug.Log("JumpDown");
+        }
 
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
@@ -176,7 +186,19 @@ public class Pet01_Controller : Pet {
     //Hitted
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Monster"))
+        if (other.gameObject.CompareTag("Plane") && isFalling)
+        {//碰撞的是Plane  
+            isJump = false;
+            isDoubleJump = false;
+            if (Plane == null) Plane = other.gameObject;
+            if (Plane != other.gameObject)
+            {
+                Plane.layer = LayerMask.NameToLayer("Default");
+                Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
+                Plane = other.gameObject;
+            }
+        }
+        else if (other.gameObject.CompareTag("Monster"))
         {
             int HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
             HP -= HurtNum;
@@ -210,11 +232,22 @@ public class Pet01_Controller : Pet {
             gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
         }
-        else if (other.gameObject.CompareTag("Plane")) {//碰撞的是Plane  
+ //    else animator.SetInteger("Hitted", 0);
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Plane") && isFalling){//碰撞的是Plane  
             isJump = false;
             isDoubleJump = false;
+            if (Plane == null) Plane = other.gameObject;
+            if (Plane != other.gameObject)
+            {
+                Plane.layer = LayerMask.NameToLayer("Default");
+                Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
+                Plane = other.gameObject;
+            }
         }
- //    else animator.SetInteger("Hitted", 0);
     }
 
     IEnumerator Damage()//無敵
