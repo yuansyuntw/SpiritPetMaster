@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SpiritMonsterMaster;
+using TMPro;
 
 public class Boss01_Controller : Monster
 {
@@ -16,6 +17,8 @@ public class Boss01_Controller : Monster
     public GameObject Player;
     public Slider MonsterHP;
     public GameStageController gamestage;
+    public GameObject HurtText;
+    public float force;
 
 
     public Boss01_Controller(int _id) : base(_id)
@@ -28,15 +31,16 @@ public class Boss01_Controller : Monster
         //change to read file here 
         //warning = 5f;
         //Attacknum = 10;
-        speed = 1.5f;
+        //speed = 1.5f;
         //maxHP = 100;
-        Monsterwind = 1;
+        //Monsterwind = 1;
 
         rb = GetComponent<Rigidbody2D>();
         Dir = -1;
         HP = maxHP;
         timer = 2.5f;
         MonsterHP.gameObject.SetActive(false);
+        Random.seed = System.Guid.NewGuid().GetHashCode();
     }
 
     void Update()
@@ -53,9 +57,10 @@ public class Boss01_Controller : Monster
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
+        float moveZ;
         if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f))
         {  //follow Player
-            float moveZ = moveHorizontal * speed;
+            moveZ = moveHorizontal * speed;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
         }
@@ -63,13 +68,13 @@ public class Boss01_Controller : Monster
         {
             if (timer > 0)
             {
-                float moveZ = -1 * speed;
+                moveZ = -1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
             }
             else
             {
-                float moveZ = 1 * speed;
+                moveZ = 1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
 
@@ -81,7 +86,7 @@ public class Boss01_Controller : Monster
         //jump
         if ((rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning && timerJump > 0.5f))
         {
-            rb.AddForce(Vector3.up * 900.0f);
+            rb.AddForce(Vector3.up * force);
             animator.SetBool("isJumping", true);
             timerJump = 0;
         }
@@ -89,13 +94,17 @@ public class Boss01_Controller : Monster
 
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
-        if (moveHorizontal < 0 && currentVelocity.x <= 0)
+        if (moveZ * transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+        if (moveZ < 0 && currentVelocity.x <= 0)
         {
             // animator.SetInteger("DirectionX", -1);
             Dir = -1;
             //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(currentVelocity.x - 0.1f, currentVelocity.y);// for ice
         }
-        else if (moveHorizontal > 0 && currentVelocity.x >= 0)
+        else if (moveZ > 0 && currentVelocity.x >= 0)
         {
             Dir = 1;
             // animator.SetInteger("DirectionX", 1);
@@ -128,27 +137,47 @@ public class Boss01_Controller : Monster
         if (other.gameObject.CompareTag("PetAttack"))
         {
             //屬性相剋
+            float HurtNum = 0;
+            int i = Random.Range(0, (int)(other.GetComponent<Attack_far>().Attacknum * 0.5f));
             if (Monsterfire == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
-                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 0.8f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
+                HP -= HurtNum;
             }
             else if (Monsterwater == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1;
-                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 0.8f;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
+                HP -= HurtNum;
             }
             else if (Monsterwind == 1)
             {
-                if (other.GetComponent<Attack_far>().fire == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1.2f;
-                else if (other.GetComponent<Attack_far>().water == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 0.8f;
-                else if (other.GetComponent<Attack_far>().wind == 1) HP -= other.GetComponent<Attack_far>().Attacknum * 1f;
+                if (other.GetComponent<Attack_far>().fire == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
+                else if (other.GetComponent<Attack_far>().water == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 0.8f;
+                else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1f;
+                else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
+                HP -= HurtNum;
             }
+            else
+            {
+                HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
+                HP -= HurtNum;
+            }
+
+            GameObject text = GameObject.Instantiate(HurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 150, 0);
+            text.GetComponent<TextMeshProUGUI>().text = ((int)HurtNum).ToString();
 
             // animator.SetInteger("Hitted", 1);
             hitted = 1;
+            other.GetComponent<Attack_far>().hitted = 1;
+            Destroy(other);
         }
         // else animator.SetInteger("Hitted", 0);
 
