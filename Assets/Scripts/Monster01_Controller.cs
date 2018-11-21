@@ -169,6 +169,11 @@ public class Monster01_Controller : Monster {
                 else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
                 HP -= HurtNum;
             }
+            else
+            {
+                HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
+                HP -= HurtNum;
+            }
 
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
