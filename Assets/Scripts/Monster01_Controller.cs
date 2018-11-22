@@ -52,7 +52,7 @@ public class Monster01_Controller : Monster {
     }
 	
 	void Update () {
-        if (gamestage.Gameover == 2)
+        if (gamestage.Gameover == 2 || gamestage.Gameover == 1 || gamestage.stop == 1)
         {
             return;
         }

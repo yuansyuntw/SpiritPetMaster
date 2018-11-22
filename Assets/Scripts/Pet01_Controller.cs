@@ -62,6 +62,10 @@ public class Pet01_Controller : Pet {
             SaveData();
             return;
         }
+        if (gamestage.Gameover == 2 || gamestage.stop == 1)//lose
+        {
+            return;
+        }
 
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
@@ -201,6 +205,8 @@ public class Pet01_Controller : Pet {
     //Hitted
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (gamestage.stop == 1) return;
+
         if (other.gameObject.CompareTag("Plane") && isFalling)
         {//碰撞的是Plane  
             isJump = false;
@@ -267,7 +273,6 @@ public class Pet01_Controller : Pet {
 
     IEnumerator Damage()//無敵
     {
-
         //animator.SetBool("Damaging", true);
         gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
         int count = 15;

@@ -45,7 +45,8 @@ public class Boss01_Controller : Monster
 
     void Update()
     {
-        if(gamestage.Gameover == 2)
+        if(gamestage.Gameover == 1 || gamestage.stop == 1) return;
+        if (gamestage.Gameover == 2)
         {
             animator.SetInteger("BossWin", 1);
             return;
