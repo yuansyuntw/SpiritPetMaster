@@ -3020,7 +3020,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 116154034}
   Player: {fileID: 600869257}
@@ -8019,7 +8019,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1247499779}
   Player: {fileID: 600869257}
@@ -8833,7 +8833,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -10132,7 +10132,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -12866,7 +12866,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -16951,7 +16951,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -17903,7 +17903,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -20381,7 +20381,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 966635948}
   Player: {fileID: 600869257}
@@ -23156,7 +23156,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1037480245}
   Player: {fileID: 600869257}
@@ -24120,7 +24120,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1085152238}
   Player: {fileID: 600869257}
@@ -26856,7 +26856,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1215919355}
   Player: {fileID: 600869257}
@@ -27854,7 +27854,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1247499779}
   Player: {fileID: 600869257}
@@ -28040,7 +28040,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -32589,7 +32589,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -33097,7 +33097,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1494844082}
   Player: {fileID: 600869257}
@@ -33470,7 +33470,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -35271,7 +35271,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1574990329}
   Player: {fileID: 600869257}
@@ -37021,7 +37021,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -38015,7 +38015,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -39382,7 +39382,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -40232,7 +40232,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -42884,7 +42884,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -44294,7 +44294,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1962019637}
   Player: {fileID: 600869257}
@@ -47378,7 +47378,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -47956,7 +47956,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}

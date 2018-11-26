@@ -25,6 +25,8 @@ public class Pet01_Controller : Pet {
     public GameStageController gamestage;
     public float force;
     public GameObject HurtText;
+    public int EnvironmentType;
+    public float SpeedValue;
 
 
     void Start () {
@@ -52,6 +54,7 @@ public class Pet01_Controller : Pet {
         HP = MaxHP;
         isJump = false;
         isDoubleJump = false;
+        Speed = Speed * SpeedValue;
         Random.seed = System.Guid.NewGuid().GetHashCode();
     }
 
@@ -123,11 +126,14 @@ public class Pet01_Controller : Pet {
 
         if(timerJump > 0.2f) animator.SetBool("isJumping", false);
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
-        {
-            Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
-            Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
-            Debug.Log("JumpDown");
+        //JumpDown
+        if(EnvironmentType == 0) {
+            if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
+            {
+                Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
+                Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
+                Debug.Log("JumpDown");
+            }
         }
 
         //animation
@@ -176,6 +182,7 @@ public class Pet01_Controller : Pet {
             if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
             else rot = Quaternion.Euler(0, 0, -45);
             GameObject fires =  Instantiate(Attackfire, transform.position, rot);
+            fires.transform.localScale = new Vector3(1, 1, 1);
             fires.GetComponent<Attack_far>().far = 1;
             fires.GetComponent<Attack_far>().fire = 1;
             fires.GetComponent<Attack_far>().Attacknum = PetfireAttack * 0.1f;
@@ -207,21 +214,25 @@ public class Pet01_Controller : Pet {
     {
         if (gamestage.stop == 1) return;
 
-        if (other.gameObject.CompareTag("Plane") && isFalling)
+        if (other.gameObject.CompareTag("Plane"))
         {//碰撞的是Plane  
             isJump = false;
             isDoubleJump = false;
-            if (Plane == null) Plane = other.gameObject;
-            if (Plane != other.gameObject)
-            {
-                Plane.layer = LayerMask.NameToLayer("Default");
-                Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
-                Plane = other.gameObject;
+            if (EnvironmentType == 0) {
+                if (Plane == null) Plane = other.gameObject;
+                if (Plane != other.gameObject)
+                {
+                    Plane.layer = LayerMask.NameToLayer("Default");
+                    Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
+                    Plane = other.gameObject;
+                }
             }
         }
         else if (other.gameObject.CompareTag("Monster"))
         {
-            int HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
+            int HurtNum;
+            if (EnvironmentType == 1) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
+            else HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
@@ -258,15 +269,18 @@ public class Pet01_Controller : Pet {
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Plane") && isFalling){//碰撞的是Plane  
-            isJump = false;
-            isDoubleJump = false;
-            if (Plane == null) Plane = other.gameObject;
-            if (Plane != other.gameObject)
+        if (other.gameObject.CompareTag("Plane")){//碰撞的是Plane  
+            //isJump = false;
+            //isDoubleJump = false;
+            if (EnvironmentType == 0)
             {
-                Plane.layer = LayerMask.NameToLayer("Default");
-                Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
-                Plane = other.gameObject;
+                if (Plane == null) Plane = other.gameObject;
+                if (Plane != other.gameObject)
+                {
+                    Plane.layer = LayerMask.NameToLayer("Default");
+                    Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
+                    Plane = other.gameObject;
+                }
             }
         }
     }
