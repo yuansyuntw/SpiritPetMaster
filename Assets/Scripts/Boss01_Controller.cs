@@ -17,7 +17,7 @@ public class Boss01_Controller : Monster
     public GameObject Player;
     public Slider MonsterHP;
     public GameStageController gamestage;
-    public GameObject HurtText;
+    public GameObject HurtText, BoomHurtText;
     public float force;
     public int EnvironmentType;
 
@@ -62,7 +62,7 @@ public class Boss01_Controller : Monster
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
         float moveZ, moveY;
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f))
+        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning))
         {  //follow Player
             moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1); ;
             moveY = moveVer * Random.Range(speed - 1, speed + 1);
@@ -187,6 +187,23 @@ public class Boss01_Controller : Monster
             Destroy(other);
         }
         // else animator.SetInteger("Hitted", 0);
+       
+    }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        //water
+        if (other.gameObject.GetComponent<Boom>().BoomHitted == 0 && other.gameObject.CompareTag("Boom") && other.gameObject.GetComponent<Boom>().Booming == true)
+        {
+            other.gameObject.GetComponent<Boom>().BoomHitted = 1;
+            int HurtNum;
+            if (other.gameObject.GetComponent<Boom>().Type == 1) HurtNum = 50;
+            else HurtNum = 20;
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(BoomHurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = (HurtNum).ToString();
+        }
     }
 }

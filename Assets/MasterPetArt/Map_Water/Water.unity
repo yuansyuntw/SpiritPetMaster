@@ -214,6 +214,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.59}
   m_EdgeRadius: 0
+--- !u!1 &7896860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1210321534}
+--- !u!114 &7896864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 7896860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &8401930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,18 +2302,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -2702,6 +2723,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.82, y: 0.67}
   m_EdgeRadius: 0
+--- !u!1 &43768060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1691326918}
+--- !u!114 &43768064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43768060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &44084219
 GameObject:
   m_ObjectHideFlags: 0
@@ -6851,6 +6891,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &111756231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 842434066}
+--- !u!114 &111756235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111756231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &112038807
 GameObject:
   m_ObjectHideFlags: 0
@@ -14351,6 +14410,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.59}
   m_EdgeRadius: 0
+--- !u!1 &239026081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1752254492}
+--- !u!114 &239026085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239026081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &240154526
 GameObject:
   m_ObjectHideFlags: 0
@@ -14908,18 +14986,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -16255,6 +16335,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.53, y: 0.56}
   m_EdgeRadius: 0
+--- !u!1 &266118159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733,
+    type: 2}
+  m_PrefabInternal: {fileID: 2030517875}
+--- !u!114 &266118163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266118159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 1
 --- !u!1 &266389425
 GameObject:
   m_ObjectHideFlags: 0
@@ -16572,18 +16671,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -19791,18 +19892,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -20149,18 +20252,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -20871,6 +20976,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.76, y: 0.67}
   m_EdgeRadius: 0
+--- !u!1 &326365233 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1836309892}
+--- !u!114 &326365237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326365233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &327224977
 GameObject:
   m_ObjectHideFlags: 0
@@ -23414,18 +23538,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -26257,18 +26383,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -27498,18 +27626,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -28469,18 +28599,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -30365,18 +30497,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -31554,18 +31688,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -33530,18 +33666,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -37687,6 +37825,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -40854,18 +41001,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -42254,6 +42403,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.85}
   m_EdgeRadius: 0
+--- !u!1 &635957968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1578028119}
+--- !u!114 &635957972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635957968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &637957836
 GameObject:
   m_ObjectHideFlags: 0
@@ -42874,18 +43042,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -43680,7 +43850,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2006212119}
   - {fileID: 1075184165}
   - {fileID: 251371702}
   - {fileID: 2038367606}
@@ -43696,6 +43865,7 @@ Transform:
   - {fileID: 500719444}
   - {fileID: 1499832661}
   - {fileID: 2034775646}
+  - {fileID: 2006212119}
   - {fileID: 796893764}
   - {fileID: 89666600}
   m_Father: {fileID: 1198659750}
@@ -47197,6 +47367,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &697924645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 769828335}
+--- !u!114 &697924649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 697924645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &697969530
 GameObject:
   m_ObjectHideFlags: 0
@@ -47615,18 +47804,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -49209,18 +49400,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -50933,11 +51126,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -50979,11 +51181,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -51324,6 +51535,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367,
     type: 2}
   m_PrefabInternal: {fileID: 774425652}
+--- !u!1 &774617461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 768054015}
+--- !u!114 &774617465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774617461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &776315052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a,
@@ -51364,18 +51594,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -53766,18 +53998,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -54232,18 +54466,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -55398,21 +55634,42 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
+--- !u!1 &831622788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733,
+    type: 2}
+  m_PrefabInternal: {fileID: 1243459490}
+--- !u!114 &831622792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 831622788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 1
 --- !u!1001 &836679210
 Prefab:
   m_ObjectHideFlags: 0
@@ -56014,11 +56271,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -56357,18 +56623,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -57219,18 +57487,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -57476,18 +57746,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -58832,21 +59104,56 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
+--- !u!1 &890230569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 570566246}
+--- !u!114 &890230573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890230569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
+--- !u!114 &890230574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890230569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &890266553
 GameObject:
   m_ObjectHideFlags: 0
@@ -60375,11 +60682,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -61004,18 +61320,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -62754,11 +63072,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -62803,18 +63130,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -63621,18 +63950,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -64282,18 +64613,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -64842,18 +65175,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -67104,18 +67439,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -67534,11 +67871,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -70193,18 +70539,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -70814,6 +71162,15 @@ Prefab:
     - target: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
       propertyPath: m_Name
       value: BigBomb (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61371953493228990, guid: ba3b658b50bb4dc44811b0e5d59d1733,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
@@ -71642,11 +71999,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -72724,18 +73090,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -73835,18 +74203,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -74839,6 +75209,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.59}
   m_EdgeRadius: 0
+--- !u!1 &1111108344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1079097304}
+--- !u!114 &1111108348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111108344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &1112000008
 GameObject:
   m_ObjectHideFlags: 0
@@ -81734,11 +82123,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -84394,7 +84792,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4072716001089244, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61371953493228990, guid: ba3b658b50bb4dc44811b0e5d59d1733,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
@@ -86705,6 +87112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   Player: {fileID: 1581407988}
+  BoomNum: 0
 --- !u!114 &1272847765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89369,18 +89777,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -91453,6 +91863,25 @@ Transform:
   m_Father: {fileID: 613912806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1339464307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733,
+    type: 2}
+  m_PrefabInternal: {fileID: 1063040960}
+--- !u!114 &1339464311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1339464307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 1
 --- !u!1 &1341003903
 GameObject:
   m_ObjectHideFlags: 0
@@ -92145,11 +92574,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -93482,18 +93920,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -94506,18 +94946,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -97781,18 +98223,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -98895,18 +99339,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -99649,18 +100095,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -100947,6 +101395,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1519032434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1008966342}
+--- !u!114 &1519032438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1519032434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &1519564104
 GameObject:
   m_ObjectHideFlags: 0
@@ -101391,18 +101858,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -101505,18 +101974,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -104094,11 +104565,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -106523,18 +107003,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -107478,18 +107960,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -108045,18 +108529,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -110457,18 +110943,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -110848,18 +111336,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -111581,11 +112071,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -112487,18 +112986,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -113122,18 +113623,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -115198,11 +115701,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -116886,18 +117398,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -118802,21 +119316,42 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
+--- !u!1 &1814371924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1350844990}
+--- !u!114 &1814371928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814371924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &1815249279
 GameObject:
   m_ObjectHideFlags: 0
@@ -119613,18 +120148,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -120017,11 +120554,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -121099,18 +121645,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -124918,18 +125466,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -126771,6 +127321,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.85}
   m_EdgeRadius: 0
+--- !u!1 &1923860596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 903753512}
+--- !u!114 &1923860600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923860596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &1924415629
 GameObject:
   m_ObjectHideFlags: 0
@@ -127365,18 +127934,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -130802,6 +131373,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.59}
   m_EdgeRadius: 0
+--- !u!1 &1984828223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2025866501}
+--- !u!114 &1984828227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984828223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &1987722418
 GameObject:
   m_ObjectHideFlags: 0
@@ -131145,18 +131735,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -131306,18 +131898,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
-  maxHP: 50
+  speed: 11
+  maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -131366,18 +131960,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -131900,18 +132496,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -132741,11 +133339,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4145090943520998, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
       propertyPath: m_Name
       value: Bomb (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61802305954957048, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4055bc739abc5b46b5c4c02d5432a2f, type: 2}
@@ -132792,6 +133399,15 @@ Prefab:
     - target: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
       propertyPath: m_Name
       value: BigBomb (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936637625027336, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
+      propertyPath: m_TagString
+      value: Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 61371953493228990, guid: ba3b658b50bb4dc44811b0e5d59d1733,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3b658b50bb4dc44811b0e5d59d1733, type: 2}
@@ -132922,21 +133538,23 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 10
   maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 15
   Attacknum: 10
   animator: {fileID: 2036036858}
   Player: {fileID: 1581407988}
   MonsterHP: {fileID: 783364705}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   force: 0
-  EnvironmentType: 0
+  EnvironmentType: 1
 --- !u!95 &2036036858 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95474064441953976, guid: 777513de0dc7edf4bb1c0a8343431ce7,
@@ -132961,7 +133579,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &2037991146
 GameObject:
   m_ObjectHideFlags: 0
@@ -133411,18 +134029,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -133788,6 +134408,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a,
     type: 2}
   m_PrefabInternal: {fileID: 2044323949}
+--- !u!1 &2045108190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1778934518213856, guid: b4055bc739abc5b46b5c4c02d5432a2f,
+    type: 2}
+  m_PrefabInternal: {fileID: 936091146}
+--- !u!114 &2045108194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045108190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e3110181644234f956aa215057dcea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  envi: {fileID: 1272847764}
+  Booming: 0
+  Type: 0
 --- !u!1 &2046963920
 GameObject:
   m_ObjectHideFlags: 0
@@ -133929,18 +134568,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -133984,18 +134625,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -134342,18 +134985,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -135407,18 +136052,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -135563,18 +136210,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -136400,18 +137049,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 11
   maxHP: 30
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 8
+  warning: 10
   Attacknum: 5
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -136908,18 +137559,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02
@@ -140506,18 +141159,20 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 7
+  speed: 9
   maxHP: 25
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
-  warning: 10
+  warning: 12
   Attacknum: 8
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   NewHPBar: {fileID: 1190429882884124, guid: 10f6267692ad06e4ea493a3e0e045dda, type: 2}
   force: 100
   size: 0.02

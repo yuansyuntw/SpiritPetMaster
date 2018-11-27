@@ -62,6 +62,7 @@ public class Pet01_Controller : Pet {
     {
         if (gamestage.Gameover == 1)//win
         {
+            Speed = Speed / SpeedValue;
             SaveData();
             return;
         }
@@ -102,6 +103,22 @@ public class Pet01_Controller : Pet {
             }
             else
             {
+                //for water only (can always jump)
+                if (EnvironmentType == 1)
+                {
+                    if (timerJump > 0.2f)
+                    {
+                        isDoubleJump = true;
+                        rb.velocity = Vector2.zero;
+                        rb.angularVelocity = 0;
+                        rb.AddForce(Vector3.up * force);
+                        animator.SetBool("isJumping", true);
+                        Debug.Log("SwimJump");
+                        timerJump = 0;
+                    }
+                }
+                //for water only (can always jump)
+
                 if (isDoubleJump)//判断是否在二段跳  
                 {
                     return;//否则不能二段跳  
@@ -116,6 +133,8 @@ public class Pet01_Controller : Pet {
                     Debug.Log("DoubleJump");
                     timerJump = 0;
                 }
+
+                
             }
             /*rb.AddForce(Vector3.up * 350.0f);
             //transform.Translate(Vector3.up * 10.0f);
@@ -127,13 +146,20 @@ public class Pet01_Controller : Pet {
         if(timerJump > 0.2f) animator.SetBool("isJumping", false);
 
         //JumpDown
-        if(EnvironmentType == 0) {
+        if(EnvironmentType != 1) {//not water
             if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
             {
                 Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
                 Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
                 Debug.Log("JumpDown");
             }
+        }
+        else
+        {
+            float moveY = Input.GetAxis("Vertical") * Speed * 0.5f;
+            if (moveY > 0) moveY = 0;
+            moveY *= Time.deltaTime;
+            transform.Translate(0, moveY, 0);
         }
 
         //animation
@@ -218,7 +244,7 @@ public class Pet01_Controller : Pet {
         {//碰撞的是Plane  
             isJump = false;
             isDoubleJump = false;
-            if (EnvironmentType == 0) {
+            if (EnvironmentType != 1) {
                 if (Plane == null) Plane = other.gameObject;
                 if (Plane != other.gameObject)
                 {
@@ -272,7 +298,7 @@ public class Pet01_Controller : Pet {
         if (other.gameObject.CompareTag("Plane")){//碰撞的是Plane  
             //isJump = false;
             //isDoubleJump = false;
-            if (EnvironmentType == 0)
+            if (EnvironmentType != 1)//not water
             {
                 if (Plane == null) Plane = other.gameObject;
                 if (Plane != other.gameObject)

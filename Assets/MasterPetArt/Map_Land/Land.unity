@@ -13053,6 +13053,8 @@ MonoBehaviour:
   gamestage: {fileID: 1270467897}
   force: 500
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
+  EnvironmentType: 0
+  SpeedValue: 1
 --- !u!95 &600869259
 Animator:
   serializedVersion: 3
@@ -18131,7 +18133,10 @@ MonoBehaviour:
   MonsterHP: {fileID: 236422815}
   gamestage: {fileID: 1270467897}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   force: 250
+  EnvironmentType: 0
 --- !u!95 &866237402 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95182245839927522, guid: aa84d6bde1417904fa5fe53e0d5d2bad,
@@ -28114,7 +28119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Player: {fileID: 600869257}
-  PlayerO2: {fileID: 90830755}
+  BoomNum: 0
 --- !u!114 &1270467897
 MonoBehaviour:
   m_ObjectHideFlags: 0

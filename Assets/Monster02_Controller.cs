@@ -17,7 +17,7 @@ public class Monster02_Controller : Monster
 
     public GameObject Player;
     public GameStageController gamestage;
-    public GameObject HurtText;
+    public GameObject HurtText, BoomHurtText;
     public GameObject NewHPBar;
     public float force;
     public float size;
@@ -196,5 +196,30 @@ public class Monster02_Controller : Monster
         }
         // else animator.SetInteger("Hitted", 0);
 
+        /*if (other.gameObject.CompareTag("Boom") && other.gameObject.GetComponent<Boom>().Booming == true)
+        {
+            int HurtNum = 20;
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(BoomHurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = (HurtNum).ToString();
+        }*/
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        //water
+        if (other.gameObject.CompareTag("Boom") && other.gameObject.GetComponent<Boom>().Booming == true)
+        {
+            int HurtNum;
+            if (other.gameObject.GetComponent<Boom>().Type == 1) HurtNum = 50;
+            else HurtNum = 20;
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(BoomHurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = (HurtNum).ToString();
+        }
     }
 }

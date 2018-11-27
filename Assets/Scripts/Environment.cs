@@ -7,10 +7,12 @@ public class Environment : MonoBehaviour {
 
     public int Type;//water 1 wind 2
     public GameObject Player;
+    public int BoomNum;
     //public Slider PlayerO2;
     private float O2, timer;
 
     void Start () {
+        BoomNum = 0;
         /*if (Type == 1)
         {
             O2 = 100;
