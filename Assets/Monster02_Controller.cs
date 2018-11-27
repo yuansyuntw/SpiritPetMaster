@@ -5,28 +5,30 @@ using UnityEngine.UI;
 using SpiritMonsterMaster;
 using TMPro;
 
-public class Monster01_Controller : Monster {
+public class Monster02_Controller : Monster
+{
     [SerializeField]
     private Animator animator;
     private Rigidbody2D rb;
     private int Dir = 1;
-    private float HP, Distx, timer, timerJump;
+    private float HP, Distx, Disty, timer, timerJump;
     private int hitted = 0;
     private GameObject HPBar;
 
     public GameObject Player;
     public GameStageController gamestage;
-    public GameObject HurtText;
+    public GameObject HurtText, BoomHurtText;
     public GameObject NewHPBar;
     public float force;
     public float size;
 
-    public Monster01_Controller(int _id) : base(_id)
+    public Monster02_Controller(int _id) : base(_id)
     {
 
     }
 
-    void Start () {
+    void Start()
+    {
         //change to read file here 
         //warning = 5f;
         //Attacknum = 10;
@@ -50,53 +52,59 @@ public class Monster01_Controller : Monster {
         animator = this.GetComponent<Animator>();
         Random.seed = System.Guid.NewGuid().GetHashCode();
     }
-	
-	void Update () {
+
+    void Update()
+    {
         if (gamestage.Gameover == 2 || gamestage.Gameover == 1 || gamestage.stop == 1)
         {
             return;
         }
 
-        if (Mathf.Abs(rb.velocity.y) < 0.05f)timerJump += Time.deltaTime;
+        if (Mathf.Abs(rb.velocity.y) < 0.05f) timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
+        Disty = Mathf.Abs(Player.transform.position.y - gameObject.transform.position.y);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
+        float moveVer = (Player.transform.position.y - gameObject.transform.position.y) / Disty;
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
-        float moveZ;
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning/2)) {  //follow Player
-            moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1);;
+        float moveZ, moveY;
+        if ((Distx < warning || hitted == 1) && (Disty < warning))
+        {  //follow Player
+            moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1); ;
+            moveY = moveVer * Random.Range(speed - 1, speed + 1);
             moveZ *= Time.deltaTime;
-            transform.Translate(moveZ, 0, 0);
+            moveY *= Time.deltaTime;
+            transform.Translate(moveZ, moveY, 0);
         }
         else
         {
-            if(timer > 0)
+            if (timer > 0)
             {
                 moveZ = -1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
             }
-            else 
+            else
             {
                 moveZ = 1 * speed;
                 moveZ *= Time.deltaTime;
                 transform.Translate(moveZ, 0, 0);
-                
+
             }
-            if (timer < -2.5f)timer = 2.5f;
+            if (timer < -2.5f) timer = 2.5f;
             timer -= Time.deltaTime;
         }
 
         //jump
-        if (timerJump > 1f ||(rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning/2 && Distx < warning && timerJump > 0.5f))
+        /*if (timerJump > 1f || (rb.velocity.y < -0.5f && timerJump > 0.5f) || (Player.transform.position.y - gameObject.transform.position.y > warning / 2 && Distx < warning && timerJump > 0.5f))
         {
-            if(timerJump > 1f) rb.AddForce(Vector3.up * force/2);
+            if (timerJump > 1f) rb.AddForce(Vector3.up * force / 2);
             else rb.AddForce(Vector3.up * force);
             animator.SetBool("isJumping", true);
             timerJump = 0;
         }
-        else animator.SetBool("isJumping", false);
+        else animator.SetBool("isJumping", false);*/
 
         //animation
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
@@ -122,15 +130,16 @@ public class Monster01_Controller : Monster {
         }
 
         //HP UI
-        if(hitted == 1)
+        if (hitted == 1)
         {
             //MonsterHP.gameObject.SetActive(true);
             //MonsterHP.value = HP / maxHP;
-            HPBar.transform.GetChild(0).gameObject.transform.localPosition = new Vector3( (1 - (HP / maxHP)) * -18.4f, 0, 0);
+            HPBar.transform.GetChild(0).gameObject.transform.localPosition = new Vector3((1 - (HP / maxHP)) * -18.4f, 0, 0);
         }
-        
-        
-        if(HP <= 0) {
+
+
+        if (HP <= 0)
+        {
             // animator.SetInteger("Dead", 1);
             Destroy(gameObject);
         }
@@ -159,7 +168,7 @@ public class Monster01_Controller : Monster {
                 else if (other.GetComponent<Attack_far>().wind == 1) HurtNum = (other.GetComponent<Attack_far>().Attacknum + i) * 1.2f;
                 else HurtNum = other.GetComponent<Attack_far>().Attacknum + i;
                 HP -= HurtNum;
-                
+
             }
             else if (Monsterwind == 1)
             {
@@ -187,5 +196,30 @@ public class Monster01_Controller : Monster {
         }
         // else animator.SetInteger("Hitted", 0);
 
+        /*if (other.gameObject.CompareTag("Boom") && other.gameObject.GetComponent<Boom>().Booming == true)
+        {
+            int HurtNum = 20;
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(BoomHurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = (HurtNum).ToString();
+        }*/
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        //water
+        if (other.gameObject.CompareTag("Boom") && other.gameObject.GetComponent<Boom>().Booming == true)
+        {
+            int HurtNum;
+            if (other.gameObject.GetComponent<Boom>().Type == 1) HurtNum = 50;
+            else HurtNum = 20;
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(BoomHurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = (HurtNum).ToString();
+        }
     }
 }

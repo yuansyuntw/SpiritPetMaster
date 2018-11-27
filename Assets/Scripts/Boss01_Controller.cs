@@ -11,14 +11,15 @@ public class Boss01_Controller : Monster
     private Animator animator;
     private Rigidbody2D rb;
     private int Dir = 1;
-    private float HP, Distx, timer, timerJump;
+    private float HP, Distx, Disty, timer, timerJump;
     private int hitted = 0;
 
     public GameObject Player;
     public Slider MonsterHP;
     public GameStageController gamestage;
-    public GameObject HurtText;
+    public GameObject HurtText, BoomHurtText;
     public float force;
+    public int EnvironmentType;
 
 
     public Boss01_Controller(int _id) : base(_id)
@@ -55,15 +56,20 @@ public class Boss01_Controller : Monster
         if (Mathf.Abs(rb.velocity.y) < 0.05f) timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
+        Disty = Mathf.Abs(Player.transform.position.y - gameObject.transform.position.y);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
+        float moveVer = (Player.transform.position.y - gameObject.transform.position.y) / Disty;
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
-        float moveZ;
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < 1f))
+        float moveZ, moveY;
+        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning))
         {  //follow Player
-            moveZ = moveHorizontal * speed;
+            moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1); ;
+            moveY = moveVer * Random.Range(speed - 1, speed + 1);
             moveZ *= Time.deltaTime;
-            transform.Translate(moveZ, 0, 0);
+            moveY *= Time.deltaTime;
+            if(EnvironmentType == 0)transform.Translate(moveZ, 0, 0);
+            else if (EnvironmentType == 1) transform.Translate(moveZ, moveY, 0);//water
         }
         else
         {
@@ -181,6 +187,23 @@ public class Boss01_Controller : Monster
             Destroy(other);
         }
         // else animator.SetInteger("Hitted", 0);
+       
+    }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        //water
+        if (other.gameObject.GetComponent<Boom>().BoomHitted == 0 && other.gameObject.CompareTag("Boom") && other.gameObject.GetComponent<Boom>().Booming == true)
+        {
+            other.gameObject.GetComponent<Boom>().BoomHitted = 1;
+            int HurtNum;
+            if (other.gameObject.GetComponent<Boom>().Type == 1) HurtNum = 50;
+            else HurtNum = 20;
+            HP -= HurtNum;
+            GameObject text = GameObject.Instantiate(BoomHurtText);
+            text.transform.parent = GameObject.Find("Canvas").transform;
+            text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
+            text.GetComponent<TextMeshProUGUI>().text = (HurtNum).ToString();
+        }
     }
 }
