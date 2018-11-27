@@ -10,7 +10,7 @@ public class Monster01_Controller : Monster {
     private Animator animator;
     private Rigidbody2D rb;
     private int Dir = 1;
-    private float HP, Distx, timer, timerJump;
+    private float HP, Distx, Disty, timer, timerJump;
     private int hitted = 0;
     private GameObject HPBar;
 
@@ -60,11 +60,12 @@ public class Monster01_Controller : Monster {
         if (Mathf.Abs(rb.velocity.y) < 0.05f)timerJump += Time.deltaTime;
 
         Distx = Mathf.Abs(Player.transform.position.x - gameObject.transform.position.x);
+        Disty = Mathf.Abs(Player.transform.position.y - gameObject.transform.position.y);
         float moveHorizontal = (Player.transform.position.x - gameObject.transform.position.x) / Distx;
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
         float moveZ;
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning/2)) {  //follow Player
+        if ((Distx < warning || hitted == 1) && (Disty < warning/2)) {  //follow Player
             moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1);;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);
