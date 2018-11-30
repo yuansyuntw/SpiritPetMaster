@@ -146,7 +146,7 @@ public class Pet01_Controller : Pet {
         if(timerJump > 0.2f) animator.SetBool("isJumping", false);
 
         //JumpDown
-        if(EnvironmentType != 1) {//not water
+        if(EnvironmentType == 0) {//land jump down
             if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
             {
                 Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
@@ -244,7 +244,7 @@ public class Pet01_Controller : Pet {
         {//碰撞的是Plane  
             isJump = false;
             isDoubleJump = false;
-            if (EnvironmentType != 1) {
+            if (EnvironmentType  == 0) {//land jump down
                 if (Plane == null) Plane = other.gameObject;
                 if (Plane != other.gameObject)
                 {
@@ -257,7 +257,7 @@ public class Pet01_Controller : Pet {
         else if (other.gameObject.CompareTag("Monster"))
         {
             int HurtNum;
-            if (EnvironmentType == 1) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
+            if (EnvironmentType == 1 || EnvironmentType == 2) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
             else HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
@@ -298,7 +298,7 @@ public class Pet01_Controller : Pet {
         if (other.gameObject.CompareTag("Plane")){//碰撞的是Plane  
             //isJump = false;
             //isDoubleJump = false;
-            if (EnvironmentType != 1)//not water
+            if (EnvironmentType == 0)//land jump down
             {
                 if (Plane == null) Plane = other.gameObject;
                 if (Plane != other.gameObject)

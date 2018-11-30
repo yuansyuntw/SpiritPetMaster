@@ -45,7 +45,7 @@ public class Monster01_Controller : Monster {
         HPBar = Instantiate(NewHPBar);
         HPBar.transform.SetParent(gameObject.transform);
         HPBar.transform.localScale = new Vector3(size, size, 1);
-        HPBar.transform.localPosition = new Vector3(0, 0.1f, 0);
+        HPBar.transform.localPosition = new Vector3(0, 0.15f, 0);
         //HPBar = gameObject.transform.GetChild(0).gameObject;
         animator = this.GetComponent<Animator>();
         Random.seed = System.Guid.NewGuid().GetHashCode();
