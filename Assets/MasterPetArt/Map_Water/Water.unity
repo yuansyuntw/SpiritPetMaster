@@ -233,6 +233,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &8401930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2743,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &44084219
 GameObject:
   m_ObjectHideFlags: 0
@@ -6910,6 +6912,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &112038807
 GameObject:
   m_ObjectHideFlags: 0
@@ -14429,6 +14432,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &240154526
 GameObject:
   m_ObjectHideFlags: 0
@@ -16354,6 +16358,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 1
+  BoomHitted: 0
 --- !u!1 &266389425
 GameObject:
   m_ObjectHideFlags: 0
@@ -20995,6 +21000,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &327224977
 GameObject:
   m_ObjectHideFlags: 0
@@ -42422,6 +42428,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &637957836
 GameObject:
   m_ObjectHideFlags: 0
@@ -47386,6 +47393,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &697969530
 GameObject:
   m_ObjectHideFlags: 0
@@ -51554,6 +51562,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &776315052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a,
@@ -55670,6 +55679,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 1
+  BoomHitted: 0
 --- !u!1001 &836679210
 Prefab:
   m_ObjectHideFlags: 0
@@ -59140,6 +59150,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!114 &890230574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59154,6 +59165,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &890266553
 GameObject:
   m_ObjectHideFlags: 0
@@ -75228,6 +75240,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &1112000008
 GameObject:
   m_ObjectHideFlags: 0
@@ -91882,6 +91895,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 1
+  BoomHitted: 0
 --- !u!1 &1341003903
 GameObject:
   m_ObjectHideFlags: 0
@@ -101414,6 +101428,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &1519564104
 GameObject:
   m_ObjectHideFlags: 0
@@ -104638,6 +104653,9 @@ MonoBehaviour:
   HP: 0
   MP: 0
   Attackfire: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
+  Attackwind: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
+  Attackwater: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3,
+    type: 2}
   Attack: {fileID: 1485824797693866, guid: 0b91e19d9573e794a8590aba2dd60d99, type: 2}
   PlayerHP: {fileID: 1451510164}
   PlayerMP: {fileID: 1136816136}
@@ -119352,6 +119370,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &1815249279
 GameObject:
   m_ObjectHideFlags: 0
@@ -127340,6 +127359,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &1924415629
 GameObject:
   m_ObjectHideFlags: 0
@@ -131392,6 +131412,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &1987722418
 GameObject:
   m_ObjectHideFlags: 0
@@ -134427,6 +134448,7 @@ MonoBehaviour:
   envi: {fileID: 1272847764}
   Booming: 0
   Type: 0
+  BoomHitted: 0
 --- !u!1 &2046963920
 GameObject:
   m_ObjectHideFlags: 0

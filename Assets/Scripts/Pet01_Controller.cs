@@ -12,7 +12,7 @@ public class Pet01_Controller : Pet {
     private float timerJump = 0.6f;
     private int Dir = 1;
     private float timerRecover = 0;
-    private float timerAttackfire = 0;
+    private float timerAttackfire = 0, timerAttackwind = 0, timerAttackwater = 0;
     private float timerAttack = 0;
     public float HP, MP;
     private bool isJump = false;
@@ -20,7 +20,7 @@ public class Pet01_Controller : Pet {
     private bool isFalling = false;
     private GameObject Plane;
 
-    public GameObject Attackfire, Attack;
+    public GameObject Attackfire, Attackwind, Attackwater, Attack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
     public float force;
@@ -74,6 +74,8 @@ public class Pet01_Controller : Pet {
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
         timerAttackfire += Time.deltaTime;
+        timerAttackwind += Time.deltaTime;
+        timerAttackwater += Time.deltaTime;
         timerAttack += Time.deltaTime;
 
         if (HP <= 0)
@@ -201,7 +203,7 @@ public class Pet01_Controller : Pet {
         PlayerMP.value = MP / MaxMP;
 
         //attack
-        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 1f)
+        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 0.7f)
         {
             MP -= 10;
             Quaternion rot;
@@ -216,9 +218,43 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
         }
-        else animator.SetBool("isAttacking", false);
+        if(timerAttackfire > 0.2f) animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.8f)
+        if (Input.GetKeyDown(KeyCode.W) && MP - 10 > 0 && timerAttackwind > 0.7f)
+        {
+            MP -= 10;
+            Quaternion rot;
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, -45);
+            GameObject winds = Instantiate(Attackwind, transform.position, rot);
+            winds.transform.localScale = new Vector3(1, 1, 1);
+            winds.GetComponent<Attack_far>().far = 1;
+            winds.GetComponent<Attack_far>().wind = 1;
+            winds.GetComponent<Attack_far>().Attacknum = PetwindAttack * 0.1f;
+            winds.GetComponent<Attack_far>().AttackDir = Dir;
+            animator.SetBool("isAttacking", true);
+            timerAttackwind = 0;
+        }
+        if (timerAttackwind > 0.2f) animator.SetBool("isAttacking", false);
+
+        if (Input.GetKeyDown(KeyCode.E) && MP - 10 > 0 && timerAttackwater > 0.7f)
+        {
+            MP -= 10;
+            Quaternion rot;
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, -45);
+            GameObject waters = Instantiate(Attackwind, transform.position, rot);
+            waters.transform.localScale = new Vector3(1, 1, 1);
+            waters.GetComponent<Attack_far>().far = 1;
+            waters.GetComponent<Attack_far>().water = 1;
+            waters.GetComponent<Attack_far>().Attacknum = PetwaterAttack * 0.1f;
+            waters.GetComponent<Attack_far>().AttackDir = Dir;
+            animator.SetBool("isAttacking", true);
+            timerAttackwater = 0;
+        }
+        if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
+
+        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.5f)
         {
             GameObject attacks = Instantiate(Attack);
             attacks.transform.SetParent(this.transform);
@@ -230,7 +266,7 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
         }
-        else animator.SetBool("isAttacking", false);
+        if(timerAttack > 0.2f) animator.SetBool("isAttacking", false);
 
 
     }
