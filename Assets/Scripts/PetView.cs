@@ -88,6 +88,8 @@ namespace SpiritPetMaster
 
         void Update()
         {
+            /* Sorting the layer */
+            GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 1000f) ;
             if(CheckTouched())
             {
                 MouseDownEvents.Invoke();

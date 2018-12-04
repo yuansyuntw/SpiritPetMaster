@@ -63,10 +63,9 @@ namespace SpiritPetMaster
 
         public void RightPetView()
         {
-            if(current_view_index + 1 < pets_view_data.Count)
-            {
-                current_view_index++;
-            }
+            current_view_index++;
+            if(current_view_index>=pets_view_data.Count)
+                current_view_index -= pets_view_data.Count;
 
             if((current_view_index < pets_view_data.Count) && (current_view_index >= 0))
             {
@@ -82,10 +81,9 @@ namespace SpiritPetMaster
 
         public void LeftPetView()
         {
-            if(current_view_index - 1 >= 0)
-            {
-                current_view_index--;
-            }
+            current_view_index--;
+            if(current_view_index<0) 
+                current_view_index += pets_view_data.Count;
 
             if ((current_view_index < pets_view_data.Count) && (current_view_index >= 0))
             {
@@ -297,6 +295,8 @@ namespace SpiritPetMaster
 
             return result;
         }
-        
+        public PetView CurrentFocusPet(){
+            return current_focus_pet;
+        }
     }
 }

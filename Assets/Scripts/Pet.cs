@@ -20,13 +20,16 @@ namespace SpiritPetMaster
 
         public float Speed = 1;
         public float MaxHP = 100;
+        public float HPRecover = 0.005f;
         public float MaxMP = 100;
         public float MPRecover = 0.005f;
-        public float HPRecover = 0.005f;
-        public int PetfireAttack = 100;
-        public int PetwaterAttack = 100;
-        public int PetwindAttack = 100;
+        public float PetfireAttack = 100;
+        public float PetwaterAttack = 100;
+        public float PetwindAttack = 100;
+        public float Attack = 100;
+        public float Defence = 100;
 
+        public int Points = 0;
 
 
         /*  */
@@ -54,7 +57,7 @@ namespace SpiritPetMaster
             Name = _name;
             PetSpriteName = Kind.ToString() + "/idle/idle1";
             PetAnimatorName = Kind.ToString() + "/" + Kind.ToString();
-            PetTalkingFilename = "pet_taking" + Kind.ToString();
+            PetTalkingFilename = Kind.ToString() + "/talks";
 
             SaveData();
         }
@@ -72,6 +75,18 @@ namespace SpiritPetMaster
             Level = PlayerData.instance.LoadData<int>(petid, "pet_level");
             Mood = PlayerData.instance.LoadData<int>(petid, "pet_mood");
             Hunger = PlayerData.instance.LoadData<int>(petid, "pet_hunger");
+
+            Speed = PlayerData.instance.LoadData<float>(petid, "pet_speed");
+            MaxHP = PlayerData.instance.LoadData<float>(petid, "pet_maxHP");
+            HPRecover = PlayerData.instance.LoadData<float>(petid, "pet_HPRecover");
+            MaxMP = PlayerData.instance.LoadData<float>(petid, "pet_maxMP");
+            MPRecover = PlayerData.instance.LoadData<float>(petid, "pet_MPRecover");
+            PetfireAttack = PlayerData.instance.LoadData<float>(petid, "pet_petfireAttack");
+            PetwaterAttack = PlayerData.instance.LoadData<float>(petid, "pet_petwaterAttack");
+            PetwindAttack = PlayerData.instance.LoadData<float>(petid, "pet_petwindAttack");
+            Attack = PlayerData.instance.LoadData<float>(petid, "pet_attack");
+            Defence = PlayerData.instance.LoadData<float>(petid, "pet_defence");
+            Points = PlayerData.instance.LoadData<int>(petid, "pet_points");
         }
 
 
@@ -88,20 +103,20 @@ namespace SpiritPetMaster
             PlayerData.instance.SaveData<int>(petid, "pet_mood", Mood);
             PlayerData.instance.SaveData<int>(petid, "pet_hunger", Hunger);
 
-            PlayerData.instance.SaveData<string>(petid, "pet_speed", Speed.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_maxHP", MaxHP.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_maxMP", MaxMP.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_mPRecover", MPRecover.ToString());
-            PlayerData.instance.SaveData<string>(petid, "pet_hPRecover", HPRecover.ToString());
-            PlayerData.instance.SaveData<int>(petid, "pet_petfireAttack", PetfireAttack);
-            PlayerData.instance.SaveData<int>(petid, "pet_petwaterAttack", PetwaterAttack);
-            PlayerData.instance.SaveData<int>(petid, "pet_petwindAttack", PetwindAttack);
+            PlayerData.instance.SaveData<float>(petid, "pet_speed", Speed);
+            PlayerData.instance.SaveData<float>(petid, "pet_maxHP", MaxHP);
+            PlayerData.instance.SaveData<float>(petid, "pet_HPRecover", HPRecover);
+            PlayerData.instance.SaveData<float>(petid, "pet_maxMP", MaxMP);
+            PlayerData.instance.SaveData<float>(petid, "pet_MPRecover", MPRecover);
+            PlayerData.instance.SaveData<float>(petid, "pet_petfireAttack", PetfireAttack);
+            PlayerData.instance.SaveData<float>(petid, "pet_petwaterAttack", PetwaterAttack);
+            PlayerData.instance.SaveData<float>(petid, "pet_petwindAttack", PetwindAttack);
+            PlayerData.instance.SaveData<float>(petid, "pet_attack", Attack);
+            PlayerData.instance.SaveData<float>(petid, "pet_defence", Defence);
+            PlayerData.instance.SaveData<int>(petid, "pet_points", Points);
         
-    }
+        }
 
-
-
-        
     }
 }
 
