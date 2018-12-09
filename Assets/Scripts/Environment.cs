@@ -7,11 +7,13 @@ public class Environment : MonoBehaviour {
 
     public int Type;//water 1 wind 2
     public GameObject Player;
-    public Slider PlayerO2;
+    public int BoomNum;
+    //public Slider PlayerO2;
     private float O2, timer;
 
     void Start () {
-        if (Type == 1)
+        BoomNum = 0;
+        /*if (Type == 1)
         {
             O2 = 100;
             PlayerO2.gameObject.SetActive(true);
@@ -21,13 +23,15 @@ public class Environment : MonoBehaviour {
         else
         {
             //Player.GetComponent<Pet01_Controller>().force = 500f;
-        }
+        }*/
     }
 	
 	void Update () {
 		if(Type == 1)
         {
-            timer += Time.deltaTime;
+            Player.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
+            Player.GetComponent<Pet01_Controller>().force = 200f;
+            /*timer += Time.deltaTime;
             PlayerO2.value = O2 / 100;
             if(timer > 1)
             {
@@ -46,8 +50,7 @@ public class Environment : MonoBehaviour {
                 Player.GetComponent<Rigidbody2D>().gravityScale = 1f;
                 Player.GetComponent<Pet01_Controller>().force = 250f;
             }
-
-
+            */
         }
 	}
 }

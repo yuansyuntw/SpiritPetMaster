@@ -3020,7 +3020,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 116154034}
   Player: {fileID: 600869257}
@@ -4821,7 +4821,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8019,7 +8019,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1247499779}
   Player: {fileID: 600869257}
@@ -8833,7 +8833,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -10132,7 +10132,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -12866,7 +12866,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -13040,18 +13040,24 @@ MonoBehaviour:
   MPRecover: 0.1
   HPRecover: 0.01
   PetfireAttack: 100
-  PetwaterAttack: 100
+  PetwaterAttack: 200
   PetwindAttack: 100
+  Exp: 0
   animator: {fileID: 600869259}
   HP: 0
   MP: 0
   Attackfire: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
+  Attackwind: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
+  Attackwater: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3,
+    type: 2}
   Attack: {fileID: 1485824797693866, guid: 0b91e19d9573e794a8590aba2dd60d99, type: 2}
   PlayerHP: {fileID: 172720369}
   PlayerMP: {fileID: 1388292696}
   gamestage: {fileID: 1270467897}
   force: 500
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
+  EnvironmentType: 0
+  SpeedValue: 1
 --- !u!95 &600869259
 Animator:
   serializedVersion: 3
@@ -14390,7 +14396,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.9, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16950,7 +16956,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -17902,7 +17908,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -18130,7 +18136,10 @@ MonoBehaviour:
   MonsterHP: {fileID: 236422815}
   gamestage: {fileID: 1270467897}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 1488549802897114, guid: 46474eb9f691cd746bbb93f23306bea2,
+    type: 2}
   force: 250
+  EnvironmentType: 0
 --- !u!95 &866237402 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95182245839927522, guid: aa84d6bde1417904fa5fe53e0d5d2bad,
@@ -20380,7 +20389,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 966635948}
   Player: {fileID: 600869257}
@@ -20985,6 +20994,81 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0000009536743, y: 0}
   m_Size: {x: 0.17, y: 0.17}
   m_Direction: 0
+--- !u!1 &976390766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976390767}
+  - component: {fileID: 976390769}
+  - component: {fileID: 976390768}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &976390767
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976390766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1348183126}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &976390768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976390766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Stop
+--- !u!222 &976390769
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976390766}
+  m_CullTransparentMesh: 0
 --- !u!1 &978189183
 GameObject:
   m_ObjectHideFlags: 0
@@ -23080,7 +23164,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1037480245}
   Player: {fileID: 600869257}
@@ -24044,7 +24128,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1085152238}
   Player: {fileID: 600869257}
@@ -26780,7 +26864,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1215919355}
   Player: {fileID: 600869257}
@@ -27778,7 +27862,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1247499779}
   Player: {fileID: 600869257}
@@ -27964,7 +28048,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -28017,6 +28101,7 @@ GameObject:
   - component: {fileID: 1270467898}
   - component: {fileID: 1270467897}
   - component: {fileID: 1270467896}
+  - component: {fileID: 1270467899}
   m_Layer: 0
   m_Name: GameStageController
   m_TagString: Untagged
@@ -28037,7 +28122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Player: {fileID: 600869257}
-  PlayerO2: {fileID: 90830755}
+  BoomNum: 0
 --- !u!114 &1270467897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28051,6 +28136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gameover: 0
   Stage: {fileID: 1934504309}
+  stop: 0
 --- !u!4 &1270467898
 Transform:
   m_ObjectHideFlags: 0
@@ -28064,6 +28150,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270467899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270467895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8203280b388cb64ba5032f0ac09d776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerName: test
+  OwnPets: []
 --- !u!1 &1270612534
 GameObject:
   m_ObjectHideFlags: 0
@@ -29872,6 +29971,129 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.45}
   m_EdgeRadius: 0
+--- !u!1 &1348183125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1348183126}
+  - component: {fileID: 1348183129}
+  - component: {fileID: 1348183128}
+  - component: {fileID: 1348183127}
+  m_Layer: 5
+  m_Name: StopButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1348183126
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348183125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 976390767}
+  m_Father: {fileID: 1506060654}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 883.3, y: 500}
+  m_SizeDelta: {x: 93.5, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1348183127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348183125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1348183128}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1270467897}
+        m_MethodName: ClickStopButtom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1348183128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348183125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1348183129
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348183125}
+  m_CullTransparentMesh: 0
 --- !u!1 &1350497836
 GameObject:
   m_ObjectHideFlags: 0
@@ -32375,7 +32597,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -32883,7 +33105,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1494844082}
   Player: {fileID: 600869257}
@@ -33256,7 +33478,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -33418,6 +33640,7 @@ RectTransform:
   - {fileID: 236422814}
   - {fileID: 1934504308}
   - {fileID: 90830756}
+  - {fileID: 1348183126}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35056,7 +35279,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1574990329}
   Player: {fileID: 600869257}
@@ -36806,7 +37029,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -37800,7 +38023,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -39167,7 +39390,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -40017,7 +40240,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -42669,7 +42892,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -44079,7 +44302,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 5
   Attacknum: 5
   animator: {fileID: 1962019637}
   Player: {fileID: 600869257}
@@ -47163,7 +47386,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}
@@ -47741,7 +47964,7 @@ MonoBehaviour:
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
-  warning: 8
+  warning: 6
   Attacknum: 8
   animator: {fileID: 1691095149}
   Player: {fileID: 600869257}

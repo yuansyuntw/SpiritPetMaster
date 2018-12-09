@@ -12,7 +12,7 @@ public class Pet01_Controller : Pet {
     private float timerJump = 0.6f;
     private int Dir = 1;
     private float timerRecover = 0;
-    private float timerAttackfire = 0;
+    private float timerAttackfire = 0, timerAttackwind = 0, timerAttackwater = 0;
     private float timerAttack = 0;
     public float HP, MP;
     private bool isJump = false;
@@ -20,11 +20,13 @@ public class Pet01_Controller : Pet {
     private bool isFalling = false;
     private GameObject Plane;
 
-    public GameObject Attackfire, Attack;
+    public GameObject Attackfire, Attackwind, Attackwater, Attack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
     public float force;
     public GameObject HurtText;
+    public int EnvironmentType;
+    public float SpeedValue;
 
 
     void Start () {
@@ -32,14 +34,19 @@ public class Pet01_Controller : Pet {
         //NewPet(524, 1, "01");
         //LoadPet(524);
         //Speed = 2;
-        MaxHP = 100;
-        MaxMP = 100;
+
+        LoadPet(PlayerData.instance.GetPlayerFocusPetId());
+
+        /*Speed = 5;
+        MaxHP = 200;
+        MaxMP = 200;
         MPRecover = 0.01f;
         HPRecover = 0.01f;
         PetfireAttack = 100;
         PetwaterAttack = 100;
-        PetwindAttack = 100;
-        
+        PetwindAttack = 100;*/
+
+        SaveData();
 
         rb = GetComponent<Rigidbody2D>();
         Dir = 1;
@@ -47,14 +54,28 @@ public class Pet01_Controller : Pet {
         HP = MaxHP;
         isJump = false;
         isDoubleJump = false;
+        Speed = Speed * SpeedValue;
         Random.seed = System.Guid.NewGuid().GetHashCode();
     }
 
     void FixedUpdate()
     {
+        if (gamestage.Gameover == 1)//win
+        {
+            Speed = Speed / SpeedValue;
+            SaveData();
+            return;
+        }
+        if (gamestage.Gameover == 2 || gamestage.stop == 1)//lose
+        {
+            return;
+        }
+
         timerJump += Time.deltaTime;
         timerRecover += Time.deltaTime;
         timerAttackfire += Time.deltaTime;
+        timerAttackwind += Time.deltaTime;
+        timerAttackwater += Time.deltaTime;
         timerAttack += Time.deltaTime;
 
         if (HP <= 0)
@@ -84,6 +105,22 @@ public class Pet01_Controller : Pet {
             }
             else
             {
+                //for water only (can always jump)
+                if (EnvironmentType == 1)
+                {
+                    if (timerJump > 0.2f)
+                    {
+                        isDoubleJump = true;
+                        rb.velocity = Vector2.zero;
+                        rb.angularVelocity = 0;
+                        rb.AddForce(Vector3.up * force);
+                        animator.SetBool("isJumping", true);
+                        Debug.Log("SwimJump");
+                        timerJump = 0;
+                    }
+                }
+                //for water only (can always jump)
+
                 if (isDoubleJump)//判断是否在二段跳  
                 {
                     return;//否则不能二段跳  
@@ -91,24 +128,40 @@ public class Pet01_Controller : Pet {
                 else if(timerJump > 0.2f)
                 {
                     isDoubleJump = true;
+                    rb.velocity = Vector2.zero;
+                    rb.angularVelocity = 0;
                     rb.AddForce(Vector3.up * force);
                     animator.SetBool("isJumping", true);
                     Debug.Log("DoubleJump");
                     timerJump = 0;
                 }
+
+                
             }
             /*rb.AddForce(Vector3.up * 350.0f);
             //transform.Translate(Vector3.up * 10.0f);
             timerJump = 0;
             animator.SetBool("isJumping", true);*/
         }
-        else animator.SetBool("isJumping", false);
+        //else animator.SetBool("isJumping", false);
 
-        if(Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
+        if(timerJump > 0.2f) animator.SetBool("isJumping", false);
+
+        //JumpDown
+        if(EnvironmentType == 0) {//land jump down
+            if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
+            {
+                Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
+                Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
+                Debug.Log("JumpDown");
+            }
+        }
+        else
         {
-            Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
-            Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
-            Debug.Log("JumpDown");
+            float moveY = Input.GetAxis("Vertical") * Speed * 0.5f;
+            if (moveY > 0) moveY = 0;
+            moveY *= Time.deltaTime;
+            transform.Translate(0, moveY, 0);
         }
 
         //animation
@@ -150,13 +203,14 @@ public class Pet01_Controller : Pet {
         PlayerMP.value = MP / MaxMP;
 
         //attack
-        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 1f)
+        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 0.7f)
         {
             MP -= 10;
             Quaternion rot;
             if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
             else rot = Quaternion.Euler(0, 0, -45);
             GameObject fires =  Instantiate(Attackfire, transform.position, rot);
+            fires.transform.localScale = new Vector3(1, 1, 1);
             fires.GetComponent<Attack_far>().far = 1;
             fires.GetComponent<Attack_far>().fire = 1;
             fires.GetComponent<Attack_far>().Attacknum = PetfireAttack * 0.1f;
@@ -164,9 +218,43 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
         }
-        else animator.SetBool("isAttacking", false);
+        if(timerAttackfire > 0.2f) animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.8f)
+        if (Input.GetKeyDown(KeyCode.W) && MP - 10 > 0 && timerAttackwind > 0.7f)
+        {
+            MP -= 10;
+            Quaternion rot;
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, -45);
+            GameObject winds = Instantiate(Attackwind, transform.position, rot);
+            winds.transform.localScale = new Vector3(1, 1, 1);
+            winds.GetComponent<Attack_far>().far = 1;
+            winds.GetComponent<Attack_far>().wind = 1;
+            winds.GetComponent<Attack_far>().Attacknum = PetwindAttack * 0.1f;
+            winds.GetComponent<Attack_far>().AttackDir = Dir;
+            animator.SetBool("isAttacking", true);
+            timerAttackwind = 0;
+        }
+        if (timerAttackwind > 0.2f) animator.SetBool("isAttacking", false);
+
+        if (Input.GetKeyDown(KeyCode.E) && MP - 10 > 0 && timerAttackwater > 0.7f)
+        {
+            MP -= 10;
+            Quaternion rot;
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, -45);
+            GameObject waters = Instantiate(Attackwind, transform.position, rot);
+            waters.transform.localScale = new Vector3(1, 1, 1);
+            waters.GetComponent<Attack_far>().far = 1;
+            waters.GetComponent<Attack_far>().water = 1;
+            waters.GetComponent<Attack_far>().Attacknum = PetwaterAttack * 0.1f;
+            waters.GetComponent<Attack_far>().AttackDir = Dir;
+            animator.SetBool("isAttacking", true);
+            timerAttackwater = 0;
+        }
+        if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
+
+        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.5f)
         {
             GameObject attacks = Instantiate(Attack);
             attacks.transform.SetParent(this.transform);
@@ -178,7 +266,7 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
         }
-        else animator.SetBool("isAttacking", false);
+        if(timerAttack > 0.2f) animator.SetBool("isAttacking", false);
 
 
     }
@@ -186,21 +274,27 @@ public class Pet01_Controller : Pet {
     //Hitted
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Plane") && isFalling)
+        if (gamestage.stop == 1) return;
+
+        if (other.gameObject.CompareTag("Plane"))
         {//碰撞的是Plane  
             isJump = false;
             isDoubleJump = false;
-            if (Plane == null) Plane = other.gameObject;
-            if (Plane != other.gameObject)
-            {
-                Plane.layer = LayerMask.NameToLayer("Default");
-                Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
-                Plane = other.gameObject;
+            if (EnvironmentType  == 0) {//land jump down
+                if (Plane == null) Plane = other.gameObject;
+                if (Plane != other.gameObject)
+                {
+                    Plane.layer = LayerMask.NameToLayer("Default");
+                    Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
+                    Plane = other.gameObject;
+                }
             }
         }
         else if (other.gameObject.CompareTag("Monster"))
         {
-            int HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
+            int HurtNum;
+            if (EnvironmentType == 1 || EnvironmentType == 2) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
+            else HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
@@ -237,25 +331,27 @@ public class Pet01_Controller : Pet {
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Plane") && isFalling){//碰撞的是Plane  
-            isJump = false;
-            isDoubleJump = false;
-            if (Plane == null) Plane = other.gameObject;
-            if (Plane != other.gameObject)
+        if (other.gameObject.CompareTag("Plane")){//碰撞的是Plane  
+            //isJump = false;
+            //isDoubleJump = false;
+            if (EnvironmentType == 0)//land jump down
             {
-                Plane.layer = LayerMask.NameToLayer("Default");
-                Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
-                Plane = other.gameObject;
+                if (Plane == null) Plane = other.gameObject;
+                if (Plane != other.gameObject)
+                {
+                    Plane.layer = LayerMask.NameToLayer("Default");
+                    Plane.GetComponent<BoxCollider2D>().usedByEffector = true;
+                    Plane = other.gameObject;
+                }
             }
         }
     }
 
     IEnumerator Damage()//無敵
     {
-
         //animator.SetBool("Damaging", true);
         gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
-        int count = 10;
+        int count = 15;
         while (count > 0)
         {
             GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0);
