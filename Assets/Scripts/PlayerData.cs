@@ -11,10 +11,14 @@ namespace SpiritPetMaster
         static public PlayerData instance;
         public string PlayerName;
 
+        const int foodsNumber = 6;
+
         #region Private Save Data    
         [SerializeField]
         List<PetView> OwnPets = new List<PetView>();
         int current_focus_petid = -1;
+
+        int[] foods = new int[foodsNumber];
         #endregion
 
         #region public function
@@ -85,7 +89,10 @@ namespace SpiritPetMaster
             Save<string>(PlayerName, "pets_id", pets_id);
             Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
 
-            Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
+            for(int i=0;i<foodsNumber;++i)
+                Save<int>(PlayerName, "foods"+i.ToString() , foods[i]);
+
+            // Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
         }
 
         public void SavePlayerFocusPetId(int _petid)
@@ -97,6 +104,11 @@ namespace SpiritPetMaster
         public int GetPlayerFocusPetId()
         {
             return Load<int>(PlayerName, "current_focus_petid");
+        }
+
+        public int GetFood(int ind)
+        {
+            return Load<int>(PlayerName, "foods"+ind.ToString());
         }
         #endregion
 

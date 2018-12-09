@@ -62,11 +62,11 @@ namespace SpiritPetMaster
         public void ChangeTakingContent()
         {
             /* Showing a pet taking content */
-            string[] pet_taking_contents = CurrentPet.PetTakingContents;
-            if ((pet_taking_contents != null) && (pet_taking_contents.Length > 0))
+            string[] pet_talking_contents = CurrentPet.PetTalkingContents;
+            if ((pet_talking_contents != null) && (pet_talking_contents.Length > 0))
             {
                 TakingBox.SetActive(true);
-                PetTalking.text = pet_taking_contents[Random.Range(0, pet_taking_contents.Length)];
+                PetTalking.text = pet_talking_contents[Random.Range(0, pet_talking_contents.Length)];
             }
             else
             {

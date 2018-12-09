@@ -4,6 +4,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 namespace SpiritPetMaster
 {
@@ -12,12 +13,16 @@ namespace SpiritPetMaster
         public UnityEvent MouseDownEvents;
         public int MoodIncreatedRate = 1;
         public LayerMask TouchLayer;
+        public float TimeForHunger = 1;
+
 
         #region private
 
         SpriteRenderer PetSprite;
         Animator PetAnimator;
         Collider2D PetViewCollider;
+
+        float HungerTimer;
 
         #endregion
 
@@ -62,14 +67,59 @@ namespace SpiritPetMaster
             /* Loading the taking of th pet */
             if(this.PetTalkingFilename != "")
             {
-                TextAsset text = Resources.Load(this.PetTalkingFilename) as TextAsset;
+                TextAsset text;
+
+                //normal talks
+                text = Resources.Load(this.PetTalkingFilename + "_normal") as TextAsset;
                 if(text != null)
                 {
                     //Debug.LogFormat("{0}: {1}", this.PetTalkingFilename, text.text);
-                    PetTakingContents content = JsonUtility.FromJson<PetTakingContents>(text.text);
+                    PetTalkingContents content = JsonUtility.FromJson<PetTalkingContents>(text.text);
                     if (content != null)
                     {
-                        this.PetTakingContents = content.contents;
+                        this.PetTalkingContents_normal = content.contents;
+                    }
+                    else
+                    {
+                        Debug.LogFormat("can't parse the json file");
+                    }
+                    
+                }
+                else
+                {
+                    Debug.LogFormat("not found taking file: {0}", this.PetTalkingFilename);
+                }
+
+                // hungry talk
+                text = Resources.Load(this.PetTalkingFilename + "_hungry") as TextAsset;
+                if(text != null)
+                {
+                    //Debug.LogFormat("{0}: {1}", this.PetTalkingFilename, text.text);
+                    PetTalkingContents content = JsonUtility.FromJson<PetTalkingContents>(text.text);
+                    if (content != null)
+                    {
+                        this.PetTalkingContents_hungry = content.contents;
+                    }
+                    else
+                    {
+                        Debug.LogFormat("can't parse the json file");
+                    }
+                    
+                }
+                else
+                {
+                    Debug.LogFormat("not found taking file: {0}", this.PetTalkingFilename);
+                }
+
+                //happy talk
+                text = Resources.Load(this.PetTalkingFilename + "_happy") as TextAsset;
+                if(text != null)
+                {
+                    //Debug.LogFormat("{0}: {1}", this.PetTalkingFilename, text.text);
+                    PetTalkingContents content = JsonUtility.FromJson<PetTalkingContents>(text.text);
+                    if (content != null)
+                    {
+                        this.PetTalkingContents_happy = content.contents;
                     }
                     else
                     {
@@ -82,19 +132,32 @@ namespace SpiritPetMaster
                     Debug.LogFormat("not found taking file: {0}", this.PetTalkingFilename);
                 }
             }
+
+            HungerTimer = Time.time;
         }
 
 
 
         void Update()
         {
-            if(CheckTouched())
-            {
-                MouseDownEvents.Invoke();
+            /* Sorting the layer */
+            GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 1000f) ;
+            // if(CheckTouched())
+            // {
+            //     MouseDownEvents.Invoke();
 
-                /* Moveing the pet view */
-                PetViewController.instance.TouchPetView(this);
+            //     /* Moveing the pet view */
+            //     PetViewController.instance.TouchPetView(this);
+            // }
+            ChangeTalksType();
+
+            if(Time.time-HungerTimer>TimeForHunger)
+            {
+                DecreaseHunger((int)(Time.time-HungerTimer/TimeForHunger));
+
+                HungerTimer = Time.time;
             }
+
         }
 
 
@@ -108,12 +171,15 @@ namespace SpiritPetMaster
 
         public void IncreateMood()
         {
-            this.Mood += MoodIncreatedRate;
-            if(this.Mood > 100)
+            if(Hunger>0)
             {
-                this.Mood = 100;
+                this.Mood += MoodIncreatedRate;
+                if(this.Mood > 100)
+                {
+                    this.Mood = 100;
+                }
+                PetAnimator.SetFloat("Mood", this.Mood);
             }
-            PetAnimator.SetFloat("Mood", this.Mood);
             PetInformation.instance.UpdateInfo();
             PetInformation.instance.ChangeTakingContent();
         }
@@ -131,7 +197,28 @@ namespace SpiritPetMaster
             PetInformation.instance.UpdateInfo();
         }
 
+        public void DecreaseHunger(int _value)
+        {
+            this.Hunger -= _value;
+            if(this.Hunger < 0)
+            {
+                this.Hunger = 0;
+                this.Mood -= 1;
+                if(this.Mood<0)
+                    this.Mood = 0;
+                PetAnimator.SetFloat("Mood", this.Mood);
+            }
+        }
 
+        public void ChangeTalksType()
+        {
+            if(Hunger < 5)
+                PetTalkingContents = PetTalkingContents_hungry;
+            else if(Mood>HappyMood)
+                PetTalkingContents = PetTalkingContents_happy;
+            else
+                PetTalkingContents = PetTalkingContents_normal;
+        }
 
         bool CheckTouched()
         {
@@ -150,5 +237,17 @@ namespace SpiritPetMaster
 
             return result;
         }
+        void OnMouseDown()
+        {
+            if(!EventSystem.current.IsPointerOverGameObject()){
+
+                // check that it worked
+                //Debug.Log("Player has clicked " + gameObject.name);
+
+                /* Moveing the pet view */
+                PetViewController.instance.TouchPetView(this);
+            }
+        }
+        
     }
 }

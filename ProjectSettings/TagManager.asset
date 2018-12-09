@@ -12,6 +12,8 @@ TagManager:
   - Plane
   - Boss
   - Boom
+  - FoodController
+  - StatusController
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Food
   - PetView
   - PlayerDamage
   - Enemy
