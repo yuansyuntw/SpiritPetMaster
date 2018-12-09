@@ -13,10 +13,15 @@ namespace SpiritPetMaster
         public int Mood = 90;
         public int Hunger = 90;
 
+        public int HappyMood = 80;
+
         public string PetSpriteName;            //寵物圖片
         public string PetAnimatorName;          //寵物動畫名稱
         public string PetTalkingFilename;       //寵物說話檔案位置
-        public string[] PetTakingContents;      //寵物說話內容
+        public string[] PetTalkingContents;      //寵物說話內容
+        public string[] PetTalkingContents_normal;
+        public string[] PetTalkingContents_hungry;
+        public string[] PetTalkingContents_happy;
 
         public float Speed = 1;
         public float MaxHP = 100;
@@ -27,7 +32,15 @@ namespace SpiritPetMaster
         public float PetwaterAttack = 100;
         public float PetwindAttack = 100;
         public float Attack = 100;
-        public float Defence = 100;
+        public float Defence = 0;
+
+        
+        public float UpgradeMaxHP = 1;
+        public float UpgradeHPRecover = 1;
+        public float UpgradeMaxMP = 1;
+        public float UpgradeMPRecover = 1;
+        public float UpgradeAttack = 1;
+        public float UpgradeDefence = 1;
 
         public int Points = 0;
 
@@ -62,6 +75,17 @@ namespace SpiritPetMaster
             SaveData();
         }
 
+
+        public void LevelUp()
+        {
+            Level += 1;
+            MaxHP += UpgradeMaxHP*100;
+            HPRecover += UpgradeHPRecover*0.05f;
+            MaxMP += UpgradeMaxMP*100;
+            MPRecover += UpgradeMPRecover*0.05f;
+            Attack += UpgradeAttack*10;
+            Defence += UpgradeDefence*10;
+        }
 
 
         protected void LoadData()

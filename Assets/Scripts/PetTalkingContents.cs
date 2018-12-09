@@ -5,7 +5,7 @@ using UnityEngine;
 namespace SpiritPetMaster
 {
     [System.Serializable]
-    public class PetTakingContents
+    public class PetTalkingContents
     {
         public string[] contents;
     }

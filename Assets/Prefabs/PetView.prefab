@@ -137,8 +137,14 @@ MonoBehaviour:
   PetwaterAttack: 100
   PetwindAttack: 100
   Attack: 100
-  Defence: 100
-  Points: 0
+  Defence: 0
+  UpgradeMaxHP: 1
+  UpgradeHPRecover: 1
+  UpgradeMaxMP: 1
+  UpgradeMPRecover: 1
+  UpgradeAttack: 1
+  UpgradeDefence: 1
+  Points: 100
   MouseDownEvents:
     m_PersistentCalls:
       m_Calls: []

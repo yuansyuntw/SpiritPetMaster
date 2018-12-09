@@ -29,7 +29,6 @@ namespace SpiritPetMaster
         public PetInformation PetInfoController;
 
 
-
         #region GOBAL VARIABLE
 
         const int STOP = 0;
@@ -54,6 +53,11 @@ namespace SpiritPetMaster
 
         float PET_VIEWS_POS_RANGE = 0.9f;
         int PET_ID_RANGER = 1000;
+
+        bool focused = false;
+
+        private Vector3 CameraDomovePosition;
+        private Vector3 CameraTargetPosition;
 
         #endregion
 
@@ -100,13 +104,13 @@ namespace SpiritPetMaster
         public void TouchPetView(PetView _touched_pet)
         {
             /* Player want to focus a pet */
-            if(current_focus_pet == null)
+            if(!focused && current_focus_pet == null)
             {
                 FocusPetView(_touched_pet);
             }
 
             /* Player is interactive with the touched pet */
-            if(current_focus_pet == _touched_pet)
+            if(focused && current_focus_pet == _touched_pet)
             {
                 _touched_pet.IncreateMood();
             }
@@ -122,11 +126,17 @@ namespace SpiritPetMaster
 
         public void FocusPetView(PetView _focus_pet)
         {
+            focused = true;
+            GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().FocusView();
+
             /* Moveing camera */
             current_focus_pet = _focus_pet;
             Vector3 pos = current_focus_pet.transform.position;
-            if (pos.y < 0) pos.y = 0;
-            camera_transform.DOMove(pos, 1.5f);
+            pos.z = Camera.main.transform.position.z;
+            //if (pos.y < 0) pos.y = 0;
+            if(camera_transform.position != pos){
+                CameraDomovePosition = pos;
+            }
 
             /* Showing the pet information */
             InformationUI.SetActive(true);
@@ -137,15 +147,40 @@ namespace SpiritPetMaster
             /* keep the current pet id */
             PlayerData.instance.SavePlayerFocusPetId(current_focus_pet.ID);
         }
+        public void FocusingPetView()
+        {
+            if(focused && current_focus_pet!=null)
+            {
+                PetView _focus_pet = current_focus_pet;
+
+                GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().FocusView();
+
+                /* Moveing camera */
+                current_focus_pet = _focus_pet;
+                Vector3 pos = current_focus_pet.transform.position;
+                pos.z = Camera.main.transform.position.z;
+                //if (pos.y < 0) pos.y = 0;
+                if(camera_transform.position != pos){
+                    CameraDomovePosition = pos;
+
+                    
+                }
+            }
+        }
 
 
 
         public void FreePetView()
         {
+            focused = false;
+            DOTween.KillAll();
+
             /* Closing the pet information */
             InformationUI.SetActive(false);
 
             current_focus_pet = null;
+            GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().DefaultView();
+            CameraTargetPosition = Vector3.zero;
         }
 
 
@@ -198,7 +233,7 @@ namespace SpiritPetMaster
                     int.TryParse(_petids[i], out id);
 
                     /* A insatnced position in background*/
-                    Vector3 new_view_pos = Vector3.zero + new Vector3(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE), 0);
+                    Vector2 new_view_pos = Vector2.zero + new Vector2(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE));
 
                     /* Instantiate PetView prefab and load it data by it's id */
                     GameObject _new_pet_view = Instantiate(PetViewPrefab, new_view_pos, Quaternion.identity, transform);
@@ -244,9 +279,11 @@ namespace SpiritPetMaster
         {
             /* Get the transform of the main camera */
             camera_transform = Camera.main.transform;
+            CameraDomovePosition = camera_transform.position;
+            CameraTargetPosition = camera_transform.position;
 
             UpdatePetView();
-            RightPetView();
+            //RightPetView();
         }
 
 
@@ -269,6 +306,15 @@ namespace SpiritPetMaster
                 {
                     camera_transform.Translate(camera_transform.right * ViewMovingSpeed * Time.deltaTime);
                 }
+            }
+            
+            if(focused && CameraTargetPosition!=CameraDomovePosition)
+            {
+                DOTween.KillAll();
+                CameraTargetPosition = CameraDomovePosition;
+                Debug.Log("Target = " + CameraTargetPosition);
+                Debug.Log("DOMove = " + CameraDomovePosition);
+                camera_transform.DOMove(CameraTargetPosition, 1.5f);
             }
         }
 
@@ -297,6 +343,9 @@ namespace SpiritPetMaster
         }
         public PetView CurrentFocusPet(){
             return current_focus_pet;
+        }
+        public bool isFocus(){
+            return focused;
         }
     }
 }
