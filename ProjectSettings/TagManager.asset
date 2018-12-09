@@ -51,6 +51,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Wall
+    uniqueID: 1687006631
+    locked: 0
   - name: Pet
     uniqueID: 1660848513
     locked: 0
