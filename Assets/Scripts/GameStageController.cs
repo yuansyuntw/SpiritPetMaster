@@ -8,6 +8,7 @@ public class GameStageController : MonoBehaviour {
     public int Gameover;
     public Text Stage;
     public int stop;
+    public int Killnum;
 
     private float timergameover = 0;
 
@@ -15,6 +16,7 @@ public class GameStageController : MonoBehaviour {
 	void Start () {
         Gameover = 0;
         stop = 0;
+        Killnum = 0;
         Stage.text = "";
     }
 

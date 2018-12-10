@@ -12,7 +12,7 @@ public class Pet01_Controller : Pet {
     private float timerJump = 0.6f;
     private int Dir = 1;
     private float timerRecover = 0;
-    private float timerAttackfire = 0, timerAttackwind = 0, timerAttackwater = 0;
+    private float timerAttackfire = 0, timerAttackwind = 0, timerAttackwater = 0, timerBetweenAttacks = 0;
     private float timerAttack = 0;
     public float HP, MP;
     private bool isJump = false;
@@ -63,6 +63,7 @@ public class Pet01_Controller : Pet {
         if (gamestage.Gameover == 1)//win
         {
             Speed = Speed / SpeedValue;
+            Exp = gamestage.Killnum * 10 + 200;
             SaveData();
             return;
         }
@@ -77,6 +78,7 @@ public class Pet01_Controller : Pet {
         timerAttackwind += Time.deltaTime;
         timerAttackwater += Time.deltaTime;
         timerAttack += Time.deltaTime;
+        timerBetweenAttacks += Time.deltaTime;
 
         if (HP <= 0)
         {
@@ -113,7 +115,7 @@ public class Pet01_Controller : Pet {
                         isDoubleJump = true;
                         rb.velocity = Vector2.zero;
                         rb.angularVelocity = 0;
-                        rb.AddForce(Vector3.up * force);
+                        rb.AddForce(Vector3.up * force*5);
                         animator.SetBool("isJumping", true);
                         Debug.Log("SwimJump");
                         timerJump = 0;
@@ -203,7 +205,7 @@ public class Pet01_Controller : Pet {
         PlayerMP.value = MP / MaxMP;
 
         //attack
-        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 0.7f)
+        if (Input.GetKeyDown(KeyCode.Q) && MP - 10 > 0 && timerAttackfire > 0.7f && timerBetweenAttacks > 0.2f)
         {
             MP -= 10;
             Quaternion rot;
@@ -217,10 +219,11 @@ public class Pet01_Controller : Pet {
             fires.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
+            timerBetweenAttacks = 0;
         }
         if(timerAttackfire > 0.2f) animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.W) && MP - 10 > 0 && timerAttackwind > 0.7f)
+        if (Input.GetKeyDown(KeyCode.W) && MP - 10 > 0 && timerAttackwind > 0.7f && timerBetweenAttacks > 0.2f)
         {
             MP -= 10;
             Quaternion rot;
@@ -234,10 +237,11 @@ public class Pet01_Controller : Pet {
             winds.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttackwind = 0;
+            timerBetweenAttacks = 0;
         }
         if (timerAttackwind > 0.2f) animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.E) && MP - 10 > 0 && timerAttackwater > 0.7f)
+        if (Input.GetKeyDown(KeyCode.E) && MP - 10 > 0 && timerAttackwater > 0.7f && timerBetweenAttacks > 0.2f)
         {
             MP -= 10;
             Quaternion rot;
@@ -251,10 +255,11 @@ public class Pet01_Controller : Pet {
             waters.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttackwater = 0;
+            timerBetweenAttacks = 0;
         }
         if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.5f)
+        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.6f && timerBetweenAttacks > 0.2f)
         {
             GameObject attacks = Instantiate(Attack);
             attacks.transform.SetParent(this.transform);
@@ -265,6 +270,7 @@ public class Pet01_Controller : Pet {
             attacks.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
+            timerBetweenAttacks = 0;
         }
         if(timerAttack > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -295,7 +301,7 @@ public class Pet01_Controller : Pet {
             int HurtNum;
             if (EnvironmentType == 1 || EnvironmentType == 2) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
             else HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
-            HurtNum = (HurtNum<PetDefence) ? 1 : (HurtNum-PetDefence);
+            HurtNum = (HurtNum<PetDefence) ? 1 : (int)(HurtNum-PetDefence);
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
@@ -313,7 +319,7 @@ public class Pet01_Controller : Pet {
         else if (other.gameObject.CompareTag("Boss"))
         {
             int HurtNum = (int)other.gameObject.GetComponent<Boss01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Boss01_Controller>().Attacknum * 0.5f));
-            HurtNum = (HurtNum<PetDefence) ? 1 : (HurtNum-PetDefence);
+            HurtNum = (HurtNum < PetDefence) ? 1 : (int)(HurtNum - PetDefence);
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
