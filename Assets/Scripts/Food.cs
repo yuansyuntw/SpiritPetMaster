@@ -14,8 +14,8 @@ namespace SpiritPetMaster
         public float EffectHPRecover = 0;
         public float EffectMaxMP = 0;
         public float EffectMPRecover = 0;
-        public float EffectAttack = 0;
-        public float EffectDefence = 0;
+        public int EffectAttack = 0;
+        public int EffectDefence = 0;
 
         public string Description = "";
 
