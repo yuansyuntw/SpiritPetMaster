@@ -3631,28 +3631,46 @@ MonoBehaviour:
   Level: 0
   Mood: 0
   Hunger: 0
+  HappyMood: 80
   PetSpriteName: 
   PetAnimatorName: 
   PetTalkingFilename: 
-  PetTakingContents: []
+  PetTalkingContents: []
+  PetTalkingContents_normal: []
+  PetTalkingContents_hungry: []
+  PetTalkingContents_happy: []
   Speed: 1
   MaxHP: 100
+  HPRecover: 0.01
   MaxMP: 200
   MPRecover: 0.1
-  HPRecover: 0.01
   PetfireAttack: 100
   PetwaterAttack: 100
   PetwindAttack: 100
+  Attack: NaN
+  Defence: 0
+  Exp: 0
+  UpgradeMaxHP: 1
+  UpgradeHPRecover: 1
+  UpgradeMaxMP: 1
+  UpgradeMPRecover: 1
+  UpgradeAttack: 1
+  UpgradeDefence: 1
+  Points: 0
   animator: {fileID: 1118217806}
   HP: 0
   MP: 0
   Attackfire: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
+  Attackwind: {fileID: 0}
+  Attackwater: {fileID: 0}
   Attack: {fileID: 1485824797693866, guid: 0b91e19d9573e794a8590aba2dd60d99, type: 2}
   PlayerHP: {fileID: 289544680}
   PlayerMP: {fileID: 717527840}
   gamestage: {fileID: 1942658203}
   force: 250
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
+  EnvironmentType: 0
+  SpeedValue: 0
 --- !u!4 &1118217803
 Transform:
   m_ObjectHideFlags: 0
@@ -4454,6 +4472,9 @@ MonoBehaviour:
   MonsterHP: {fileID: 1082348481}
   gamestage: {fileID: 1942658203}
   HurtText: {fileID: 1755222867736774, guid: 50316368b046f594193b9bd789552932, type: 2}
+  BoomHurtText: {fileID: 0}
+  force: 0
+  EnvironmentType: 0
 --- !u!95 &1411396885
 Animator:
   serializedVersion: 3
@@ -5112,7 +5133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Player: {fileID: 1118217801}
-  PlayerO2: {fileID: 1417795570}
+  BoomNum: 0
 --- !u!114 &1942658203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5126,6 +5147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gameover: 0
   Stage: {fileID: 1967215269}
+  stop: 0
 --- !u!1 &1950492388
 GameObject:
   m_ObjectHideFlags: 0
