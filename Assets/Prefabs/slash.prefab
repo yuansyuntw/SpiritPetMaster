@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 212247911794823378}
   - component: {fileID: 114579149819318558}
   - component: {fileID: 70256175307394174}
+  - component: {fileID: 95022968879696282}
   m_Layer: 0
-  m_Name: fire
+  m_Name: slash
   m_TagString: PetAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1952483095173660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.31, y: -0.22, z: 0}
-  m_LocalScale: {x: 0.69968563, y: 0.69968563, z: 0.69968563}
+  m_LocalScale: {x: 2.2389941, y: 2.1695678, z: 0.69968563}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,6 +58,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &95022968879696282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1952483095173660}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3954fdc1e88e78540bdb65d1969f58ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114579149819318558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,11 +130,11 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 860ae4775f576ef42bf02117045eb54b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfdd1efdda2290941b91fae2c808bdcc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 1
   m_Size: {x: 1.25, y: 1.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0

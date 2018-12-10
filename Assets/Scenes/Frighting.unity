@@ -2387,12 +2387,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 760761143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e13242d903b30924a8903b417c70143f, type: 3}
+  m_Script: {fileID: 11500000, guid: 27dd73c11de18fe4ea41f574174daf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1118217801}
-  rightmost: 10
-  leftmost: -11
+  rightmost: 0
+  leftmost: 0
 --- !u!1 &787657892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,10 +3660,11 @@ MonoBehaviour:
   animator: {fileID: 1118217806}
   HP: 0
   MP: 0
-  Attackfire: {fileID: 1952483095173660, guid: 39b1945d9eb7c604f89bc2a2705607a3, type: 2}
-  Attackwind: {fileID: 0}
-  Attackwater: {fileID: 0}
-  Attack: {fileID: 1485824797693866, guid: 0b91e19d9573e794a8590aba2dd60d99, type: 2}
+  Attackfire: {fileID: 1952483095173660, guid: 5f0f9261565defb4fa3fec527e981a50, type: 2}
+  Attackwind: {fileID: 1952483095173660, guid: 3009360e7ff97b747bb728d24bb40e32, type: 2}
+  Attackwater: {fileID: 1952483095173660, guid: 78d0f51229a245541af8180f675d3549,
+    type: 2}
+  Attack: {fileID: 1952483095173660, guid: c1cbf47ab257225489b7ee8a154e1644, type: 2}
   PlayerHP: {fileID: 289544680}
   PlayerMP: {fileID: 717527840}
   gamestage: {fileID: 1942658203}
