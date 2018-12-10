@@ -31,8 +31,8 @@ namespace SpiritPetMaster
         public int PetfireAttack = 100;
         public int PetwaterAttack = 100;
         public int PetwindAttack = 100;
-        public int Attack = 100;
-        public int Defence = 0;
+        public int PetAttack = 100;
+        public int PetDefence = 0;
         public float Exp;
 
         
@@ -84,8 +84,8 @@ namespace SpiritPetMaster
             HPRecover += UpgradeHPRecover*0.05f;
             MaxMP += UpgradeMaxMP*100;
             MPRecover += UpgradeMPRecover*0.05f;
-            Attack += UpgradeAttack*10;
-            Defence += UpgradeDefence*10;
+            PetAttack += UpgradeAttack*10;
+            PetDefence += UpgradeDefence*10;
         }
 
 
@@ -109,8 +109,8 @@ namespace SpiritPetMaster
             PetfireAttack = PlayerData.instance.LoadData<int>(petid, "pet_petfireAttack");
             PetwaterAttack = PlayerData.instance.LoadData<int>(petid, "pet_petwaterAttack");
             PetwindAttack = PlayerData.instance.LoadData<int>(petid, "pet_petwindAttack");
-            Attack = PlayerData.instance.LoadData<int>(petid, "pet_attack");
-            Defence = PlayerData.instance.LoadData<int>(petid, "pet_defence");
+            PetAttack = PlayerData.instance.LoadData<int>(petid, "pet_attack");
+            PetDefence = PlayerData.instance.LoadData<int>(petid, "pet_defence");
             Exp = PlayerData.instance.LoadData<float>(petid, "pet_exp");
             Points = PlayerData.instance.LoadData<int>(petid, "pet_points");
         }
@@ -137,8 +137,8 @@ namespace SpiritPetMaster
             PlayerData.instance.SaveData<int>(petid, "pet_petfireAttack", PetfireAttack);
             PlayerData.instance.SaveData<int>(petid, "pet_petwaterAttack", PetwaterAttack);
             PlayerData.instance.SaveData<int>(petid, "pet_petwindAttack", PetwindAttack);
-            PlayerData.instance.SaveData<int>(petid, "pet_attack", Attack);
-            PlayerData.instance.SaveData<int>(petid, "pet_defence", Defence);
+            PlayerData.instance.SaveData<int>(petid, "pet_attack", PetAttack);
+            PlayerData.instance.SaveData<int>(petid, "pet_defence", PetDefence);
             PlayerData.instance.SaveData<float>(petid, "pet_exp", Exp);
             PlayerData.instance.SaveData<int>(petid, "pet_points", Points);
         

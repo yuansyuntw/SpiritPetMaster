@@ -83,8 +83,8 @@ namespace SpiritPetMaster
                 HPRecoverValue.text = (pet.HPRecover+UpgradeHPRecover*0.005f).ToString();
                 MaxMPValue.text = (pet.MaxMP+UpgradeMaxMP*10).ToString();
                 MPRecoverValue.text = (pet.MPRecover+UpgradeMPRecover*0.005f).ToString();
-                AttackValue.text = (pet.Attack+UpgradeAttack).ToString();
-                DefenceValue.text = (pet.Defence+UpgradeDefence).ToString();
+                AttackValue.text = (pet.PetAttack+UpgradeAttack).ToString();
+                DefenceValue.text = (pet.PetDefence+UpgradeDefence).ToString();
                 
                 PointsValue.text = points.ToString();
                 
@@ -215,8 +215,8 @@ namespace SpiritPetMaster
             pet.HPRecover += UpgradeHPRecover*0.005f;
             pet.MaxMP += UpgradeMaxMP*10;
             pet.MPRecover += UpgradeMPRecover*0.005f;
-            pet.Attack += UpgradeAttack;
-            pet.Defence += UpgradeDefence;
+            pet.PetAttack += UpgradeAttack;
+            pet.PetDefence += UpgradeDefence;
             UpgradeMaxHP = 0;
             UpgradeHPRecover = 0;
             UpgradeMaxMP = 0;

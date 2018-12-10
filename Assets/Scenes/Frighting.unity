@@ -3647,8 +3647,8 @@ MonoBehaviour:
   PetfireAttack: 100
   PetwaterAttack: 100
   PetwindAttack: 100
-  Attack: NaN
-  Defence: 0
+  PetAttack: 100
+  PetDefence: 0
   Exp: 0
   UpgradeMaxHP: 1
   UpgradeHPRecover: 1
@@ -3661,8 +3661,8 @@ MonoBehaviour:
   HP: 0
   MP: 0
   Attackfire: {fileID: 1952483095173660, guid: 5f0f9261565defb4fa3fec527e981a50, type: 2}
-  Attackwind: {fileID: 1952483095173660, guid: 3009360e7ff97b747bb728d24bb40e32, type: 2}
-  Attackwater: {fileID: 1952483095173660, guid: 78d0f51229a245541af8180f675d3549,
+  Attackwind: {fileID: 1952483095173660, guid: 78d0f51229a245541af8180f675d3549, type: 2}
+  Attackwater: {fileID: 1952483095173660, guid: 3009360e7ff97b747bb728d24bb40e32,
     type: 2}
   Attack: {fileID: 1952483095173660, guid: c1cbf47ab257225489b7ee8a154e1644, type: 2}
   PlayerHP: {fileID: 289544680}
@@ -3671,7 +3671,7 @@ MonoBehaviour:
   force: 250
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
   EnvironmentType: 0
-  SpeedValue: 0
+  SpeedValue: 1.5
 --- !u!4 &1118217803
 Transform:
   m_ObjectHideFlags: 0

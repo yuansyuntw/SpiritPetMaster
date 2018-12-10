@@ -207,13 +207,13 @@ public class Pet01_Controller : Pet {
         {
             MP -= 10;
             Quaternion rot;
-            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
-            else rot = Quaternion.Euler(0, 0, -45);
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 0);//Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, 180);//Quaternion.Euler(0, 0, -45);
             GameObject fires =  Instantiate(Attackfire, transform.position, rot);
             fires.transform.localScale = new Vector3(1, 1, 1);
             fires.GetComponent<Attack_far>().far = 1;
             fires.GetComponent<Attack_far>().fire = 1;
-            fires.GetComponent<Attack_far>().Attacknum = PetfireAttack * 0.1f;
+            fires.GetComponent<Attack_far>().Attacknum = PetAttack * PetfireAttack/100 * 0.1f;
             fires.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
@@ -224,13 +224,13 @@ public class Pet01_Controller : Pet {
         {
             MP -= 10;
             Quaternion rot;
-            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
-            else rot = Quaternion.Euler(0, 0, -45);
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 0);//Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, 180);//Quaternion.Euler(0, 0, -45);
             GameObject winds = Instantiate(Attackwind, transform.position, rot);
             winds.transform.localScale = new Vector3(1, 1, 1);
             winds.GetComponent<Attack_far>().far = 1;
             winds.GetComponent<Attack_far>().wind = 1;
-            winds.GetComponent<Attack_far>().Attacknum = PetwindAttack * 0.1f;
+            winds.GetComponent<Attack_far>().Attacknum = PetAttack * PetwindAttack/100 * 0.1f;
             winds.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttackwind = 0;
@@ -241,13 +241,13 @@ public class Pet01_Controller : Pet {
         {
             MP -= 10;
             Quaternion rot;
-            if (Dir == 1) rot = Quaternion.Euler(0, 0, 125);
-            else rot = Quaternion.Euler(0, 0, -45);
-            GameObject waters = Instantiate(Attackwind, transform.position, rot);
+            if (Dir == 1) rot = Quaternion.Euler(0, 0, 0);//Quaternion.Euler(0, 0, 125);
+            else rot = Quaternion.Euler(0, 0, 180);//Quaternion.Euler(0, 0, -45);
+            GameObject waters = Instantiate(Attackwater, transform.position, rot);
             waters.transform.localScale = new Vector3(1, 1, 1);
             waters.GetComponent<Attack_far>().far = 1;
             waters.GetComponent<Attack_far>().water = 1;
-            waters.GetComponent<Attack_far>().Attacknum = PetwaterAttack * 0.1f;
+            waters.GetComponent<Attack_far>().Attacknum = PetAttack * PetwaterAttack/100 * 0.1f;
             waters.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttackwater = 0;
@@ -261,7 +261,7 @@ public class Pet01_Controller : Pet {
             attacks.transform.localScale = new Vector3(2, 1, 1);
             attacks.transform.localPosition = new Vector3(2f, 0, 0);
             attacks.GetComponent<Attack_far>().far = 0;
-            attacks.GetComponent<Attack_far>().Attacknum = (PetfireAttack + PetwaterAttack + PetwindAttack)/ 3 * 0.1f;
+            attacks.GetComponent<Attack_far>().Attacknum = PetAttack * 0.1f;
             attacks.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
@@ -295,6 +295,7 @@ public class Pet01_Controller : Pet {
             int HurtNum;
             if (EnvironmentType == 1 || EnvironmentType == 2) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
             else HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
+            HurtNum = (HurtNum<PetDefence) ? 1 : (HurtNum-PetDefence);
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
@@ -312,6 +313,7 @@ public class Pet01_Controller : Pet {
         else if (other.gameObject.CompareTag("Boss"))
         {
             int HurtNum = (int)other.gameObject.GetComponent<Boss01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Boss01_Controller>().Attacknum * 0.5f));
+            HurtNum = (HurtNum<PetDefence) ? 1 : (HurtNum-PetDefence);
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;

@@ -64,8 +64,8 @@ namespace SpiritPetMaster
                 pet.HPRecover += EffectHPRecover;
                 pet.MaxMP += EffectMaxMP;
                 pet.MPRecover += EffectMPRecover;
-                pet.Attack += EffectAttack;
-                pet.Defence += EffectDefence;
+                pet.PetAttack += EffectAttack;
+                pet.PetDefence += EffectDefence;
 
                 if(sound != null)   sound.Play();
             }
