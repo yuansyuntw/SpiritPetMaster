@@ -19,7 +19,8 @@ public class CameraController1 : MonoBehaviour {
     {
         Vector3 postPostion = transform.position;
         transform.position = player.transform.position + offset;
-        if (transform.position.x > rightmost || transform.position.x < leftmost) transform.position = postPostion + new Vector3(0, transform.position.y - postPostion.y, 0);
+        //Debug.Log(player.transform.position);
+        //if (transform.position.x > rightmost || transform.position.x < leftmost) transform.position = postPostion + new Vector3(0, transform.position.y - postPostion.y, 0);
         
     }
 

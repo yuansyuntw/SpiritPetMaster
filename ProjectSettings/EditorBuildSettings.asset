@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Frighting.unity
     guid: 52cddaf2aa687dc45a632cec9b16f70e
+  - enabled: 1
+    path: Assets/MasterPetArt/Map_Land/Land.unity
+    guid: c04f5a6aa12084f40a21a912af62baee
+  - enabled: 1
+    path: Assets/MasterPetArt/Map_Water/Water.unity
+    guid: 01fa9684a5922c14cae4956a05c5d259
+  - enabled: 1
+    path: Assets/MasterPetArt/Map_Wind/Wind2.unity
+    guid: 9a0cf235e80c2f44f90c60b10c2c02bf
   m_configObjects: {}

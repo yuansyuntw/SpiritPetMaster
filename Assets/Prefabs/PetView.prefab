@@ -124,20 +124,25 @@ MonoBehaviour:
   Level: 1
   Mood: 10
   Hunger: 10
+  HappyMood: 80
   PetSpriteName: 
   PetAnimatorName: 
   PetTalkingFilename: 
-  PetTakingContents: []
+  PetTalkingContents: []
+  PetTalkingContents_normal: []
+  PetTalkingContents_hungry: []
+  PetTalkingContents_happy: []
   Speed: 1
   MaxHP: 100
   HPRecover: 0.005
   MaxMP: 100
   MPRecover: 0.005
   PetfireAttack: 100
-  PetwaterAttack: 100
+  PetwaterAttack: 150
   PetwindAttack: 100
-  Attack: 100
-  Defence: 0
+  PetAttack: 100
+  PetDefence: 0
+  Exp: 0
   UpgradeMaxHP: 1
   UpgradeHPRecover: 1
   UpgradeMaxMP: 1
@@ -154,6 +159,7 @@ MonoBehaviour:
   TouchLayer:
     serializedVersion: 2
     m_Bits: 1024
+  TimeForHunger: 1
 --- !u!212 &212756324313395322
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -187,7 +193,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1660848513
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

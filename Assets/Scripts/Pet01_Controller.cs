@@ -149,7 +149,7 @@ public class Pet01_Controller : Pet {
 
         //JumpDown
         if(EnvironmentType == 0) {//land jump down
-            if (Input.GetKeyDown(KeyCode.DownArrow) && Plane.transform.parent.name == "level")
+            if ( (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && Plane.transform.parent.name == "level")
             {
                 Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
                 Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
