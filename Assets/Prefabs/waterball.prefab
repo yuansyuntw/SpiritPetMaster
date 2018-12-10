@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1952483095173660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.31, y: -0.22, z: 0}
-  m_LocalScale: {x: 0.69968563, y: 0.69968563, z: 0.69968563}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,7 +55,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 3}
   m_Direction: 0
 --- !u!114 &114579149819318558
 MonoBehaviour:
@@ -73,7 +73,8 @@ MonoBehaviour:
   wind: 0
   Attacknum: 0
   AttackDir: 0
-  maxDis: 3
+  maxDis: 15
+  flyingSpeed: 0.4
   hitted: 0
   far: 0
 --- !u!212 &212247911794823378
@@ -116,7 +117,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 1.25, y: 1.29}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -283,7 +283,11 @@ namespace SpiritPetMaster
             CameraTargetPosition = camera_transform.position;
 
             UpdatePetView();
-            //RightPetView();
+            if(current_focus_pet!=null)
+            {
+                FocusPetView(current_focus_pet);
+            }
+            // RightPetView();
         }
 
 

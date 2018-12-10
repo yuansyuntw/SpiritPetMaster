@@ -180,7 +180,7 @@ namespace SpiritPetMaster
                 }
                 PetAnimator.SetFloat("Mood", this.Mood);
             }
-            PetInformation.instance.UpdateInfo();
+            // PetInformation.instance.UpdateInfo();
             PetInformation.instance.ChangeTakingContent();
         }
 

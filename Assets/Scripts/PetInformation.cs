@@ -88,6 +88,11 @@ namespace SpiritPetMaster
                 }
             }
         }
+
+        void LateUpdate()
+        {
+            UpdateInfo();
+        }
     }
 }
 
