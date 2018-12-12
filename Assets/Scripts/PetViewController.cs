@@ -162,8 +162,6 @@ namespace SpiritPetMaster
                 //if (pos.y < 0) pos.y = 0;
                 if(camera_transform.position != pos){
                     CameraDomovePosition = pos;
-
-                    
                 }
             }
         }
@@ -287,6 +285,7 @@ namespace SpiritPetMaster
             {
                 FocusPetView(current_focus_pet);
             }
+            focused = (PlayerData.instance.GetPlayerFocusPetId()!=-1)?true:false;
             // RightPetView();
         }
 

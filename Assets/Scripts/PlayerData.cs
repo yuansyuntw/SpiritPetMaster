@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using BayatGames.SaveGameFree;
 
@@ -34,6 +35,14 @@ namespace SpiritPetMaster
         }
 
 
+        public void SetPlayerName(string _player_name)
+        {
+            PlayerName = _player_name;
+        }
+        public void SetPlayerName(Text _text)
+        {
+            PlayerName = _text.text;
+        }
 
         public void SetPetViews(List<PetView> _petviews)
         {
@@ -98,6 +107,7 @@ namespace SpiritPetMaster
         public void SavePlayerFocusPetId(int _petid)
         {
             current_focus_petid = _petid;
+            Debug.Log(current_focus_petid);
             SavePlayerData();
         }
 
@@ -128,13 +138,14 @@ namespace SpiritPetMaster
                     Destroy(this);
                 }
             }
+            //DontDestroyOnLoad(this);
         }
 
 
 
         void Start()
         {
-            
+            Debug.Log(PlayerName);
         }
 
 

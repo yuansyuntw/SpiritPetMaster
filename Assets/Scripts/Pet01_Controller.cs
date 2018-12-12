@@ -36,6 +36,7 @@ public class Pet01_Controller : Pet {
         //Speed = 2;
 
         LoadPet(PlayerData.instance.GetPlayerFocusPetId());
+        Debug.Log(PlayerData.instance.GetPlayerFocusPetId());
 
         /*Speed = 5;
         MaxHP = 200;
@@ -64,6 +65,7 @@ public class Pet01_Controller : Pet {
         {
             Speed = Speed / SpeedValue;
             SaveData();
+            //need to fix
             return;
         }
         if (gamestage.Gameover == 2 || gamestage.stop == 1)//lose
