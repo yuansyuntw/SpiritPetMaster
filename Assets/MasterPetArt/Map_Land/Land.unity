@@ -28150,6 +28150,7 @@ MonoBehaviour:
   Gameover: 0
   Stage: {fileID: 1934504309}
   stop: 0
+  Killnum: 0
 --- !u!4 &1270467898
 Transform:
   m_ObjectHideFlags: 0

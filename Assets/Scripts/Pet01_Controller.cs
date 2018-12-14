@@ -259,12 +259,13 @@ public class Pet01_Controller : Pet {
         }
         if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
 
-        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.6f && timerBetweenAttacks > 0.2f)
+        if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.2f && timerBetweenAttacks > 0.2f)
         {
             GameObject attacks = Instantiate(Attack);
             attacks.transform.SetParent(this.transform);
             attacks.transform.localScale = new Vector3(2, 1, 1);
             attacks.transform.localPosition = new Vector3(2f, 0, 0);
+            attacks.transform.SetParent(this.transform.parent);
             attacks.GetComponent<Attack_far>().far = 0;
             attacks.GetComponent<Attack_far>().Attacknum = PetAttack * 0.1f;
             attacks.GetComponent<Attack_far>().AttackDir = Dir;
