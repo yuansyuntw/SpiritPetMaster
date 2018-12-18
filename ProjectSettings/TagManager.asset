@@ -14,6 +14,8 @@ TagManager:
   - Boom
   - FoodController
   - StatusController
+  - StartChecker
+  - StartMenu
   layers:
   - Default
   - TransparentFX
