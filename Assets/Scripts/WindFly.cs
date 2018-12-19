@@ -19,7 +19,9 @@ public class WindFly : MonoBehaviour {
         //water
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 800);
+            other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            other.GetComponent<Rigidbody2D>().angularVelocity = 0;
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up * 2650);
         }
     }
 }

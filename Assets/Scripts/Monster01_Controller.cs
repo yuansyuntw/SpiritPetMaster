@@ -104,6 +104,7 @@ public class Monster01_Controller : Monster {
         if (moveZ * transform.localScale.x < 0)
         {
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            HPBar.transform.localScale = new Vector3(-HPBar.transform.localScale.x, HPBar.transform.localScale.y, 1);
         }
         if (moveZ < 0 && currentVelocity.x <= 0)
         {
@@ -133,6 +134,7 @@ public class Monster01_Controller : Monster {
         
         if(HP <= 0) {
             // animator.SetInteger("Dead", 1);
+            gamestage.Killnum++;
             Destroy(gameObject);
         }
     }
@@ -180,6 +182,13 @@ public class Monster01_Controller : Monster {
             text.transform.parent = GameObject.Find("Canvas").transform;
             text.transform.position = Camera.main.WorldToScreenPoint(transform.position) + new Vector3(50, 30, 0);
             text.GetComponent<TextMeshProUGUI>().text = ((int)HurtNum).ToString();
+
+            //back
+            float Dist = Mathf.Abs(gameObject.transform.position.x - other.transform.position.x);
+            float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0;
+            rb.AddForce(new Vector3(1, 0, 0) * moveHorizontal * 250);
 
             // animator.SetInteger("Hitted", 1);
             hitted = 1;
