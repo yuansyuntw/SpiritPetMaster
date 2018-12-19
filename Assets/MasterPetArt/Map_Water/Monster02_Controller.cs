@@ -196,7 +196,7 @@ public class Monster02_Controller : Monster
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
-            rb.AddForce(new Vector3(1, 0, 0) * moveHorizontal * 250);
+            rb.AddForce(new Vector3(1, 0, 0) * moveHorizontal * 1000);
 
             // animator.SetInteger("Hitted", 1);
             hitted = 1;
