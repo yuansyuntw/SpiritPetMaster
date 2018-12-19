@@ -19,6 +19,8 @@ public class Pet01_Controller : Pet {
     private bool isDoubleJump = false;
     private bool isFalling = false;
     private GameObject Plane;
+    private float PetSpeedInScenes;
+    private int GameFinish = 0;
 
     public GameObject Attackfire, Attackwind, Attackwater, Attack;
     public Slider PlayerHP, PlayerMP;
@@ -60,17 +62,22 @@ public class Pet01_Controller : Pet {
         HP = MaxHP;
         isJump = false;
         isDoubleJump = false;
-        Speed = Speed * SpeedValue;
+        PetSpeedInScenes = Speed * SpeedValue;
         Random.seed = System.Guid.NewGuid().GetHashCode();
+        GameFinish = 0;
     }
 
     void Update()
     {
         if (gamestage.Gameover == 1)//win
         {
-            Speed = Speed / SpeedValue;
-            Exp = gamestage.Killnum * 10 + 200;
-            SaveData();
+            //Speed = Speed / SpeedValue;
+            if (GameFinish == 0)
+            {
+                Exp = gamestage.Killnum * 10 + 200;
+                SaveData();
+                GameFinish = 1;
+            }
             //need to fix
             return;
         }
@@ -98,7 +105,7 @@ public class Pet01_Controller : Pet {
         //move
         float moveHorizontal = Input.GetAxis("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
-        float moveZ = moveHorizontal * Speed;
+        float moveZ = moveHorizontal * PetSpeedInScenes;
         moveZ *= Time.deltaTime;
         transform.Translate(moveZ, 0, 0);
 
@@ -167,7 +174,7 @@ public class Pet01_Controller : Pet {
         }
         else
         {
-            float moveY = Input.GetAxis("Vertical") * Speed * JumpDownSpeed;
+            float moveY = Input.GetAxis("Vertical") * PetSpeedInScenes * JumpDownSpeed;
             if (moveY > 0) moveY = 0;
             moveY *= Time.deltaTime;
             transform.Translate(0, moveY, 0);

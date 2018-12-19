@@ -11699,7 +11699,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.9, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -42583,6 +42583,8 @@ MonoBehaviour:
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
   EnvironmentType: 2
   SpeedValue: 5
+  JumpForceINWater: 5
+  JumpDownSpeed: 1
 --- !u!95 &844112667
 Animator:
   serializedVersion: 3
@@ -43867,6 +43869,7 @@ MonoBehaviour:
   Gameover: 0
   Stage: {fileID: 1349878922}
   stop: 0
+  Killnum: 0
 --- !u!114 &871403931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44083,7 +44086,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
