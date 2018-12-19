@@ -27,6 +27,7 @@ public class Pet01_Controller : Pet {
     public GameObject HurtText;
     public int EnvironmentType;
     public float SpeedValue;
+    public float JumpForceINWater = 5f;
 
 
     void Start () {
@@ -117,7 +118,7 @@ public class Pet01_Controller : Pet {
                         isDoubleJump = true;
                         rb.velocity = Vector2.zero;
                         rb.angularVelocity = 0;
-                        rb.AddForce(Vector3.up * force*5);
+                        rb.AddForce(Vector3.up * force * JumpForceINWater);
                         animator.SetBool("isJumping", true);
                         Debug.Log("SwimJump");
                         timerJump = 0;
@@ -269,7 +270,7 @@ public class Pet01_Controller : Pet {
             attacks.transform.localPosition = new Vector3(2f, 0, 0);
             attacks.transform.SetParent(this.transform.parent);
             attacks.GetComponent<Attack_far>().far = 0;
-            attacks.GetComponent<Attack_far>().Attacknum = PetAttack * 0.1f;
+            attacks.GetComponent<Attack_far>().Attacknum = PetAttack * 0.06f;
             attacks.GetComponent<Attack_far>().AttackDir = Dir;
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
@@ -304,7 +305,8 @@ public class Pet01_Controller : Pet {
             int HurtNum;
             if (EnvironmentType == 1 || EnvironmentType == 2) HurtNum = (int)other.gameObject.GetComponent<Monster02_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster02_Controller>().Attacknum * 0.5f));
             else HurtNum = (int)other.gameObject.GetComponent<Monster01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Monster01_Controller>().Attacknum * 0.5f));
-            HurtNum = (HurtNum<PetDefence) ? 1 : (int)(HurtNum-PetDefence);
+            //HurtNum = (HurtNum<PetDefence) ? 1 : (int)(HurtNum-PetDefence);
+            HurtNum = (int)(HurtNum - PetDefence * 0.1f);
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;
@@ -322,7 +324,8 @@ public class Pet01_Controller : Pet {
         else if (other.gameObject.CompareTag("Boss"))
         {
             int HurtNum = (int)other.gameObject.GetComponent<Boss01_Controller>().Attacknum + Random.Range(0, (int)(other.gameObject.GetComponent<Boss01_Controller>().Attacknum * 0.5f));
-            HurtNum = (HurtNum < PetDefence) ? 1 : (int)(HurtNum - PetDefence);
+            //HurtNum = (HurtNum<PetDefence) ? 1 : (int)(HurtNum-PetDefence);
+            HurtNum = (int)(HurtNum - PetDefence * 0.1f);
             HP -= HurtNum;
             GameObject text = GameObject.Instantiate(HurtText);
             text.transform.parent = GameObject.Find("Canvas").transform;

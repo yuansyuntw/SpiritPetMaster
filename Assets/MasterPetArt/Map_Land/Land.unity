@@ -18136,14 +18136,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 21300000, guid: bfb86733ddafc6b42882c2de52836eb5, type: 3}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 100
+  speed: 6
+  maxHP: 200
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
   warning: 10
-  Attacknum: 13
+  Attacknum: 20
   animator: {fileID: 866237402}
   Player: {fileID: 600869257}
   MonsterHP: {fileID: 236422815}
