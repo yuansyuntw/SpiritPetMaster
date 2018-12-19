@@ -108,21 +108,24 @@ namespace SpiritPetMaster
 
         public void SavePlayerData()
         {
-            /* Save all of the property of the pet */
-            string pets_id = "";
-            for (int i = 0; i < OwnPets.Count; i++)
+            if(OwnPets.Count > 0)
             {
-                string id = OwnPets[i].ID.ToString();
-                pets_id += id + " ";
+                /* Save all of the property of the pet */
+                string pets_id = "";
+                for (int i = 0; i < OwnPets.Count; i++)
+                {
+                    string id = OwnPets[i].ID.ToString();
+                    pets_id += id + " ";
+                }
+
+                /* Save all of the id of pet */
+                Save<int>(PlayerName, "pet_count", OwnPets.Count);
+                Save<string>(PlayerName, "pets_id", pets_id);
+                Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
+                SaveFoods();
+
+                Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
             }
-
-            /* Save all of the id of pet */
-            Save<int>(PlayerName, "pet_count", OwnPets.Count);
-            Save<string>(PlayerName, "pets_id", pets_id);
-            Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
-            SaveFoods();
-
-            // Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
         }
 
         public void SavePlayerFocusPetId(int _petid)
