@@ -35,8 +35,13 @@ public class Pet01_Controller : Pet {
         //LoadPet(524);
         //Speed = 2;
 
-        LoadPet(PlayerData.instance.GetPlayerFocusPetId());
-        Debug.Log(PlayerData.instance.GetPlayerFocusPetId());
+        if(PlayerData.instance != null)
+        {
+            LoadPet(PlayerData.instance.GetPlayerFocusPetId());
+            Debug.Log(PlayerData.instance.GetPlayerFocusPetId());
+
+            SaveData();
+        }
 
         /*Speed = 5;
         MaxHP = 200;
@@ -46,8 +51,6 @@ public class Pet01_Controller : Pet {
         PetfireAttack = 100;
         PetwaterAttack = 100;
         PetwindAttack = 100;*/
-
-        SaveData();
 
         rb = GetComponent<Rigidbody2D>();
         Dir = 1;
@@ -59,7 +62,7 @@ public class Pet01_Controller : Pet {
         Random.seed = System.Guid.NewGuid().GetHashCode();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (gamestage.Gameover == 1)//win
         {
