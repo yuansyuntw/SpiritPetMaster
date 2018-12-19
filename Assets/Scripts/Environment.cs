@@ -29,8 +29,8 @@ public class Environment : MonoBehaviour {
 	void Update () {
 		if(Type == 1)
         {
-            Player.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
-            Player.GetComponent<Pet01_Controller>().force = 200f;
+            //Player.GetComponent<Rigidbody2D>().gravityScale = 0.1f;
+            //Player.GetComponent<Pet01_Controller>().force = 200f;
             /*timer += Time.deltaTime;
             PlayerO2.value = O2 / 100;
             if(timer > 1)

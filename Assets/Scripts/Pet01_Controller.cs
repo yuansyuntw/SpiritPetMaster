@@ -28,6 +28,7 @@ public class Pet01_Controller : Pet {
     public int EnvironmentType;
     public float SpeedValue;
     public float JumpForceINWater = 5f;
+    public float JumpDownSpeed = 1.0f;
 
 
     void Start () {
@@ -166,7 +167,7 @@ public class Pet01_Controller : Pet {
         }
         else
         {
-            float moveY = Input.GetAxis("Vertical") * Speed * 0.5f;
+            float moveY = Input.GetAxis("Vertical") * Speed * JumpDownSpeed;
             if (moveY > 0) moveY = 0;
             moveY *= Time.deltaTime;
             transform.Translate(0, moveY, 0);
