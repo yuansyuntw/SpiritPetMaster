@@ -13070,7 +13070,7 @@ MonoBehaviour:
   force: 500
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
   EnvironmentType: 0
-  SpeedValue: 10
+  SpeedValue: 5
   JumpForceINWater: 5
   JumpDownSpeed: 1
 --- !u!95 &600869259
@@ -18139,13 +18139,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 6
-  maxHP: 200
+  maxHP: 150
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 0
   warning: 10
-  Attacknum: 20
+  Attacknum: 18
   animator: {fileID: 866237402}
   Player: {fileID: 600869257}
   MonsterHP: {fileID: 236422815}

@@ -110,7 +110,7 @@ public class Monster02_Controller : Monster
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         if (moveZ * transform.localScale.x < 0)
         {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            if(Distx > 0.5f || Distx < -0.5f) transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
             HPBar.transform.localScale = new Vector3(-HPBar.transform.localScale.x, HPBar.transform.localScale.y, 1);
         }
         if (moveZ < 0 && currentVelocity.x <= 0)
@@ -196,7 +196,7 @@ public class Monster02_Controller : Monster
             float moveHorizontal = (gameObject.transform.position.x - other.transform.position.x) / Dist;
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
-            rb.AddForce(new Vector3(1, 0, 0) * moveHorizontal * 250);
+            rb.AddForce(new Vector3(1, 1, 0) * moveHorizontal * 350);
 
             // animator.SetInteger("Hitted", 1);
             hitted = 1;
