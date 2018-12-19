@@ -65,6 +65,24 @@ namespace SpiritPetMaster
 
         #region public api
 
+        public void ClearPetsInScene()
+        {
+            focused = false;
+            foreach(Transform t in transform)
+            {
+                Destroy(t.gameObject);
+            }
+        }
+        public void ReloadPets()
+        {
+            UpdatePetView();
+            if(current_focus_pet!=null)
+            {
+                FocusPetView(current_focus_pet);
+            }
+            focused = (PlayerData.instance.GetPlayerFocusPetId()!=-1)?true:false;
+        }
+
         public void RightPetView()
         {
             current_view_index++;
@@ -99,7 +117,7 @@ namespace SpiritPetMaster
             }
         }
 
-
+        
         
         public void TouchPetView(PetView _touched_pet)
         {
@@ -162,8 +180,6 @@ namespace SpiritPetMaster
                 //if (pos.y < 0) pos.y = 0;
                 if(camera_transform.position != pos){
                     CameraDomovePosition = pos;
-
-                    
                 }
             }
         }
@@ -287,6 +303,7 @@ namespace SpiritPetMaster
             {
                 FocusPetView(current_focus_pet);
             }
+            focused = (PlayerData.instance.GetPlayerFocusPetId()!=-1)?true:false;
             // RightPetView();
         }
 

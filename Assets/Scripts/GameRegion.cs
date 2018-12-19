@@ -9,12 +9,4 @@ public class GameRegion : MonoBehaviour {
 	public float RegionMaxX;
 	public float RegionMinY;
 	public float RegionMaxY;
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

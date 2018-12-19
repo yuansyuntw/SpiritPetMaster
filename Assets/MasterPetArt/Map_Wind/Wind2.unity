@@ -24402,7 +24402,7 @@ RectTransform:
   - {fileID: 1086309814}
   - {fileID: 265671374}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31640,7 +31640,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600158220
 GameObject:
@@ -43846,7 +43846,6 @@ GameObject:
   - component: {fileID: 871403932}
   - component: {fileID: 871403929}
   - component: {fileID: 871403931}
-  - component: {fileID: 871403930}
   m_Layer: 0
   m_Name: GameStageController
   m_TagString: Untagged
@@ -43868,19 +43867,6 @@ MonoBehaviour:
   Gameover: 0
   Stage: {fileID: 1349878922}
   stop: 0
---- !u!114 &871403930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 871403928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8203280b388cb64ba5032f0ac09d776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerName: test
-  OwnPets: []
 --- !u!114 &871403931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43906,7 +43892,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872558188
 GameObject:

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using BayatGames.SaveGameFree;
 
@@ -11,14 +12,12 @@ namespace SpiritPetMaster
         static public PlayerData instance;
         public string PlayerName;
 
-        const int foodsNumber = 6;
-
         #region Private Save Data    
         [SerializeField]
         List<PetView> OwnPets = new List<PetView>();
         int current_focus_petid = -1;
 
-        int[] foods = new int[foodsNumber];
+        public int[] foods = new int[FoodController.foodsNumber];
         #endregion
 
         #region public function
@@ -34,6 +33,14 @@ namespace SpiritPetMaster
         }
 
 
+        public void SetPlayerName(string _player_name)
+        {
+            PlayerName = _player_name;
+        }
+        public void SetPlayerName(Text _text)
+        {
+            PlayerName = _text.text;
+        }
 
         public void SetPetViews(List<PetView> _petviews)
         {
@@ -89,15 +96,13 @@ namespace SpiritPetMaster
             Save<string>(PlayerName, "pets_id", pets_id);
             Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
 
-            for(int i=0;i<foodsNumber;++i)
-                Save<int>(PlayerName, "foods"+i.ToString() , foods[i]);
-
             // Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
         }
 
         public void SavePlayerFocusPetId(int _petid)
         {
             current_focus_petid = _petid;
+            Debug.Log(current_focus_petid);
             SavePlayerData();
         }
 
@@ -106,10 +111,6 @@ namespace SpiritPetMaster
             return Load<int>(PlayerName, "current_focus_petid");
         }
 
-        public int GetFood(int ind)
-        {
-            return Load<int>(PlayerName, "foods"+ind.ToString());
-        }
         #endregion
 
 
@@ -120,21 +121,23 @@ namespace SpiritPetMaster
             if (PlayerData.instance == null)
             {
                 PlayerData.instance = this;
+                DontDestroyOnLoad(this);
             }
             else
             {
-                if (PlayerData.instance != this)
+                if (PlayerData.instance != null &&  PlayerData.instance != this)
                 {
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
             }
+            //DontDestroyOnLoad(this);
         }
 
 
 
         void Start()
         {
-            
+            Debug.Log(PlayerName);
         }
 
 
@@ -166,8 +169,6 @@ namespace SpiritPetMaster
         {
             return SaveGame.Load<T>(_player_name + "_" + _property_name);
         }
-
-
 
         T Load<T>(string _player_name, string _petid, string _property_name)
         {
