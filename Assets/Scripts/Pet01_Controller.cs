@@ -113,7 +113,8 @@ public class Pet01_Controller : Pet {
         {
             if (!isJump)//如果还在跳跃中，则不重复执行 
             {
-                rb.AddForce(Vector3.up * force);
+                if (EnvironmentType == 1) rb.AddForce(Vector3.up * force * JumpForceINWater);
+                else rb.AddForce(Vector3.up * force);
                 isJump = true;
                 animator.SetBool("isJumping", true);
                 Debug.Log("Jump");

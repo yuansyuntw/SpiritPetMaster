@@ -104548,7 +104548,7 @@ MonoBehaviour:
   PetTalkingContents_normal: []
   PetTalkingContents_hungry: []
   PetTalkingContents_happy: []
-  Speed: 35
+  Speed: 1
   MaxHP: 100
   HPRecover: 0.01
   MaxMP: 200
