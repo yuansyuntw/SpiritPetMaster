@@ -39931,7 +39931,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 4.5
-  maxHP: 100
+  maxHP: 200
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0

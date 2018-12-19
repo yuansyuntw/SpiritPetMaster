@@ -110,7 +110,7 @@ public class Monster02_Controller : Monster
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         if (moveZ * transform.localScale.x < 0)
         {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            if(Distx > 1f || Distx < -1f) transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
             HPBar.transform.localScale = new Vector3(-HPBar.transform.localScale.x, HPBar.transform.localScale.y, 1);
         }
         if (moveZ < 0 && currentVelocity.x <= 0)
