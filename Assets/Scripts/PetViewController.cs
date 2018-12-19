@@ -310,8 +310,9 @@ namespace SpiritPetMaster
             
             if(current_focus_pet!=null)
             {
-                camera_transform.position = new Vector3 (current_focus_pet.transform.position.x, current_focus_pet.transform.position.y, camera_transform.position.z);
-                
+                //camera_transform.position = new Vector3 (current_focus_pet.transform.position.x, current_focus_pet.transform.position.y, camera_transform.position.z);
+                FocusPetView(current_focus_pet);
+                FreePetView();
             }
             focused = (PlayerData.instance.GetPlayerFocusPetId()!=-1)?true:false;
             // RightPetView();

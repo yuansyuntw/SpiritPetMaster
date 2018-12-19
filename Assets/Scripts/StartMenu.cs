@@ -13,8 +13,9 @@ namespace SpiritPetMaster{
 
 		public void isUsed (Text _name){
 			PlayerData.instance.PlayerName = _name.text;
+			Debug.Log(PlayerData.instance.PlayerName);
 			string[] _petids = PlayerData.instance.GetPetsId();
-			if(_petids==null)
+			if(_petids==null || _petids.Length==0)
 				nameUsed = false;
 			else
 				nameUsed = true;
@@ -44,10 +45,8 @@ namespace SpiritPetMaster{
 		}
 		public void reloadUser(){
 			petsContainer.GetComponent<PetViewController>().ClearPetsInScene();
-			petsContainer.GetComponent<PetViewController>().UpdatePetView();
+			petsContainer.GetComponent<PetViewController>().ReloadPets();
 		}
-
-		
 
 	}
 }
