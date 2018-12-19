@@ -263,7 +263,7 @@ namespace SpiritPetMaster
                 }
             }
 
-            /* Set back the PlayerDaata, waitting next time to save */
+            /* Set back the PlayerData, waitting next time to save */
             PlayerData.instance.SetPetViews(pets_view_data);
 
             Debug.LogFormat("now pet count: {0}, current focus pet: {1}", pets_view_data.Count, PlayerData.instance.GetPlayerFocusPetId());
