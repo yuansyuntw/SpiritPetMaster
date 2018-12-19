@@ -12,12 +12,12 @@ namespace SpiritPetMaster
         static public PlayerData instance;
         public string PlayerName;
 
-        #region Private Save Data    
+        #region Private Save Data
         [SerializeField]
         List<PetView> OwnPets = new List<PetView>();
         int current_focus_petid = -1;
 
-        public int[] foods = new int[FoodController.foodsNumber];
+        public int[] foodsCounter = new int[FoodController.foodsNumber];
         #endregion
 
         #region public function
@@ -79,7 +79,32 @@ namespace SpiritPetMaster
             return ids.ToArray();
         }
 
-
+        public void SaveFood(int _ind)
+        {
+            Save<int>(PlayerName, "foods"+_ind.ToString(), foodsCounter[_ind]);
+        }
+        public void GetFood(int _ind)
+        {
+            foodsCounter[_ind] = Load<int>(PlayerName, "foods"+_ind.ToString());
+        }
+        public void AddFood(int _ind, int _add)
+        {
+            foodsCounter[_ind] += _add;
+        }
+        public void AddFood(int _ind)
+        {
+            foodsCounter[_ind] += 1;
+        }
+        public void SaveFoods()
+        {
+            for(int i=0;i<FoodController.foodsNumber;++i)
+                SaveFood(i);
+        }
+        public void GetFoods()
+        {
+            for(int i=0;i<FoodController.foodsNumber;++i)
+                GetFood(i);
+        }
 
         public void SavePlayerData()
         {
@@ -95,6 +120,7 @@ namespace SpiritPetMaster
             Save<int>(PlayerName, "pet_count", OwnPets.Count);
             Save<string>(PlayerName, "pets_id", pets_id);
             Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
+            SaveFoods();
 
             // Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
         }

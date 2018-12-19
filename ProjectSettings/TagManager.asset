@@ -16,6 +16,7 @@ TagManager:
   - StatusController
   - StartChecker
   - StartMenu
+  - PlayerData
   layers:
   - Default
   - TransparentFX

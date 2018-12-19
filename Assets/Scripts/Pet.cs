@@ -144,6 +144,11 @@ namespace SpiritPetMaster
         
         }
 
+        protected void SavaExp()
+        {
+            PlayerData.instance.SaveData<float>(ID.ToString(), "pet_exp", Exp);
+        }
+
     }
 }
 

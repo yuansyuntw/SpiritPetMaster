@@ -14,10 +14,11 @@ namespace SpiritPetMaster
         static public PetViewController instance;
 
         [Header("Pet View Size")]
-        public int ContainerWidth = 1000;
-        public int ContainerHeight = 500;
+        public float ContainerWidth = 1000;
+        public float ContainerHeight = 500;
 
         [Header("Pet View Prefabs")]
+        public GameObject system;
         public GameObject PetViewPrefab;
 
         [Header("Pet View Translating")]
@@ -228,7 +229,7 @@ namespace SpiritPetMaster
         public void UpdatePetView()
         {
             string[] _petids = PlayerData.instance.GetPetsId();
-            current_view_index = 0;
+            current_view_index = PlayerData.instance.GetPlayerFocusPetId();
 
             /* Destroy a old pet view */
             if (pets_view_data.Count > 0)
@@ -240,7 +241,9 @@ namespace SpiritPetMaster
             }
             pets_view_data.Clear();
 
+
             /* Add a new pet view */
+            int current_focus_id = PlayerData.instance.GetPlayerFocusPetId();
             if ((_petids != null) && (PetViewPrefab != null))
             {
                 for (int i = 0; i < _petids.Length; i++)
@@ -255,6 +258,8 @@ namespace SpiritPetMaster
                     GameObject _new_pet_view = Instantiate(PetViewPrefab, new_view_pos, Quaternion.identity, transform);
                     PetView _pet_view = _new_pet_view.GetComponent<PetView>();                
                     _pet_view.LoadPet(id);
+                    if(id==current_focus_id)
+                        current_focus_pet = _pet_view;
 
                     Animator _pet_animator = _new_pet_view.GetComponent<Animator>();
 
@@ -293,15 +298,20 @@ namespace SpiritPetMaster
 
         void Start()
         {
+            // ContainerWidth = system.GetComponent<GameRegion>().RegionMaxX - system.GetComponent<GameRegion>().RegionMinX;
+            // ContainerHeight = system.GetComponent<GameRegion>().RegionMaxY - system.GetComponent<GameRegion>().RegionMinY;
+
             /* Get the transform of the main camera */
             camera_transform = Camera.main.transform;
             CameraDomovePosition = camera_transform.position;
             CameraTargetPosition = camera_transform.position;
 
             UpdatePetView();
+            
             if(current_focus_pet!=null)
             {
-                FocusPetView(current_focus_pet);
+                camera_transform.position = new Vector3 (current_focus_pet.transform.position.x, current_focus_pet.transform.position.y, camera_transform.position.z);
+                
             }
             focused = (PlayerData.instance.GetPlayerFocusPetId()!=-1)?true:false;
             // RightPetView();
