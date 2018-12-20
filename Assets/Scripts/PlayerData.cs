@@ -140,6 +140,11 @@ namespace SpiritPetMaster
             return Load<int>(PlayerName, "current_focus_petid");
         }
 
+        public void AddNewPet(string PetKind, string PetName)
+        {
+            PetViewController.instance.NewPetView(PetKind, PetName);
+        }
+
         #endregion
 
 

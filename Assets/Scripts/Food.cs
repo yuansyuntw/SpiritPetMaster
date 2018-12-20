@@ -19,6 +19,8 @@ namespace SpiritPetMaster
 
         public string Description = "";
 
+        private float spawn_time;
+        public float life_time = 5f;
 
         string PetTag = "PetView";
         AudioSource sound;
@@ -30,15 +32,17 @@ namespace SpiritPetMaster
         {
             sound = GetComponent<AudioSource>();
             //GetComponent<SpriteRenderer>().size = FoodController.Instantiate.FoodSize;
+            spawn_time = Time.time;
         }
 
 
 
 
         // Update is called once per frame
-        void Update()
+        void LateUpdate()
         {
-
+            if(Time.time-spawn_time > life_time)
+                Destroy(gameObject);
         }
 
 
@@ -46,7 +50,7 @@ namespace SpiritPetMaster
 
         void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.CompareTag(PetTag))
+            if (collider.CompareTag(PetTag) && collider.gameObject.GetComponent<PetView>().ID == PlayerData.instance.GetPlayerFocusPetId())
             {
                 PetView pet = collider.GetComponent<PetView>();
 
@@ -68,8 +72,9 @@ namespace SpiritPetMaster
                 pet.PetDefence += EffectDefence;
 
                 if(sound != null)   sound.Play();
+                
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }

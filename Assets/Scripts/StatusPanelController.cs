@@ -67,7 +67,7 @@ namespace SpiritPetMaster
             OpenStatus(PetViewController.instance.CurrentFocusPet());
         }
         
-        void FixedUpdate () {
+        void LateUpdate () {
             if(pet != null){
                 Mood.value = pet.Mood;
                 Hunger.value = pet.Hunger;

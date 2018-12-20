@@ -33,6 +33,7 @@ namespace SpiritPetMaster
         public int PetwindAttack = 100;
         public int PetAttack = 100;
         public float PetDefence = 0;
+        public float maxExp;
         public float Exp;
 
         
@@ -111,7 +112,8 @@ namespace SpiritPetMaster
             PetwindAttack = PlayerData.instance.LoadData<int>(petid, "pet_petwindAttack");
             PetAttack = PlayerData.instance.LoadData<int>(petid, "pet_attack");
             PetDefence = PlayerData.instance.LoadData<float>(petid, "pet_defence");
-            Exp = PlayerData.instance.LoadData<float>(petid, "pet_exp");
+            maxExp = PlayerData.instance.LoadData<float>(petid, "pet_maxExp");
+            Exp = PlayerData.instance.LoadData<float>(petid, "pet_Exp");
             Points = PlayerData.instance.LoadData<int>(petid, "pet_points");
         }
 
@@ -139,14 +141,15 @@ namespace SpiritPetMaster
             PlayerData.instance.SaveData<int>(petid, "pet_petwindAttack", PetwindAttack);
             PlayerData.instance.SaveData<int>(petid, "pet_attack", PetAttack);
             PlayerData.instance.SaveData<float>(petid, "pet_defence", PetDefence);
-            PlayerData.instance.SaveData<float>(petid, "pet_exp", Exp);
+            PlayerData.instance.SaveData<float>(petid, "pet_maxExp", maxExp);
+            PlayerData.instance.SaveData<float>(petid, "pet_Exp", Exp);
             PlayerData.instance.SaveData<int>(petid, "pet_points", Points);
         
         }
 
         protected void SavaExp()
         {
-            PlayerData.instance.SaveData<float>(ID.ToString(), "pet_exp", Exp);
+            PlayerData.instance.SaveData<float>(ID.ToString(), "pet_Exp", Exp);
         }
 
     }
