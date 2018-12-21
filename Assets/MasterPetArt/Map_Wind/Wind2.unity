@@ -42676,7 +42676,7 @@ MonoBehaviour:
   force: 500
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
   EnvironmentType: 2
-  SpeedValue: 7.5
+  SpeedValue: 10
   JumpForceINWater: 5
   JumpDownSpeed: 1
 --- !u!95 &844112667
