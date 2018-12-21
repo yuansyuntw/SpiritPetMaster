@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 using BayatGames.SaveGameFree;
 
@@ -61,6 +62,84 @@ namespace SpiritPetMaster
         }
 
 
+        public void SaveAllPets()
+        {
+            int pet_count = Load<int>(PlayerName, "pet_count");
+            string old_pets_id = Load<string>(PlayerName, "pets_id");
+            string[] old_pets_idlist = new string[0];
+            if(old_pets_id==null)
+                old_pets_id="";
+            old_pets_idlist = old_pets_id.Split(' ');
+
+            for (int i = 0; i < OwnPets.Count; i++)
+            {
+                string id = OwnPets[i].ID.ToString();
+                if( ! old_pets_idlist.Contains(id) )
+                {
+                    old_pets_id += " "+id;
+                    old_pets_idlist = old_pets_id.Split(' ');
+                }
+            }
+            
+            /* Save all of the id of pet */
+            Save<int>(PlayerName, "pet_count", OwnPets.Count);
+            Save<string>(PlayerName, "pets_id", old_pets_id);
+        }
+        public bool AddPet(int id)
+        {
+            string _id = id.ToString();
+            List<string> ids = new List<string>();
+            int pet_count = Load<int>(PlayerName, "pet_count");
+            string pets_id = Load<string>(PlayerName, "pets_id");
+            if(pets_id==null)
+                pets_id = "";
+            Debug.LogFormat("pets id: {0}", pets_id);
+            string[] temp = new string[0];
+            temp = pets_id.Split(' ');
+            for(int i=0;i< pet_count; i++)
+            {
+                ids.Add(temp[i]);
+            }
+            if(!temp.Contains(_id))
+            {
+                pet_count += 1;
+                if(pets_id=="")
+                    pets_id += _id;
+                else
+                    pets_id = pets_id + " " + _id;
+                
+                Save<int>(PlayerName, "pet_count", OwnPets.Count);
+                Debug.Log(pets_id);
+                Save<string>(PlayerName, "pets_id", pets_id);
+            }
+            else
+                return false;
+            return true;
+        }
+        public bool DeletePet(string _id)
+        {
+            List<string> ids = new List<string>();
+            int pet_count = Load<int>(PlayerName, "pet_count");
+            string pets_id = Load<string>(PlayerName, "pets_id");
+            if(pets_id==null)
+                pets_id="";
+            string[] temp = pets_id.Split(' ');
+            for(int i=0;i< pet_count; i++)
+            {
+                if(temp[i]!=_id)
+                    ids.Add(temp[i]);
+            }
+            if(temp.Contains(_id))
+            {
+                pet_count -= 1;
+                Save<int>(PlayerName, "pet_count", OwnPets.Count);
+                Save<string>(PlayerName, "pets_id", pets_id);
+            }
+            else
+                return false;
+                
+            return true;
+        }
         public string[] GetPetsId()
         {
             List<string> ids = new List<string>();
@@ -75,35 +154,51 @@ namespace SpiritPetMaster
                     ids.Add(temp[i]);
                 }
             }
-
+            Debug.Log(ids.ToArray().Length);
             return ids.ToArray();
         }
 
         public void SaveFood(int _ind)
         {
+            if(_ind<0 || _ind>=FoodController.foodsNumber)
+                return;
             Save<int>(PlayerName, "foods"+_ind.ToString(), foodsCounter[_ind]);
         }
-        public void GetFood(int _ind)
+        public int GetFoodNum(int _ind)
         {
-            foodsCounter[_ind] = Load<int>(PlayerName, "foods"+_ind.ToString());
+            if(_ind<0 || _ind>=FoodController.foodsNumber)
+                return -1;
+            return foodsCounter[_ind] = Load<int>(PlayerName, "foods"+_ind.ToString());
         }
         public void AddFood(int _ind, int _add)
         {
+            if(_ind<0 || _ind>=FoodController.foodsNumber)
+                return;
             foodsCounter[_ind] += _add;
+            SaveFood(_ind);
         }
         public void AddFood(int _ind)
         {
+            if(_ind<0 || _ind>=FoodController.foodsNumber)
+                return;
             foodsCounter[_ind] += 1;
+            SaveFood(_ind);
         }
         public void SaveFoods()
         {
             for(int i=0;i<FoodController.foodsNumber;++i)
                 SaveFood(i);
         }
-        public void GetFoods()
+        public int[] GetFoods()
         {
             for(int i=0;i<FoodController.foodsNumber;++i)
-                GetFood(i);
+                GetFoodNum(i);
+            return foodsCounter;
+        }
+        public void LoadFoods()
+        {
+            for(int i=0;i<FoodController.foodsNumber;++i)
+                GetFoodNum(i);
         }
 
         public void SavePlayerData()
@@ -111,20 +206,9 @@ namespace SpiritPetMaster
             if(OwnPets.Count > 0)
             {
                 /* Save all of the property of the pet */
-                string pets_id = "";
-                for (int i = 0; i < OwnPets.Count; i++)
-                {
-                    string id = OwnPets[i].ID.ToString();
-                    pets_id += id + " ";
-                }
-
-                /* Save all of the id of pet */
-                Save<int>(PlayerName, "pet_count", OwnPets.Count);
-                Save<string>(PlayerName, "pets_id", pets_id);
+                SaveAllPets();
                 Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
                 SaveFoods();
-
-                Debug.LogFormat("pet count:{0}, ids: {1}", OwnPets.Count, pets_id);
             }
         }
 
@@ -132,7 +216,7 @@ namespace SpiritPetMaster
         {
             current_focus_petid = _petid;
             Debug.Log(current_focus_petid);
-            SavePlayerData();
+            Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
         }
 
         public int GetPlayerFocusPetId()

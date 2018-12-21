@@ -40,6 +40,10 @@ namespace SpiritPetMaster
         {
             PetViewController.instance.NewPetView(PetKind, PetNameInput.text);
         }
+        public void AddNewPetForStage()
+        {
+            
+        }
 
     }
 }

@@ -17,6 +17,7 @@ TagManager:
   - StartChecker
   - StartMenu
   - PlayerData
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -124,7 +124,6 @@ MonoBehaviour:
   Level: 1
   Mood: 10
   Hunger: 10
-  HappyMood: 80
   PetSpriteName: 
   PetAnimatorName: 
   PetTalkingFilename: 
@@ -142,6 +141,7 @@ MonoBehaviour:
   PetwindAttack: 100
   PetAttack: 100
   PetDefence: 0
+  maxExp: 1000
   Exp: 0
   UpgradeMaxHP: 1
   UpgradeHPRecover: 1

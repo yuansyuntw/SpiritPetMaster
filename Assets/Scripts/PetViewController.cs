@@ -250,6 +250,7 @@ namespace SpiritPetMaster
                 {
                     int id;
                     int.TryParse(_petids[i], out id);
+                    Debug.Log(id);
 
                     /* A insatnced position in background*/
                     Vector2 new_view_pos = Vector2.zero + new Vector2(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE));

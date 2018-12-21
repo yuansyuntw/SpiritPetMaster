@@ -336,7 +336,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter your name here...
+  m_Text: "\u8ACB\u8F38\u5165\u5BF5\u7269\u7684\u540D\u5B57..."
 --- !u!114 &114196649971586908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,9 +450,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You got a new pet!
-
-    please give it a name:'
+  m_Text: "\u4F60\u5F97\u5230\u4E86\u4E00\u96BB\u53F2\u840A\u59C6\n\u5FEB\u5E6B\u7260\u53D6\u500B\u540D\u5B57\u5427:"
 --- !u!114 &114458985722100490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,7 +700,7 @@ RectTransform:
   m_GameObject: {fileID: 1436301002654554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.00008, y: 1.00008, z: 1.00008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224213260110351254}
   - {fileID: 224543444290948576}

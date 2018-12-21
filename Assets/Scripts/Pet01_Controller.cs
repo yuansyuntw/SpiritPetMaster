@@ -71,14 +71,12 @@ public class Pet01_Controller : Pet {
     {
         if (gamestage.Gameover == 1)//win
         {
-            //Speed = Speed / SpeedValue;
-            if (GameFinish == 0)
-            {
-                Exp = gamestage.Killnum * 10 + 200;
-                SaveData();
-                GameFinish = 1;
-            }
-            //need to fix
+            // if (GameFinish == 0)
+            // {
+            //     Exp = gamestage.Killnum * 10 + 200;
+            //     SaveData();
+            //     GameFinish = 1;
+            // }
             return;
         }
         if (gamestage.Gameover == 2 || gamestage.stop == 1)//lose

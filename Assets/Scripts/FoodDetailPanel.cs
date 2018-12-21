@@ -19,10 +19,10 @@ namespace SpiritPetMaster
 
 			public void UseFood()
 			{
-				//if(food!=null && PlayerData.instance.GetFood(ind)>0)
-				if(food!=null)
+				if(food!=null && PlayerData.instance.GetFoodNum(ind)>0)
 				{
 					GameObject.FindGameObjectWithTag("FoodController").GetComponent<FoodController>().InstanceFood(ind);
+					PlayerData.instance.AddFood(ind,-1);
 				}
 			}
 	}

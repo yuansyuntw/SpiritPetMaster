@@ -10,6 +10,18 @@ public class GameStageController : MonoBehaviour {
     public int stop;
     public int Killnum;
 
+    public int ExpPerMonster = 10;
+    public int ExpBoss = 200;
+
+    public string dropPetKind;
+	public int[] foodsCounter = new int[SpiritPetMaster.FoodController.foodsNumber];
+
+    private bool stageEnd = false;
+    public bool win = false;
+
+    public GameObject resultsPanel;
+
+
     private float timergameover = 0;
 
 	// Use this for initialization
@@ -22,21 +34,32 @@ public class GameStageController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Gameover == 1)
+        if(!stageEnd)
         {
-            Stage.text = "Win";
-        } 
-        else if (Gameover == 2) {
-            Stage.text = "Lose";
+            if (Gameover == 1)
+            {
+                stop = 1;
+                Stage.text = "Win";
+                stageEnd = true;
+                win = true;
+                stageWinRewords();
+            } 
+            else if (Gameover == 2) {
+                stop = 1;
+                Stage.text = "Lose";
+                stageEnd = true;
+                win = false;
+                stageLoseRewords();
+            }
         }
-        if (Gameover != 0)
+        else if (Gameover != 0 && Gameover!=-1)
         {
             timergameover += Time.deltaTime;
-        }
-
-        if (timergameover > 5f)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("InteractiveScene");
+            if (timergameover > 0.5f)
+            {
+                resultsPanel.SetActive(true);
+                Gameover = -1;
+            }
         }
     }
 
@@ -60,6 +83,19 @@ public class GameStageController : MonoBehaviour {
             colors.normalColor = new Color(200, 200, 200);
             colors.highlightedColor = new Color(200, 200, 200);
             button.GetComponent<Button>().colors = colors;*/
+        }
+    }
+
+    private void stageWinRewords(){
+        for(int i=0; i<foodsCounter.Length; ++i)
+        {
+            foodsCounter[i] += Random.Range(0,3);
+        }
+    }
+    private void stageLoseRewords(){
+        for(int i=0; i<foodsCounter.Length; ++i)
+        {
+            foodsCounter[i] += (Random.Range(0,100)>70)?1:0;
         }
     }
 }
