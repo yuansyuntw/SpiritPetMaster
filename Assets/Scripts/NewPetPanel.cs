@@ -10,6 +10,7 @@ namespace SpiritPetMaster
         public string PetKind = "";
         public Image PetImage;
         public Text PetNameInput;
+        public GameObject PetViewPrefab;
 
         public void SetPetImage()
         {
@@ -42,7 +43,17 @@ namespace SpiritPetMaster
         }
         public void AddNewPetForStage()
         {
-            
+            int id;
+            do
+            {
+                id = Random.Range(0, PetViewController.PET_ID_RANGER);
+            } while (!CheckID(id));
+            GameObject _new_pet_view = Instantiate(PetViewPrefab, Vector3.zero, Quaternion.identity, transform);
+            _new_pet_view.SetActive(false);
+            PetView _pet_view = _new_pet_view.GetComponent<PetView>();
+            _pet_view.NewPet(id, PetKind, GetNewPetName());
+
+            PlayerData.instance.SavePlayerData();
         }
 
     }

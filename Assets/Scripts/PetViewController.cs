@@ -53,7 +53,7 @@ namespace SpiritPetMaster
         UnityAction player_update_date_events;
 
         float PET_VIEWS_POS_RANGE = 0.9f;
-        int PET_ID_RANGER = 1000;
+        public const int PET_ID_RANGER = 1000;
 
         bool focused = false;
 
@@ -209,7 +209,7 @@ namespace SpiritPetMaster
             do
             {
                 id = Random.Range(0, PET_ID_RANGER);
-            } while (!CheckID(id));
+            } while(PlayerData.instance.CheckIDExisted(id)); //while (!CheckID(id));
 
             /* A insatnced position in background*/
             Vector3 new_view_pos = Vector3.zero + new Vector3(Random.Range(-ContainerWidth * PET_VIEWS_POS_RANGE, ContainerWidth * PET_VIEWS_POS_RANGE), Random.Range(0, ContainerHeight * PET_VIEWS_POS_RANGE), 0);
@@ -369,6 +369,7 @@ namespace SpiritPetMaster
                 if (_id == pets_view_data[i].ID)
                 {
                     result = false;
+                    break;
                 }
             }
 

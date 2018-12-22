@@ -85,6 +85,12 @@ namespace SpiritPetMaster
             Save<int>(PlayerName, "pet_count", OwnPets.Count);
             Save<string>(PlayerName, "pets_id", old_pets_id);
         }
+        public bool CheckIDExisted(int _id)
+        {
+            string pets_id = Load<string>(PlayerName, "pets_id");
+            string[] temp = pets_id.Split(' ');
+            return temp.Contains(_id.ToString());
+        }
         public bool AddPet(int id)
         {
             string _id = id.ToString();
