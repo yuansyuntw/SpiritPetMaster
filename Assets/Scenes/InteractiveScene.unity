@@ -13837,7 +13837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: There is already a player with same name , are you going to overwrite it?
+  m_Text: "\u5DF2\u7D93\u6709\u91CD\u8907\u540D\u7A31\u7684\u73A9\u5BB6\u4E86\uFF0C\u78BA\u5B9A\u8981\u7E7C\u7E8C\u4F7F\u7528\u9019\u500B\u540D\u7A31\u8986\u84CB\u6389\u4E4B\u524D\u7684\u5B58\u6A94\u55CE?"
 --- !u!222 &1395143634
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17216,7 +17216,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please enter your name:'
+  m_Text: "\u8ACB\u8F38\u5165\u4F60\u7684\u540D\u7A31:"
 --- !u!222 &1803408077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18351,7 +18351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please enter your name:'
+  m_Text: "\u8ACB\u8F38\u5165\u4F60\u7684\u540D\u7A31:"
 --- !u!222 &1982430246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20092,7 +20092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034c3160345337143aef5349939f04e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarting: 1
+  gameBegin: 1
   startMenu: {fileID: 607506772}
 --- !u!1 &2129123262
 GameObject:

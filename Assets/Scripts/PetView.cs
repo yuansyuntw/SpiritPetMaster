@@ -153,7 +153,7 @@ namespace SpiritPetMaster
 
             if(Time.time-HungerTimer>TimeForHunger)
             {
-                DecreaseHunger((int)(Time.time-HungerTimer/TimeForHunger));
+                DecreaseHunger((int)((Time.time-HungerTimer)/TimeForHunger));
 
                 HungerTimer = Time.time;
             }
