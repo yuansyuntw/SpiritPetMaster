@@ -378,8 +378,8 @@ namespace SpiritPetMaster
             {
                 DOTween.KillAll();
                 CameraTargetPosition = CameraDomovePosition;
-                Debug.Log("Target = " + CameraTargetPosition);
-                Debug.Log("DOMove = " + CameraDomovePosition);
+                //Debug.Log("Target = " + CameraTargetPosition);
+                //Debug.Log("DOMove = " + CameraDomovePosition);
                 camera_transform.DOMove(CameraTargetPosition, 1.5f);
             }
         }
