@@ -137,7 +137,7 @@ MonoBehaviour:
   MaxMP: 100
   MPRecover: 0.005
   PetfireAttack: 100
-  PetwaterAttack: 150
+  PetwaterAttack: 100
   PetwindAttack: 100
   PetAttack: 100
   PetDefence: 0

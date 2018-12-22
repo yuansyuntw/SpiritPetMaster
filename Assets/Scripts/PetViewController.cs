@@ -341,15 +341,19 @@ namespace SpiritPetMaster
 
             UpdatePetView();
             
+            focused = (current_focus_pet!=null)?true:false;
+
             if(current_focus_pet!=null)
             {
                 //camera_transform.position = new Vector3 (current_focus_pet.transform.position.x, current_focus_pet.transform.position.y, camera_transform.position.z);
                 FocusPetView(current_focus_pet);
-                if(StartChecker.instance.gameBegin)
-                    FreePetView();
             }
-            focused = (current_focus_pet!=null)?true:false;
-            // RightPetView();
+
+            if(!StartChecker.instance.gameStarted)
+            {
+                FreePetView();
+                StartChecker.instance.gameStarted = true;
+            }
         }
 
 
