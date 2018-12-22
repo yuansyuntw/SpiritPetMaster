@@ -10,7 +10,6 @@ namespace SpiritPetMaster
 		public Pet pet;
 		public GameStageController gameStage;
 		public GameObject newPetPanel;
-		public float getPetPersentage = 20;
 
 
 
@@ -118,9 +117,9 @@ namespace SpiritPetMaster
 			}
 
 			//get Pet
-			if(gameStage.win && Random.Range(0,100)>(0-getPetPersentage))
+			if(gameStage.win && Random.Range(0,100)>(100-gameStage.getPetPersentage))
 			{
-				Debug.Log(0-getPetPersentage);
+				Debug.Log(0-gameStage.getPetPersentage);
 				newPetPanel.GetComponent<NewPetPanel>().NewPetNaming(gameStage.dropPetKind);
 			}
 		}
