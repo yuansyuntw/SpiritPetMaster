@@ -36305,13 +36305,14 @@ MonoBehaviour:
   Stage: {fileID: 1934504309}
   stop: 0
   Killnum: 0
-  ExpPerMonster: 10
+  ExpPerMonster: 20
   ExpBoss: 200
   dropPetKind: Mushroom
-  getPetPersentage: 20
+  getPetPersentage: 87
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
   petMoodBuff: {fileID: 1214436791}
+  waitTime: 0.25
   resultsPanel: {fileID: 1805173047}
 --- !u!4 &1270467898
 Transform:

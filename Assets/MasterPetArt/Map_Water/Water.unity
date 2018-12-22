@@ -88731,13 +88731,14 @@ MonoBehaviour:
   Stage: {fileID: 1847825750}
   stop: 0
   Killnum: 0
-  ExpPerMonster: 10
-  ExpBoss: 200
+  ExpPerMonster: 50
+  ExpBoss: 500
   dropPetKind: Slime
-  getPetPersentage: 20
+  getPetPersentage: 87
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
   petMoodBuff: {fileID: 443000063}
+  waitTime: 0.25
   resultsPanel: {fileID: 1720131680}
 --- !u!4 &1272847766
 Transform:

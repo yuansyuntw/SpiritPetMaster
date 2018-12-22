@@ -44711,13 +44711,14 @@ MonoBehaviour:
   Stage: {fileID: 1349878922}
   stop: 0
   Killnum: 0
-  ExpPerMonster: 10
-  ExpBoss: 200
+  ExpPerMonster: 100
+  ExpBoss: 1000
   dropPetKind: Owl
-  getPetPersentage: 20
+  getPetPersentage: 87
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
   petMoodBuff: {fileID: 1135047540}
+  waitTime: 0.25
   resultsPanel: {fileID: 1599283419}
 --- !u!114 &871403931
 MonoBehaviour:
