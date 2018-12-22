@@ -66,6 +66,7 @@ public class Monster01_Controller : Monster {
         //move
         float moveZ;
         if ((Distx < warning || hitted == 1) && (Disty < warning/2)) {  //follow Player
+            if (moveHorizontal == 0) moveHorizontal = 1;
             moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1);;
             moveZ *= Time.deltaTime;
             transform.Translate(moveZ, 0, 0);

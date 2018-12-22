@@ -74,7 +74,8 @@ public class Pet01_Controller : Pet {
         //Kind = "Muchroom";
         if (Kind == "Slime") this.GetComponent<Animator>().runtimeAnimatorController = Slime as RuntimeAnimatorController;
         else if(Kind == "Owl") this.GetComponent<Animator>().runtimeAnimatorController = Owl as RuntimeAnimatorController;
-        else if(Kind == "Muchroom") this.GetComponent<Animator>().runtimeAnimatorController = Muchroom as RuntimeAnimatorController;
+        else if(Kind == "Mushroom") this.GetComponent<Animator>().runtimeAnimatorController = Muchroom as RuntimeAnimatorController;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -299,7 +300,7 @@ public class Pet01_Controller : Pet {
             GameObject attacks = null;
             if (Kind == "Slime") attacks = Instantiate(SlimeAttack);
             else if (Kind == "Owl") attacks = Instantiate(OwlAttack);
-            else if (Kind == "Muchroom") attacks = Instantiate(MuchroomAttack);
+            else if (Kind == "Mushroom") attacks = Instantiate(MuchroomAttack);
 
             attacks.transform.SetParent(this.transform);
             attacks.transform.localScale = new Vector3(2, 1, 1);

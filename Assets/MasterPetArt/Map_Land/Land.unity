@@ -36118,6 +36118,7 @@ MonoBehaviour:
   ExpPerMonster: 10
   ExpBoss: 200
   dropPetKind: Mushroom
+  getPetPersentage: 20
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
   resultsPanel: {fileID: 1805173047}
@@ -52389,7 +52390,6 @@ MonoBehaviour:
   pet: {fileID: 600869258}
   gameStage: {fileID: 1270467897}
   newPetPanel: {fileID: 718209978}
-  getPetPersentage: 20
   WinTitle: {fileID: 1179148942}
   LoseTitle: {fileID: 1284639414}
   ItemPrefab: {fileID: 1556365031753690, guid: cf2ad916cdbc63c46aa72162ec115b8e, type: 2}
