@@ -47,11 +47,11 @@ namespace SpiritPetMaster
             do
             {
                 id = Random.Range(0, PetViewController.PET_ID_RANGER);
-            } while (!CheckID(id));
+            } while (PlayerData.instance.CheckIDExisted(id));
             GameObject _new_pet_view = Instantiate(PetViewPrefab, Vector3.zero, Quaternion.identity, transform);
-            _new_pet_view.SetActive(false);
             PetView _pet_view = _new_pet_view.GetComponent<PetView>();
             _pet_view.NewPet(id, PetKind, GetNewPetName());
+            _new_pet_view.GetComponent<SpriteRenderer>().enabled = false;
 
             PlayerData.instance.SavePlayerData();
         }

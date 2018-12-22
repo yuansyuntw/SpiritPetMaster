@@ -181,6 +181,8 @@ MonoBehaviour:
   PetKind: Slime
   PetImage: {fileID: 114047156833157222}
   PetNameInput: {fileID: 114533532802622200}
+  PetViewPrefab: {fileID: 1191177169943202, guid: ec891656c90253349bce300364a0a2e4,
+    type: 2}
 --- !u!114 &114047156833157222
 MonoBehaviour:
   m_ObjectHideFlags: 1

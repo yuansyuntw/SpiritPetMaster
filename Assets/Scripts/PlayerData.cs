@@ -82,12 +82,14 @@ namespace SpiritPetMaster
             }
             
             /* Save all of the id of pet */
-            Save<int>(PlayerName, "pet_count", OwnPets.Count);
+            Save<int>(PlayerName, "pet_count", pet_count);
             Save<string>(PlayerName, "pets_id", old_pets_id);
         }
         public bool CheckIDExisted(int _id)
         {
             string pets_id = Load<string>(PlayerName, "pets_id");
+            if(pets_id==null)
+                pets_id = "";
             string[] temp = pets_id.Split(' ');
             return temp.Contains(_id.ToString());
         }
@@ -99,7 +101,7 @@ namespace SpiritPetMaster
             string pets_id = Load<string>(PlayerName, "pets_id");
             if(pets_id==null)
                 pets_id = "";
-            Debug.LogFormat("pets id: {0}", pets_id);
+            //Debug.LogFormat("pets id: {0}", pets_id);
             string[] temp = new string[0];
             temp = pets_id.Split(' ');
             for(int i=0;i< pet_count; i++)
@@ -110,12 +112,11 @@ namespace SpiritPetMaster
             {
                 pet_count += 1;
                 if(pets_id=="")
-                    pets_id += _id;
+                    pets_id = _id;
                 else
                     pets_id = pets_id + " " + _id;
                 
-                Save<int>(PlayerName, "pet_count", OwnPets.Count);
-                Debug.Log(pets_id);
+                Save<int>(PlayerName, "pet_count", pet_count);
                 Save<string>(PlayerName, "pets_id", pets_id);
             }
             else
@@ -138,7 +139,7 @@ namespace SpiritPetMaster
             if(temp.Contains(_id))
             {
                 pet_count -= 1;
-                Save<int>(PlayerName, "pet_count", OwnPets.Count);
+                Save<int>(PlayerName, "pet_count", pet_count);
                 Save<string>(PlayerName, "pets_id", pets_id);
             }
             else
@@ -155,6 +156,7 @@ namespace SpiritPetMaster
                 string pets_id = Load<string>(PlayerName, "pets_id");
                 Debug.LogFormat("pets id: {0}", pets_id);
                 string[] temp = pets_id.Split(' ');
+                Debug.LogFormat("pet count: {0}", pet_count);
                 for(int i=0;i< pet_count; i++)
                 {
                     ids.Add(temp[i]);
