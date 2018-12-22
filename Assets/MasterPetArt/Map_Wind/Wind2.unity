@@ -43279,7 +43279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  Kind: 0
+  Kind: Slime
   Name: 
   Level: 0
   Mood: 0
