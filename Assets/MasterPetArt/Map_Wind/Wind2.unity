@@ -43193,7 +43193,11 @@ MonoBehaviour:
   Attackwind: {fileID: 1952483095173660, guid: 78d0f51229a245541af8180f675d3549, type: 2}
   Attackwater: {fileID: 1952483095173660, guid: 3009360e7ff97b747bb728d24bb40e32,
     type: 2}
-  Attack: {fileID: 1952483095173660, guid: c1cbf47ab257225489b7ee8a154e1644, type: 2}
+  SlimeAttack: {fileID: 1485824797693866, guid: 0b91e19d9573e794a8590aba2dd60d99,
+    type: 2}
+  OwlAttack: {fileID: 1100213470783312, guid: d24f243b265679f4099cf43f10306c00, type: 2}
+  MuchroomAttack: {fileID: 1943204824150930, guid: e9d1d7002e6639044a43a0e7c003c3b4,
+    type: 2}
   PlayerHP: {fileID: 713844043}
   PlayerMP: {fileID: 360450936}
   gamestage: {fileID: 871403929}
@@ -43203,6 +43207,9 @@ MonoBehaviour:
   SpeedValue: 10
   JumpForceINWater: 5
   JumpDownSpeed: 1
+  Slime: {fileID: 9100000, guid: cdcf351bbd75b074c990213ba33180d9, type: 2}
+  Owl: {fileID: 9100000, guid: 096dccc9392c32640b6f03da4b9bca65, type: 2}
+  Muchroom: {fileID: 9100000, guid: 0910f23deb3e1a744b0d6faa98779ba1, type: 2}
 --- !u!95 &844112667
 Animator:
   serializedVersion: 3

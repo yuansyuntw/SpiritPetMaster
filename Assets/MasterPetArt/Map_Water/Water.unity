@@ -9180,7 +9180,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.17}
+  m_Size: {x: 0.82, y: 0.67}
   m_EdgeRadius: 0
 --- !u!1 &134905297
 GameObject:
@@ -9345,8 +9345,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1687006631
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300040, guid: d6df938e6f5db1d43b1ec68341e1b535, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9549,8 +9549,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1687006631
   m_SortingLayer: 1
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d6df938e6f5db1d43b1ec68341e1b535, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300040, guid: d6df938e6f5db1d43b1ec68341e1b535, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -44899,7 +44899,6 @@ GameObject:
   m_Component:
   - component: {fileID: 632431053}
   - component: {fileID: 632431054}
-  - component: {fileID: 632431055}
   m_Layer: 0
   m_Name: black (158)
   m_TagString: Untagged
@@ -69556,7 +69555,6 @@ GameObject:
   m_Component:
   - component: {fileID: 978126457}
   - component: {fileID: 978126458}
-  - component: {fileID: 978126459}
   m_Layer: 0
   m_Name: black (156)
   m_TagString: Untagged
@@ -81231,7 +81229,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1126478293}
   - component: {fileID: 1126478294}
-  - component: {fileID: 1126478295}
   m_Layer: 0
   m_Name: black (178)
   m_TagString: Untagged
@@ -110989,7 +110986,11 @@ MonoBehaviour:
   Attackwind: {fileID: 1952483095173660, guid: 78d0f51229a245541af8180f675d3549, type: 2}
   Attackwater: {fileID: 1952483095173660, guid: 3009360e7ff97b747bb728d24bb40e32,
     type: 2}
-  Attack: {fileID: 1952483095173660, guid: c1cbf47ab257225489b7ee8a154e1644, type: 2}
+  SlimeAttack: {fileID: 1485824797693866, guid: 0b91e19d9573e794a8590aba2dd60d99,
+    type: 2}
+  OwlAttack: {fileID: 1100213470783312, guid: d24f243b265679f4099cf43f10306c00, type: 2}
+  MuchroomAttack: {fileID: 1943204824150930, guid: e9d1d7002e6639044a43a0e7c003c3b4,
+    type: 2}
   PlayerHP: {fileID: 1451510164}
   PlayerMP: {fileID: 1136816136}
   gamestage: {fileID: 1272847765}
@@ -110999,6 +111000,9 @@ MonoBehaviour:
   SpeedValue: 35
   JumpForceINWater: 5
   JumpDownSpeed: 0.65
+  Slime: {fileID: 9100000, guid: cdcf351bbd75b074c990213ba33180d9, type: 2}
+  Owl: {fileID: 9100000, guid: 096dccc9392c32640b6f03da4b9bca65, type: 2}
+  Muchroom: {fileID: 9100000, guid: 0910f23deb3e1a744b0d6faa98779ba1, type: 2}
 --- !u!95 &1581407990
 Animator:
   serializedVersion: 3
@@ -134613,7 +134617,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1924415630}
   - component: {fileID: 1924415631}
-  - component: {fileID: 1924415632}
   m_Layer: 0
   m_Name: black (138)
   m_TagString: Untagged

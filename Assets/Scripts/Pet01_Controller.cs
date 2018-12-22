@@ -22,7 +22,7 @@ public class Pet01_Controller : Pet {
     private float PetSpeedInScenes;
     private int GameFinish = 0;
 
-    public GameObject Attackfire, Attackwind, Attackwater, Attack;
+    public GameObject Attackfire, Attackwind, Attackwater, SlimeAttack, OwlAttack, MuchroomAttack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
     public float force;
@@ -31,6 +31,7 @@ public class Pet01_Controller : Pet {
     public float SpeedValue;
     public float JumpForceINWater = 5f;
     public float JumpDownSpeed = 1.0f;
+    public RuntimeAnimatorController Slime, Owl, Muchroom; 
 
 
     void Start () {
@@ -65,6 +66,10 @@ public class Pet01_Controller : Pet {
         PetSpeedInScenes = Speed * SpeedValue;
         Random.seed = System.Guid.NewGuid().GetHashCode();
         GameFinish = 0;
+        //Kind = "Muchroom";
+        if (Kind == "Slime") this.GetComponent<Animator>().runtimeAnimatorController = Slime as RuntimeAnimatorController;
+        else if(Kind == "Owl") this.GetComponent<Animator>().runtimeAnimatorController = Owl as RuntimeAnimatorController;
+        else if(Kind == "Muchroom") this.GetComponent<Animator>().runtimeAnimatorController = Muchroom as RuntimeAnimatorController;
     }
 
     void Update()
@@ -274,7 +279,11 @@ public class Pet01_Controller : Pet {
 
         if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.2f && timerBetweenAttacks > 0.2f)
         {
-            GameObject attacks = Instantiate(Attack);
+            GameObject attacks = null;
+            if (Kind == "Slime") attacks = Instantiate(SlimeAttack);
+            else if (Kind == "Owl") attacks = Instantiate(OwlAttack);
+            else if (Kind == "Muchroom") attacks = Instantiate(MuchroomAttack);
+
             attacks.transform.SetParent(this.transform);
             attacks.transform.localScale = new Vector3(2, 1, 1);
             attacks.transform.localPosition = new Vector3(2f, 0, 0);
