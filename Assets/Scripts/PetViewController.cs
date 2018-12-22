@@ -345,7 +345,8 @@ namespace SpiritPetMaster
             {
                 //camera_transform.position = new Vector3 (current_focus_pet.transform.position.x, current_focus_pet.transform.position.y, camera_transform.position.z);
                 FocusPetView(current_focus_pet);
-                FreePetView();
+                if(StartChecker.instance.gameBegin)
+                    FreePetView();
             }
             focused = (current_focus_pet!=null)?true:false;
             // RightPetView();

@@ -50,7 +50,7 @@ public class Pet01_Controller : Pet {
             LoadPet(PlayerData.instance.GetPlayerFocusPetId());
             Debug.Log(PlayerData.instance.GetPlayerFocusPetId());
 
-            SaveData();
+            // SaveData();
         }
 
         /*Speed = 5;
