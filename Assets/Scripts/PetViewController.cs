@@ -28,7 +28,10 @@ namespace SpiritPetMaster
         public GameObject InformationUI;
         public PetInformation PetInfoController;
 
+        [Header("When Player Focus a Pet")]
         public UnityEvent FocusPetEvents;
+
+        [Header("When Player Touch a Pet")]
         public UnityEvent TouchPetEvents;
 
 

@@ -32,6 +32,10 @@ public class Pet01_Controller : Pet {
     public float JumpForceINWater = 5f;
     public float JumpDownSpeed = 1.0f;
 
+    [Header("Sounds")]
+    public AudioSource AttackSound;
+    public AudioSource JumpSound;
+    public AudioSource HurtedSound;
 
     void Start () {
         //change to read file here
@@ -119,6 +123,8 @@ public class Pet01_Controller : Pet {
                 animator.SetBool("isJumping", true);
                 Debug.Log("Jump");
                 timerJump = 0;
+
+                if (JumpSound != null) JumpSound.Play();
             }
             else
             {
@@ -134,6 +140,8 @@ public class Pet01_Controller : Pet {
                         animator.SetBool("isJumping", true);
                         Debug.Log("SwimJump");
                         timerJump = 0;
+
+                        if (JumpSound != null) JumpSound.Play();
                     }
                 }
                 //for water only (can always jump)
@@ -171,6 +179,8 @@ public class Pet01_Controller : Pet {
                 Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
                 Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
                 Debug.Log("JumpDown");
+
+                if (JumpSound != null) JumpSound.Play();
             }
         }
         else
@@ -235,6 +245,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
             timerBetweenAttacks = 0;
+
+            if (AttackSound != null) AttackSound.Play();
         }
         if(timerAttackfire > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -253,6 +265,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackwind = 0;
             timerBetweenAttacks = 0;
+
+            if (AttackSound != null) AttackSound.Play();
         }
         if (timerAttackwind > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -271,6 +285,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackwater = 0;
             timerBetweenAttacks = 0;
+
+            if (AttackSound != null) AttackSound.Play();
         }
         if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -287,6 +303,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
             timerBetweenAttacks = 0;
+
+            if (AttackSound != null) AttackSound.Play();
         }
         if(timerAttack > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -332,6 +350,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("Damaging", false);
             gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
+
+            if (HurtedSound != null) HurtedSound.Play();
         }
         else if (other.gameObject.CompareTag("Boss"))
         {
@@ -351,6 +371,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("Damaging", false);
             gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
+
+            if (HurtedSound != null) HurtedSound.Play();
         }
  //    else animator.SetInteger("Hitted", 0);
     }
