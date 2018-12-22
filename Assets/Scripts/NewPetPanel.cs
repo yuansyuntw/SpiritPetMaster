@@ -14,7 +14,7 @@ namespace SpiritPetMaster
 
         public void SetPetImage()
         {
-            var sprite = Resources.Load(PetKind, typeof(Sprite));
+            var sprite = Resources.Load(PetKind+"/Idle/idle_1", typeof(Sprite));
             if (sprite != null)
             {
                 PetImage.sprite = (Sprite)sprite;
