@@ -33,8 +33,9 @@ public class StartChecker : MonoBehaviour {
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode){
-		
-		startMenu = GameObject.FindWithTag("StartMenu");
+		GameObject temp = GameObject.FindWithTag("StartMenu");
+		if(temp != null)
+			startMenu = temp;
 		if(startMenu!=null)
 		{
 			if(gameStarting){

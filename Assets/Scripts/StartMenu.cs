@@ -10,11 +10,13 @@ namespace SpiritPetMaster{
 		public GameObject sameNameWarning;
 		public GameObject petsContainer;
 		public GameObject startMenu;
+		public NewPetPanel newPetPanel;
 
 		public void isUsed (Text _name){
 			PlayerData.instance.PlayerName = _name.text;
+			Debug.Log(PlayerData.instance.PlayerName);
 			string[] _petids = PlayerData.instance.GetPetsId();
-			if(_petids==null)
+			if(_petids==null || _petids.Length==0)
 				nameUsed = false;
 			else
 				nameUsed = true;
@@ -27,9 +29,13 @@ namespace SpiritPetMaster{
 			else{
 				reloadUser();
 				startMenu.SetActive(false);
+				newPetPanel.NewPetNaming("Slime");
 			}
 		}
 
+		public void AddNewPet(string _petName){
+			PlayerData.instance.AddNewPet(_petName, newPetPanel.GetNewPetName());
+		}
 		public void rebuildUser(string _name){
 			PlayerData.instance.PlayerName = _name;
 			rebuildUser();
@@ -37,6 +43,7 @@ namespace SpiritPetMaster{
 		public void rebuildUser(){
 			PlayerData.instance.ClearPlayerData();
 			reloadUser();
+			newPetPanel.NewPetNaming("Slime");
 		}
 		public void reloadUser(string _name){
 			PlayerData.instance.PlayerName = _name;
@@ -44,10 +51,8 @@ namespace SpiritPetMaster{
 		}
 		public void reloadUser(){
 			petsContainer.GetComponent<PetViewController>().ClearPetsInScene();
-			petsContainer.GetComponent<PetViewController>().UpdatePetView();
+			petsContainer.GetComponent<PetViewController>().ReloadPets();
 		}
-
-		
 
 	}
 }

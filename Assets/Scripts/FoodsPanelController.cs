@@ -14,15 +14,15 @@ namespace SpiritPetMaster
         {
             for(int i=0;i<FoodController.foodsNumber;++i){
                 if(foodsCounterText[i]!=null)
-                    foodsCounterText[i].text = "× "+ PlayerData.instance.foods[i].ToString();
+                    foodsCounterText[i].text = "× "+ PlayerData.instance.foodsCounter[i].ToString();
             }
         }
 
         public void FoodButton(int ind){
-            if(PlayerData.instance.foods[ind]>0)
+            if(PlayerData.instance.foodsCounter[ind]>0)
             {
                 foodController.GetComponent<FoodController>().InstanceFood(ind);
-                PlayerData.instance.foods[ind] -= 1;
+                PlayerData.instance.foodsCounter[ind] -= 1;
             }
         }
 	}

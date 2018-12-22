@@ -62,7 +62,7 @@ public class Boss01_Controller : Monster
         animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
         //move
         float moveZ, moveY;
-        if ((Distx < warning || hitted == 1) && (Player.transform.position.y - gameObject.transform.position.y < warning))
+        if ((Distx < warning || hitted == 1) && (Disty < warning))
         {  //follow Player
             moveZ = moveHorizontal * Random.Range(speed - 1, speed + 1); ;
             moveY = moveVer * Random.Range(speed - 1, speed + 1);
@@ -103,7 +103,7 @@ public class Boss01_Controller : Monster
         Vector2 currentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         if (moveZ * transform.localScale.x < 0)
         {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            if (Distx > 1f || Distx < -1f) transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
         if (moveZ < 0 && currentVelocity.x <= 0)
         {

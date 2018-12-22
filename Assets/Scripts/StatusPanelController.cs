@@ -67,7 +67,7 @@ namespace SpiritPetMaster
             OpenStatus(PetViewController.instance.CurrentFocusPet());
         }
         
-        void FixedUpdate () {
+        void LateUpdate () {
             if(pet != null){
                 Mood.value = pet.Mood;
                 Hunger.value = pet.Hunger;
@@ -78,13 +78,13 @@ namespace SpiritPetMaster
                 FireAttackValue.text = pet.PetfireAttack.ToString();
                 WaterAttackValue.text = pet.PetwaterAttack.ToString();
                 WindAttackValue.text = pet.PetwindAttack.ToString();
-
-                MaxHPValue.text = (pet.MaxHP+UpgradeMaxHP*10).ToString();
-                HPRecoverValue.text = (pet.HPRecover+UpgradeHPRecover*0.005f).ToString();
-                MaxMPValue.text = (pet.MaxMP+UpgradeMaxMP*10).ToString();
-                MPRecoverValue.text = (pet.MPRecover+UpgradeMPRecover*0.005f).ToString();
-                AttackValue.text = (pet.PetAttack+UpgradeAttack).ToString();
-                DefenceValue.text = (pet.PetDefence+UpgradeDefence).ToString();
+                
+                MaxHPValue.text = (pet.MaxHP+UpgradeMaxHP*Pet.UpgradeMaxHPPerPoint).ToString();
+                HPRecoverValue.text = (pet.HPRecover+UpgradeHPRecover*Pet.UpgradeHPRecoverPerPoint).ToString();
+                MaxMPValue.text = (pet.MaxMP+UpgradeMaxMP*Pet.UpgradeMaxMPPerPoint).ToString();
+                MPRecoverValue.text = (pet.MPRecover+UpgradeMPRecover*Pet.UpgradeMPRecoverPerPoint).ToString();
+                AttackValue.text = (pet.PetAttack+UpgradeAttack*Pet.UpgradeAttackPerPoint).ToString();
+                DefenceValue.text = (pet.PetDefence+UpgradeDefence*Pet.UpgradeDefencePerPoint).ToString();
                 
                 PointsValue.text = points.ToString();
                 
@@ -211,12 +211,12 @@ namespace SpiritPetMaster
 
         public void SetUpgrades(){
             pet.Points = points;
-            pet.MaxHP += UpgradeMaxHP*10;
-            pet.HPRecover += UpgradeHPRecover*0.005f;
-            pet.MaxMP += UpgradeMaxMP*10;
-            pet.MPRecover += UpgradeMPRecover*0.005f;
-            pet.PetAttack += UpgradeAttack;
-            pet.PetDefence += UpgradeDefence;
+            pet.MaxHP += UpgradeMaxHP*Pet.UpgradeMaxHPPerPoint;
+            pet.HPRecover += UpgradeHPRecover*Pet.UpgradeHPRecoverPerPoint;
+            pet.MaxMP += UpgradeMaxMP*Pet.UpgradeMaxMPPerPoint;
+            pet.MPRecover += UpgradeMPRecover*Pet.UpgradeMPRecoverPerPoint;
+            pet.PetAttack += UpgradeAttack*Pet.UpgradeAttackPerPoint;
+            pet.PetDefence += UpgradeDefence*Pet.UpgradeDefencePerPoint;
             UpgradeMaxHP = 0;
             UpgradeHPRecover = 0;
             UpgradeMaxMP = 0;
