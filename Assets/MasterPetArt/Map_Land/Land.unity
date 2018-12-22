@@ -34339,8 +34339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showingTime: 3
   pet: {fileID: 600869258}
-  maxBuffMultiplier: 2
-  minBuffMultiplier: 0.5
+  maxBuffMultiplier: 1.25
+  minBuffMultiplier: 0.75
   petImage: {fileID: 1807094774}
   text: {fileID: 289313982}
 --- !u!114 &1214436794
