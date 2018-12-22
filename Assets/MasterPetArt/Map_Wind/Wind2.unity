@@ -2972,7 +2972,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -6382,7 +6382,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -8097,7 +8097,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -9428,7 +9428,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -11996,7 +11996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.006896496, b: 1, a: 1}
+  m_Color: {r: 0.3764706, g: 0.38039216, b: 0.85882354, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -14615,10 +14615,10 @@ RectTransform:
   m_Father: {fileID: 446384422}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 883.3, y: 500}
-  m_SizeDelta: {x: 93.5, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -75, y: -40}
+  m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265671375
 MonoBehaviour:
@@ -14632,7 +14632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -14828,7 +14828,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -16535,7 +16535,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -19923,11 +19923,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: ef8a7c8942c07f545aa75be30c9bca7f, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -19935,7 +19935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stop
+  m_Text: STOP
 --- !u!222 &353769628
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20244,10 +20244,10 @@ RectTransform:
   m_Father: {fileID: 446384422}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 500}
-  m_SizeDelta: {x: 250, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 5, y: -60}
+  m_SizeDelta: {x: -10, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360450936
 MonoBehaviour:
@@ -22216,7 +22216,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -29351,7 +29351,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -37296,10 +37296,10 @@ RectTransform:
   m_Father: {fileID: 446384422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -800, y: 500}
-  m_SizeDelta: {x: 250, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 5, y: -25}
+  m_SizeDelta: {x: -10, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713844043
 MonoBehaviour:
@@ -39632,7 +39632,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -42000,7 +42000,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -43384,6 +43384,7 @@ MonoBehaviour:
   PetwindAttack: 100
   PetAttack: 100
   PetDefence: 0
+  ExpPerLevel: 1000
   maxExp: 0
   Exp: 0
   UpgradeMaxHP: 1
@@ -43863,7 +43864,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -44867,7 +44868,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -44950,7 +44951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9607843, g: 0.21176471, b: 0.21176471, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -49971,7 +49972,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -55827,7 +55828,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -59981,7 +59982,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -61835,7 +61836,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -63634,7 +63635,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -67905,7 +67906,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -68736,7 +68737,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -70313,7 +70314,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -70748,7 +70749,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -71310,7 +71311,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -71549,7 +71550,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -72136,7 +72137,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -72395,7 +72396,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -72659,7 +72660,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -75758,7 +75759,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -79848,7 +79849,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -87333,7 +87334,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -90855,7 +90856,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -93733,7 +93734,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -93790,7 +93791,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -98361,7 +98362,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -98418,7 +98419,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7.5
-  maxHP: 50
+  maxHP: 100
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
@@ -111702,7 +111703,7 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 7
-  maxHP: 75
+  maxHP: 125
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
