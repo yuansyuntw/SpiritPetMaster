@@ -34305,7 +34305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1214436792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34340,8 +34340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showingTime: 3
   pet: {fileID: 600869258}
-  maxBuffMultiplier: 2
-  minBuffMultiplier: 0.5
+  maxBuffMultiplier: 1.25
+  minBuffMultiplier: 0.75
   petImage: {fileID: 1807094774}
   text: {fileID: 289313982}
 --- !u!114 &1214436794
@@ -36311,6 +36311,7 @@ MonoBehaviour:
   getPetPersentage: 20
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
+  petMoodBuff: {fileID: 1214436791}
   resultsPanel: {fileID: 1805173047}
 --- !u!4 &1270467898
 Transform:

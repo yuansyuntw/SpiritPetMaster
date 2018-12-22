@@ -160,7 +160,7 @@ MonoBehaviour:
   TouchLayer:
     serializedVersion: 2
     m_Bits: 1024
-  TimeForHunger: 1
+  TimeForHunger: 3
 --- !u!212 &212756324313395322
 SpriteRenderer:
   m_ObjectHideFlags: 1

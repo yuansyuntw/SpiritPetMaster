@@ -13,7 +13,7 @@ namespace SpiritPetMaster
         public UnityEvent MouseDownEvents;
         public int MoodIncreatedRate = 1;
         public LayerMask TouchLayer;
-        public float TimeForHunger = 1;
+        public float TimeForHunger = 3;
 
 
         #region private

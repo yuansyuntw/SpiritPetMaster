@@ -422,7 +422,18 @@ public class Pet01_Controller : Pet {
         gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
-
+    
+    public void Buff(float _multiplier)
+    {
+        MaxHP *= _multiplier;
+        HP = MaxHP;
+        HPRecover  *= _multiplier;
+        MP = MaxMP;
+        MaxMP  *= _multiplier;
+        MPRecover  *= _multiplier;
+        PetAttack  *= _multiplier;
+        PetDefence  *= _multiplier;
+    }
 }
 
 
