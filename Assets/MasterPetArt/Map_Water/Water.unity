@@ -674,7 +674,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 61
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -2324,13 +2324,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -8295,7 +8295,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_TagString
@@ -10820,7 +10820,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -15294,13 +15294,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -16418,7 +16418,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 45
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -17000,13 +17000,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -17053,7 +17053,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 39
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -18533,7 +18533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 24
+      value: 46
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -19423,7 +19423,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -20221,13 +20221,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -20581,13 +20581,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -22673,7 +22673,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -24095,13 +24095,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -27015,13 +27015,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -28258,13 +28258,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -28412,7 +28412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 40
+      value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -29231,13 +29231,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -31243,13 +31243,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -32503,13 +32503,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -34481,13 +34481,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -41896,13 +41896,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -42648,19 +42648,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: ef8a7c8942c07f545aa75be30c9bca7f, type: 3}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 4
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stop
+  m_Text: STOP
 --- !u!222 &626671044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43958,13 +43958,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -44415,7 +44415,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 34
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -44924,7 +44924,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 46
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -48741,13 +48741,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -48895,7 +48895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -50337,13 +50337,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -52449,7 +52449,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 29
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -52552,13 +52552,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -52892,7 +52892,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -54956,13 +54956,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -55211,7 +55211,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 51
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -55424,13 +55424,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -56592,13 +56592,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -56754,7 +56754,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -57533,7 +57533,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 55
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -57671,13 +57671,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -57811,7 +57811,7 @@ Camera:
   far clip plane: 30
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -57966,7 +57966,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 27
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -58534,13 +58534,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -58793,13 +58793,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -59374,7 +59374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 41
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -59433,7 +59433,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 30
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -60151,13 +60151,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -60547,6 +60547,28 @@ Transform:
   - {fileID: 1269154518}
   - {fileID: 273643603}
   - {fileID: 1873431618}
+  - {fileID: 984823057}
+  - {fileID: 854489731}
+  - {fileID: 1790259762}
+  - {fileID: 774425653}
+  - {fileID: 880251972}
+  - {fileID: 1316150820}
+  - {fileID: 894317283}
+  - {fileID: 1243220963}
+  - {fileID: 656125075}
+  - {fileID: 929662406}
+  - {fileID: 1375062985}
+  - {fileID: 1486274381}
+  - {fileID: 1531540856}
+  - {fileID: 806822140}
+  - {fileID: 1621965016}
+  - {fileID: 1637199335}
+  - {fileID: 1060573962}
+  - {fileID: 1257494752}
+  - {fileID: 1546766460}
+  - {fileID: 1205012725}
+  - {fileID: 15641596}
+  - {fileID: 1810872190}
   - {fileID: 127563617}
   - {fileID: 341442851}
   - {fileID: 305733912}
@@ -60561,19 +60583,6 @@ Transform:
   - {fileID: 1351532802}
   - {fileID: 292914120}
   - {fileID: 1385305887}
-  - {fileID: 984823057}
-  - {fileID: 854489731}
-  - {fileID: 1790259762}
-  - {fileID: 774425653}
-  - {fileID: 880251972}
-  - {fileID: 1316150820}
-  - {fileID: 894317283}
-  - {fileID: 1243220963}
-  - {fileID: 656125075}
-  - {fileID: 929662406}
-  - {fileID: 1375062985}
-  - {fileID: 1486274381}
-  - {fileID: 1531540856}
   - {fileID: 273602190}
   - {fileID: 419568916}
   - {fileID: 880211296}
@@ -60586,18 +60595,9 @@ Transform:
   - {fileID: 2044323950}
   - {fileID: 1882918206}
   - {fileID: 1015901656}
-  - {fileID: 806822140}
-  - {fileID: 1621965016}
-  - {fileID: 1637199335}
   - {fileID: 1723684196}
   - {fileID: 844912344}
   - {fileID: 1618749620}
-  - {fileID: 1060573962}
-  - {fileID: 1257494752}
-  - {fileID: 1546766460}
-  - {fileID: 1205012725}
-  - {fileID: 15641596}
-  - {fileID: 1810872190}
   - {fileID: 670536133}
   - {fileID: 1668579788}
   - {fileID: 2024958737}
@@ -60819,7 +60819,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 32
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -62299,13 +62299,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -63385,7 +63385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 35
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -64109,13 +64109,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -65004,7 +65004,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 44
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -65067,13 +65067,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -65730,13 +65730,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -66292,13 +66292,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -66798,7 +66798,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -68585,13 +68585,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -69172,7 +69172,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 50
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -71201,10 +71201,10 @@ RectTransform:
   m_Father: {fileID: 1648001590}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 883.3, y: 500}
-  m_SizeDelta: {x: 93.5, y: 30}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -75, y: -40}
+  m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050212986
 MonoBehaviour:
@@ -71218,7 +71218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -71226,7 +71226,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -71793,13 +71793,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -72250,7 +72250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 57
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -74468,13 +74468,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -75581,13 +75581,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -77942,10 +77942,10 @@ RectTransform:
   m_Father: {fileID: 1648001590}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 500}
-  m_SizeDelta: {x: 250, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 5, y: -60}
+  m_SizeDelta: {x: -10, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136816136
 MonoBehaviour:
@@ -78824,7 +78824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.006896496, b: 1, a: 1}
+  m_Color: {r: 0.376602, g: 0.38038167, b: 0.8584906, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -83000,7 +83000,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 60
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -86014,7 +86014,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 43
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -86275,7 +86275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 33
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -87470,7 +87470,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 58
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -91389,13 +91389,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -92224,7 +92224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 31
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -92762,7 +92762,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 42
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -94231,7 +94231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 23
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -95066,7 +95066,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.7, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -95082,7 +95082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9622642, g: 0.21333215, b: 0.21333215, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -95598,13 +95598,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -95752,7 +95752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 36
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -96385,7 +96385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 25
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -96624,13 +96624,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -99504,10 +99504,10 @@ RectTransform:
   m_Father: {fileID: 1648001590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -800, y: 500}
-  m_SizeDelta: {x: 250, y: 30}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 5, y: -25}
+  m_SizeDelta: {x: -10, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451510164
 MonoBehaviour:
@@ -99528,10 +99528,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.014705896, b: 0.014705896, a: 1}
+    m_NormalColor: {r: 1, g: 0.4575472, b: 0.4575472, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 0.3066038, b: 0.3066038, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -99551,7 +99551,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -99901,13 +99901,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -100942,13 +100942,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -101433,7 +101433,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 37
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -101698,13 +101698,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -103482,13 +103482,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -103535,7 +103535,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 38
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -103598,13 +103598,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -104156,7 +104156,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 59
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -106289,7 +106289,7 @@ MonoBehaviour:
   force: 200
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
   EnvironmentType: 1
-  SpeedValue: 40
+  SpeedValue: 20
   JumpForceINWater: 5
   JumpDownSpeed: 0.65
   Slime: {fileID: 9100000, guid: cdcf351bbd75b074c990213ba33180d9, type: 2}
@@ -106407,7 +106407,7 @@ Transform:
   m_GameObject: {fileID: 1581407988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.8, y: -2.9, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1097222780}
   - {fileID: 849710010}
@@ -108662,13 +108662,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -108917,7 +108917,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 56
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -109354,7 +109354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 52
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -109619,13 +109619,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -109949,7 +109949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -110188,13 +110188,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -110443,7 +110443,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 53
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -112605,13 +112605,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -112998,13 +112998,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -114573,13 +114573,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -115210,13 +115210,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -115941,7 +115941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 54
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -119158,13 +119158,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -119817,7 +119817,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -119977,7 +119977,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -120812,7 +120812,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4225347611143518, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_RootOrder
-      value: 62
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 1884957028886606, guid: ec190b6593163c445a47ce2e942b4367, type: 2}
       propertyPath: m_Name
@@ -120976,13 +120976,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -121829,13 +121829,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -123326,13 +123326,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -125908,7 +125908,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 49
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -126934,7 +126934,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 47
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -127274,13 +127274,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -129763,13 +129763,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -129891,7 +129891,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 22
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -133585,13 +133585,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -133748,13 +133748,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -133810,13 +133810,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -134271,13 +134271,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -135313,13 +135313,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 10
-  maxHP: 180
+  maxHP: 250
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 15
-  Attacknum: 18
+  Attacknum: 36
   animator: {fileID: 2036036858}
   Player: {fileID: 1581407988}
   MonsterHP: {fileID: 783364705}
@@ -135804,13 +135804,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -136160,7 +136160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 48
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -136364,13 +136364,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -136421,13 +136421,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -136781,13 +136781,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -137848,13 +137848,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -138006,13 +138006,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -138845,13 +138845,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 11
-  maxHP: 30
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 10
-  Attacknum: 5
+  Attacknum: 20
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -139355,13 +139355,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
@@ -142169,7 +142169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4719592996518316, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 1914572791693232, guid: fec759281a609994dad04454ec3bf71a, type: 2}
       propertyPath: m_Name
@@ -143040,13 +143040,13 @@ MonoBehaviour:
   Name: 
   Level: 0
   speed: 9
-  maxHP: 25
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 1
   Monsterwind: 0
   warning: 12
-  Attacknum: 8
+  Attacknum: 16
   animator: {fileID: 0}
   Player: {fileID: 1581407988}
   gamestage: {fileID: 1272847765}
