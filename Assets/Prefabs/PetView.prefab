@@ -141,7 +141,8 @@ MonoBehaviour:
   PetwindAttack: 100
   PetAttack: 100
   PetDefence: 0
-  maxExp: 1000
+  ExpPerLevel: 500
+  maxExp: 200
   Exp: 0
   UpgradeMaxHP: 1
   UpgradeHPRecover: 1

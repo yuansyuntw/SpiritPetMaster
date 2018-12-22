@@ -2971,14 +2971,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -6381,14 +6381,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -8096,14 +8096,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -9427,14 +9427,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -11980,7 +11980,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14827,14 +14827,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -16534,14 +16534,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -22215,14 +22215,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -29350,14 +29350,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -39631,14 +39631,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -40755,14 +40755,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 4.5
-  maxHP: 200
+  speed: 7
+  maxHP: 400
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 20
+  Attacknum: 25
   animator: {fileID: 783545943}
   Player: {fileID: 844112665}
   MonsterHP: {fileID: 323813866}
@@ -41999,14 +41999,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -43862,14 +43862,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -44865,14 +44865,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -44933,7 +44933,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -49969,14 +49969,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -55825,14 +55825,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -59979,14 +59979,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -61833,14 +61833,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -63632,14 +63632,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -67903,14 +67903,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -68734,14 +68734,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -70311,14 +70311,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -70746,14 +70746,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -71308,14 +71308,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -71547,14 +71547,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -72134,14 +72134,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -72393,14 +72393,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -72657,14 +72657,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -75756,14 +75756,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -79846,14 +79846,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -87331,14 +87331,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -90853,14 +90853,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -93731,14 +93731,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -93788,14 +93788,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -98359,14 +98359,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -98416,14 +98416,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 6
-  maxHP: 25
+  speed: 7.5
+  maxHP: 50
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 7
-  Attacknum: 5
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}
@@ -111700,14 +111700,14 @@ MonoBehaviour:
   MonsterSprite: {fileID: 0}
   Name: 
   Level: 0
-  speed: 5
-  maxHP: 35
+  speed: 7
+  maxHP: 75
   HPRecover: 0
   Monsterfire: 0
   Monsterwater: 0
   Monsterwind: 1
   warning: 5
-  Attacknum: 7
+  Attacknum: 15
   animator: {fileID: 0}
   Player: {fileID: 844112665}
   gamestage: {fileID: 871403929}

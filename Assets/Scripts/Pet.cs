@@ -33,8 +33,8 @@ namespace SpiritPetMaster
         public float PetwindAttack = 100;
         public float PetAttack = 100;
         public float PetDefence = 0;
-        public const float ExpPerLevel = 1000;
-        public float maxExp = ExpPerLevel;
+        public float ExpPerLevel = 1000;
+        public float maxExp;
         public float Exp;
 
         

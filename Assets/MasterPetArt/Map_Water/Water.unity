@@ -78808,7 +78808,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.9, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -95066,7 +95066,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -106261,6 +106261,7 @@ MonoBehaviour:
   PetwindAttack: 100
   PetAttack: 100
   PetDefence: 0
+  ExpPerLevel: 1000
   maxExp: 0
   Exp: 0
   UpgradeMaxHP: 1
@@ -106288,7 +106289,7 @@ MonoBehaviour:
   force: 200
   HurtText: {fileID: 1572307689297694, guid: 74e30a151ce486147b7af9e3f004074b, type: 2}
   EnvironmentType: 1
-  SpeedValue: 50
+  SpeedValue: 40
   JumpForceINWater: 5
   JumpDownSpeed: 0.65
   Slime: {fileID: 9100000, guid: cdcf351bbd75b074c990213ba33180d9, type: 2}
