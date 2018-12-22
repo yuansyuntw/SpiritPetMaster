@@ -22,7 +22,7 @@ public class Pet01_Controller : Pet {
     private float PetSpeedInScenes;
     private int GameFinish = 0;
 
-    public GameObject Attackfire, Attackwind, Attackwater, Attack;
+    public GameObject Attackfire, Attackwind, Attackwater, SlimeAttack, OwlAttack, MuchroomAttack;
     public Slider PlayerHP, PlayerMP;
     public GameStageController gamestage;
     public float force;
@@ -31,7 +31,13 @@ public class Pet01_Controller : Pet {
     public float SpeedValue;
     public float JumpForceINWater = 5f;
     public float JumpDownSpeed = 1.0f;
+    public RuntimeAnimatorController Slime, Owl, Muchroom; 
 
+    [Header("Sounds")]
+    public AudioSource AttackSound;
+    public AudioSource SkillSound;
+    public AudioSource JumpSound;
+    public AudioSource HurtedSound;
 
     void Start () {
         //change to read file here
@@ -65,6 +71,10 @@ public class Pet01_Controller : Pet {
         PetSpeedInScenes = Speed * SpeedValue;
         Random.seed = System.Guid.NewGuid().GetHashCode();
         GameFinish = 0;
+        //Kind = "Muchroom";
+        if (Kind == "Slime") this.GetComponent<Animator>().runtimeAnimatorController = Slime as RuntimeAnimatorController;
+        else if(Kind == "Owl") this.GetComponent<Animator>().runtimeAnimatorController = Owl as RuntimeAnimatorController;
+        else if(Kind == "Muchroom") this.GetComponent<Animator>().runtimeAnimatorController = Muchroom as RuntimeAnimatorController;
     }
 
     void Update()
@@ -117,6 +127,8 @@ public class Pet01_Controller : Pet {
                 animator.SetBool("isJumping", true);
                 Debug.Log("Jump");
                 timerJump = 0;
+
+                if (JumpSound != null) JumpSound.Play();
             }
             else
             {
@@ -132,6 +144,8 @@ public class Pet01_Controller : Pet {
                         animator.SetBool("isJumping", true);
                         Debug.Log("SwimJump");
                         timerJump = 0;
+
+                        if (JumpSound != null) JumpSound.Play();
                     }
                 }
                 //for water only (can always jump)
@@ -169,6 +183,8 @@ public class Pet01_Controller : Pet {
                 Plane.layer = LayerMask.NameToLayer("JumpDownPlane");
                 Plane.GetComponent<BoxCollider2D>().usedByEffector = false;
                 Debug.Log("JumpDown");
+
+                if (JumpSound != null) JumpSound.Play();
             }
         }
         else
@@ -233,6 +249,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackfire = 0;
             timerBetweenAttacks = 0;
+
+            if (SkillSound != null) SkillSound.Play();
         }
         if(timerAttackfire > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -251,6 +269,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackwind = 0;
             timerBetweenAttacks = 0;
+
+            if (SkillSound != null) SkillSound.Play();
         }
         if (timerAttackwind > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -269,12 +289,18 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttackwater = 0;
             timerBetweenAttacks = 0;
+
+            if (SkillSound != null) SkillSound.Play();
         }
         if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
 
         if (Input.GetKeyDown(KeyCode.Z) && timerAttack > 0.2f && timerBetweenAttacks > 0.2f)
         {
-            GameObject attacks = Instantiate(Attack);
+            GameObject attacks = null;
+            if (Kind == "Slime") attacks = Instantiate(SlimeAttack);
+            else if (Kind == "Owl") attacks = Instantiate(OwlAttack);
+            else if (Kind == "Muchroom") attacks = Instantiate(MuchroomAttack);
+
             attacks.transform.SetParent(this.transform);
             attacks.transform.localScale = new Vector3(2, 1, 1);
             attacks.transform.localPosition = new Vector3(2f, 0, 0);
@@ -285,6 +311,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("isAttacking", true);
             timerAttack = 0;
             timerBetweenAttacks = 0;
+
+            if (AttackSound != null) AttackSound.Play();
         }
         if(timerAttack > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -330,6 +358,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("Damaging", false);
             gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
+
+            if (HurtedSound != null) HurtedSound.Play();
         }
         else if (other.gameObject.CompareTag("Boss"))
         {
@@ -349,6 +379,8 @@ public class Pet01_Controller : Pet {
             animator.SetBool("Damaging", false);
             gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
             StartCoroutine("Damage");
+
+            if (HurtedSound != null) HurtedSound.Play();
         }
  //    else animator.SetInteger("Hitted", 0);
     }
