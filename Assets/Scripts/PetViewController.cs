@@ -28,6 +28,9 @@ namespace SpiritPetMaster
         public GameObject InformationUI;
         public PetInformation PetInfoController;
 
+        public UnityEvent FocusPetEvents;
+        public UnityEvent TouchPetEvents;
+
 
         #region GOBAL VARIABLE
 
@@ -125,12 +128,14 @@ namespace SpiritPetMaster
             if(!focused && current_focus_pet == null)
             {
                 FocusPetView(_touched_pet);
+                FocusPetEvents.Invoke();
             }
 
             /* Player is interactive with the touched pet */
             if(focused && current_focus_pet == _touched_pet)
             {
                 _touched_pet.IncreateMood();
+                TouchPetEvents.Invoke();
             }
 
             /* Player is clicking other pet*/
