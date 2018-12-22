@@ -149,7 +149,7 @@ MonoBehaviour:
   UpgradeMPRecover: 1
   UpgradeAttack: 1
   UpgradeDefence: 1
-  Points: 100
+  Points: 0
   MouseDownEvents:
     m_PersistentCalls:
       m_Calls: []
