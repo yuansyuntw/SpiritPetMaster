@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class StartChecker : MonoBehaviour {
 
-	static StartChecker instance;
-	public bool gameStarting = true;
+	static public StartChecker instance;
+	public bool gameBegin = true;
 	public GameObject startMenu;
 	
 	void Awake(){
 	
-    	SceneManager.sceneLoaded += OnSceneLoaded;
-		if (instance == null)
+		SceneManager.sceneLoaded += OnSceneLoaded;
+		if (StartChecker.instance == null)
 		{
-			instance = this;
+			StartChecker.instance = this;
 			DontDestroyOnLoad(this);
 		}
 		else
 		{
-			if (instance != this)
+			if (StartChecker.instance != this)
 			{
 				Destroy(gameObject);
 			}
@@ -38,9 +38,9 @@ public class StartChecker : MonoBehaviour {
 			startMenu = temp;
 		if(startMenu!=null)
 		{
-			if(gameStarting){
+			if(gameBegin){
 				startMenu.SetActive(true);
-				gameStarting = false;
+				gameBegin = false;
 			}
 			else{
 				startMenu.SetActive(false);
@@ -54,6 +54,6 @@ public class StartChecker : MonoBehaviour {
 	
 
 	void OnDisable(){
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 }
