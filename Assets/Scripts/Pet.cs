@@ -110,22 +110,25 @@ namespace SpiritPetMaster
         }
         public void LevelUp()
         {
-            Level += 1;
-            MaxHP += UpgradeMaxHP * Pet.UpgradeMaxHPPerPoint;
-            UpgradeMaxHP = UpgradeBase;
-            HPRecover += UpgradeHPRecover * Pet.UpgradeHPRecoverPerPoint;
-            UpgradeHPRecover = UpgradeBase;
-            MaxMP += UpgradeMaxMP * Pet.UpgradeMaxMPPerPoint;
-            UpgradeMaxMP = UpgradeBase;
-            MPRecover += UpgradeMPRecover * Pet.UpgradeMPRecoverPerPoint;
-            UpgradeMPRecover = UpgradeBase;
-            PetAttack += UpgradeAttack * Pet.UpgradeAttackPerPoint;
-            UpgradeAttack = UpgradeBase;
-            PetDefence += UpgradeDefence * Pet.UpgradeDefencePerPoint;
-            UpgradeDefence = UpgradeBase;
-            Points += 3;
-            Exp -= maxExp;
-            maxExp += ExpPerLevel;
+            if(Exp>maxExp)
+            {
+                Level += 1;
+                MaxHP += UpgradeMaxHP * Pet.UpgradeMaxHPPerPoint;
+                UpgradeMaxHP = UpgradeBase;
+                HPRecover += UpgradeHPRecover * Pet.UpgradeHPRecoverPerPoint;
+                UpgradeHPRecover = UpgradeBase;
+                MaxMP += UpgradeMaxMP * Pet.UpgradeMaxMPPerPoint;
+                UpgradeMaxMP = UpgradeBase;
+                MPRecover += UpgradeMPRecover * Pet.UpgradeMPRecoverPerPoint;
+                UpgradeMPRecover = UpgradeBase;
+                PetAttack += UpgradeAttack * Pet.UpgradeAttackPerPoint;
+                UpgradeAttack = UpgradeBase;
+                PetDefence += UpgradeDefence * Pet.UpgradeDefencePerPoint;
+                UpgradeDefence = UpgradeBase;
+                Points += 3;
+                Exp -= maxExp;
+                maxExp += ExpPerLevel;
+            }
         }
 
 
