@@ -1294,7 +1294,7 @@ Prefab:
     - target: {fileID: 224395931065495702, guid: 7a42855b6e376654ba8c2c4d1464ba62,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224395931065495702, guid: 7a42855b6e376654ba8c2c4d1464ba62,
         type: 2}
@@ -2350,7 +2350,7 @@ RectTransform:
   - {fileID: 1879605596}
   - {fileID: 1802063878}
   m_Father: {fileID: 948924573}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4442,7 +4442,7 @@ RectTransform:
   - {fileID: 918395693}
   - {fileID: 753645195}
   m_Father: {fileID: 948924573}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4478,7 +4478,7 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 1
+  m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
@@ -5745,7 +5745,7 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 1
+  m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
@@ -5767,7 +5767,7 @@ RectTransform:
   - {fileID: 669549444}
   - {fileID: 515125149}
   m_Father: {fileID: 948924573}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6445,7 +6445,7 @@ RectTransform:
   - {fileID: 1198151281}
   - {fileID: 879645615}
   m_Father: {fileID: 948924573}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6604,7 +6604,7 @@ RectTransform:
   - {fileID: 701567644}
   - {fileID: 188143300}
   m_Father: {fileID: 948924573}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6661,11 +6661,11 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 1
+  m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1414280027
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &658151590
@@ -9117,7 +9117,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 636118582}
   - {fileID: 252747271}
   - {fileID: 449824895}
   - {fileID: 568241013}
@@ -9125,6 +9124,7 @@ RectTransform:
   - {fileID: 1533557913}
   - {fileID: 607506773}
   - {fileID: 1199256971}
+  - {fileID: 636118582}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13743,7 +13743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: There is already a player with same name , are you going to overwrite it?
+  m_Text: "\u5DF2\u7D93\u6709\u91CD\u8907\u540D\u7A31\u7684\u73A9\u5BB6\u4E86\uFF0C\u78BA\u5B9A\u8981\u7E7C\u7E8C\u4F7F\u7528\u9019\u500B\u540D\u7A31\u8986\u84CB\u6389\u4E4B\u524D\u7684\u5B58\u6A94\u55CE?"
 --- !u!222 &1395143634
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15168,7 +15168,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 948924573}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -17122,7 +17122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please enter your name:'
+  m_Text: "\u8ACB\u8F38\u5165\u4F60\u7684\u540D\u7A31:"
 --- !u!222 &1803408077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18257,7 +18257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please enter your name:'
+  m_Text: "\u8ACB\u8F38\u5165\u4F60\u7684\u540D\u7A31:"
 --- !u!222 &1982430246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18659,7 +18659,7 @@ RectTransform:
   - {fileID: 1586138447}
   - {fileID: 298201120}
   m_Father: {fileID: 948924573}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

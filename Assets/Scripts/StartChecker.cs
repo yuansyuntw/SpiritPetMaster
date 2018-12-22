@@ -7,6 +7,7 @@ public class StartChecker : MonoBehaviour {
 
 	static public StartChecker instance;
 	public bool gameBegin = true;
+	public bool gameStarted = false;
 	public GameObject startMenu;
 	
 	void Awake(){
