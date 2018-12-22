@@ -34,6 +34,7 @@ public class Pet01_Controller : Pet {
 
     [Header("Sounds")]
     public AudioSource AttackSound;
+    public AudioSource SkillSound;
     public AudioSource JumpSound;
     public AudioSource HurtedSound;
 
@@ -246,7 +247,7 @@ public class Pet01_Controller : Pet {
             timerAttackfire = 0;
             timerBetweenAttacks = 0;
 
-            if (AttackSound != null) AttackSound.Play();
+            if (SkillSound != null) SkillSound.Play();
         }
         if(timerAttackfire > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -266,7 +267,7 @@ public class Pet01_Controller : Pet {
             timerAttackwind = 0;
             timerBetweenAttacks = 0;
 
-            if (AttackSound != null) AttackSound.Play();
+            if (SkillSound != null) SkillSound.Play();
         }
         if (timerAttackwind > 0.2f) animator.SetBool("isAttacking", false);
 
@@ -286,7 +287,7 @@ public class Pet01_Controller : Pet {
             timerAttackwater = 0;
             timerBetweenAttacks = 0;
 
-            if (AttackSound != null) AttackSound.Play();
+            if (SkillSound != null) SkillSound.Play();
         }
         if (timerAttackwater > 0.2f) animator.SetBool("isAttacking", false);
 
