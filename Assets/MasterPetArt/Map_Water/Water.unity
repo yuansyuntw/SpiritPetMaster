@@ -30324,7 +30324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &443000064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88737,6 +88737,7 @@ MonoBehaviour:
   getPetPersentage: 20
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
+  petMoodBuff: {fileID: 443000063}
   resultsPanel: {fileID: 1720131680}
 --- !u!4 &1272847766
 Transform:

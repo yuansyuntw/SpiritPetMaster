@@ -23,7 +23,7 @@ public class GameStageController : MonoBehaviour {
     public GameObject petMoodBuff;
     private float startTimer;
     private bool buffed = false;
-    private float waitTime = 0.25f;
+    public float waitTime = 0.25f;
 
     public GameObject resultsPanel;
 
@@ -69,7 +69,7 @@ public class GameStageController : MonoBehaviour {
         else if (Gameover != 0 && Gameover!=-1)
         {
             timergameover += Time.deltaTime;
-            if (timergameover > 0.5f)
+            if (timergameover > waitTime)
             {
                 resultsPanel.SetActive(true);
                 Gameover = -1;
