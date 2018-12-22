@@ -20,6 +20,11 @@ public class GameStageController : MonoBehaviour {
     private bool stageEnd = false;
     public bool win = false;
 
+    public GameObject petMoodBuff;
+    private float startTimer;
+    private bool buffed = false;
+    private float waitTime = 0.25f;
+
     public GameObject resultsPanel;
 
 
@@ -31,10 +36,18 @@ public class GameStageController : MonoBehaviour {
         stop = 0;
         Killnum = 0;
         Stage.text = "";
+        startTimer = Time.time;
     }
 
     // Update is called once per frame
     void Update() {
+        if(!buffed && (Time.time-startTimer>waitTime))
+        {
+            petMoodBuff.SetActive(true);
+            buffed = true;
+        }
+
+
         if(!stageEnd)
         {
             if (Gameover == 1)

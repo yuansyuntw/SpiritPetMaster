@@ -8,9 +8,9 @@ public class PetMoodBuff : MonoBehaviour {
 	private float startTime;
 	public float showingTime = 3f;
 
-	public SpiritPetMaster.Pet pet;
-	public float maxBuffMultiplier = 2f;
-	public float minBuffMultiplier = 0.5f;
+	public Pet01_Controller pet;
+	public float maxBuffMultiplier = 1.5f;
+	public float minBuffMultiplier = 0.75f;
 	private float multiplier = 1f;
 
 	public Image petImage;
