@@ -80,7 +80,7 @@ namespace SpiritPetMaster
             ID = _id;
             Kind = _kind;
             Name = _name;
-            PetSpriteName = Kind.ToString() + "/idle/idle1";
+            PetSpriteName = Kind.ToString() + "/Idle/idle_1";
             PetAnimatorName = Kind.ToString() + "/" + Kind.ToString();
             PetTalkingFilename = Kind.ToString() + "/talks";
 

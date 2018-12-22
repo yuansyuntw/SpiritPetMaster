@@ -14,6 +14,7 @@ public class GameStageController : MonoBehaviour {
     public int ExpBoss = 200;
 
     public string dropPetKind;
+	public float getPetPersentage = 20;
 	public int[] foodsCounter = new int[SpiritPetMaster.FoodController.foodsNumber];
 
     private bool stageEnd = false;
