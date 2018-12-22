@@ -130,6 +130,15 @@ namespace SpiritPetMaster
                 maxExp += ExpPerLevel;
             }
         }
+        public void Buff(float _multiplier)
+        {
+            MaxHP *= _multiplier;
+            HPRecover  *= _multiplier;
+            MaxMP  *= _multiplier;
+            MPRecover  *= _multiplier;
+            PetAttack  *= _multiplier;
+            PetDefence  *= _multiplier;
+        }
 
 
         protected void LoadData()
