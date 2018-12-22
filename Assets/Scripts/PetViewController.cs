@@ -153,11 +153,39 @@ namespace SpiritPetMaster
 
         public void FocusPetView(PetView _focus_pet)
         {
+            current_focus_pet = _focus_pet;
+            FocusPetView();
+        }
+        public void FocusPetView()
+        {
             focused = true;
             GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().FocusView();
 
+            if(current_focus_pet == null)
+            {
+                int current_focus_id = PlayerData.instance.GetPlayerFocusPetId();
+                // Debug.LogFormat("focus : {0}", current_focus_id);
+                string[] _petids = PlayerData.instance.GetPetsId();
+                // Debug.LogFormat("ids length : {0}", _petids.Length);
+
+                if(_petids.Length>0)
+                {
+                    // Debug.LogFormat("ids[0] : {0}", _petids[0]);
+                    int.TryParse(_petids[0], out current_focus_id);
+                    PlayerData.instance.SavePlayerFocusPetId(current_focus_id);
+                    foreach(PetView pv in pets_view_data)
+                    {
+                        Debug.LogFormat("PV_id : {0}",pv.ID);
+                        if(pv.ID == current_focus_id)
+                            current_focus_pet = pv;
+                    }
+                }
+
+                if(current_focus_pet == null)
+                    return;
+            }
+
             /* Moveing camera */
-            current_focus_pet = _focus_pet;
             Vector3 pos = current_focus_pet.transform.position;
             pos.z = Camera.main.transform.position.z;
             //if (pos.y < 0) pos.y = 0;
@@ -167,8 +195,7 @@ namespace SpiritPetMaster
 
             /* Showing the pet information */
             InformationUI.SetActive(true);
-            Pet pet = current_focus_pet;
-            PetInformation.instance.AssignPet(pet);
+            PetInformation.instance.AssignPet(current_focus_pet);
             //Debug.LogFormat("{0}: {1}", current_focus_pet, pet);
 
             /* keep the current pet id */
@@ -178,12 +205,9 @@ namespace SpiritPetMaster
         {
             if(focused && current_focus_pet!=null)
             {
-                PetView _focus_pet = current_focus_pet;
-
                 GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().FocusView();
 
                 /* Moveing camera */
-                current_focus_pet = _focus_pet;
                 Vector3 pos = current_focus_pet.transform.position;
                 pos.z = Camera.main.transform.position.z;
                 //if (pos.y < 0) pos.y = 0;
@@ -323,7 +347,7 @@ namespace SpiritPetMaster
                 FocusPetView(current_focus_pet);
                 FreePetView();
             }
-            focused = (PlayerData.instance.GetPlayerFocusPetId()!=-1)?true:false;
+            focused = (current_focus_pet!=null)?true:false;
             // RightPetView();
         }
 

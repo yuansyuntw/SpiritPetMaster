@@ -223,7 +223,7 @@ namespace SpiritPetMaster
         public void SavePlayerFocusPetId(int _petid)
         {
             current_focus_petid = _petid;
-            Debug.Log(current_focus_petid);
+            // Debug.Log(current_focus_petid);
             Save<int>(PlayerName, "current_focus_petid", current_focus_petid);
         }
 
