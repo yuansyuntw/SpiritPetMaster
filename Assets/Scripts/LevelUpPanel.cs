@@ -36,6 +36,12 @@ namespace SpiritPetMaster
 			if(_pet!=null)
 			{
 				pet = _pet;
+				
+				var sprite = Resources.Load(pet.PetSpriteName, typeof(Sprite));
+				if (sprite != null)
+				{
+					petImage.sprite = (Sprite)sprite;
+				}
 				LevelValue.text = pet.Level.ToString();
 				Exp.maxValue = pet.maxExp;
 				Exp.value = pet.Exp;
