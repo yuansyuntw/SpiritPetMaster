@@ -11980,7 +11980,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.9, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -44718,6 +44718,7 @@ MonoBehaviour:
   foodsCounter: 000000000000000000000000000000000000000000000000
   win: 0
   petMoodBuff: {fileID: 1135047540}
+  waitTime: 0.25
   resultsPanel: {fileID: 1599283419}
 --- !u!114 &871403931
 MonoBehaviour:
@@ -44935,7 +44936,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -108186,6 +108187,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AddNewPetForStage
+      objectReference: {fileID: 0}
+    - target: {fileID: 114383298746908612, guid: 7a42855b6e376654ba8c2c4d1464ba62,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u4F60\u5F97\u5230\u4E86\u4E00\u96BB\u5BF5\u7269\n\u5FEB\u5E6B\u7260\u53D6\u500B\u540D\u5B57\u5427:"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a42855b6e376654ba8c2c4d1464ba62, type: 2}

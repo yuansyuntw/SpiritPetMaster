@@ -428,8 +428,8 @@ public class Pet01_Controller : Pet {
         MaxHP *= _multiplier;
         HP = MaxHP;
         HPRecover  *= _multiplier;
-        MP = MaxMP;
         MaxMP  *= _multiplier;
+        MP = MaxMP;
         MPRecover  *= _multiplier;
         PetAttack  *= _multiplier;
         PetDefence  *= _multiplier;

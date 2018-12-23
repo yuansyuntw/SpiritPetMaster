@@ -25,7 +25,7 @@ public class PetMoodBuff : MonoBehaviour {
 			multiplier = pet.Mood / 100f/4f * (1-minBuffMultiplier) + minBuffMultiplier;
 			text.text = pet.Name + " 心情不好、能力值下降了";
 		}
-		if(pet.Mood>(100f-100f/4f))
+		else if(pet.Mood>(100f-100f/4f))
 		{
 			petSpriteName += "/Happy/happy_3";
 			multiplier = 1 + (pet.Mood-100f/4f) / (100f-100f/4f) * (maxBuffMultiplier-1);
