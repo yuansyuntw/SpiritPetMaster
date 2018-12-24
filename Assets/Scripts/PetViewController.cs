@@ -331,7 +331,7 @@ namespace SpiritPetMaster
 
         void Start()
         {
-            // ContainerWidth = system.GetComponent<GameRegion>().RegionMaxX - system.GetComponent<GameRegion>().RegionMinX;
+            ContainerWidth = system.GetComponent<GameRegion>().RegionMaxX - system.GetComponent<GameRegion>().RegionMinX;
             // ContainerHeight = system.GetComponent<GameRegion>().RegionMaxY - system.GetComponent<GameRegion>().RegionMinY;
 
             /* Get the transform of the main camera */
