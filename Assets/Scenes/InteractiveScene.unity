@@ -3995,7 +3995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ContainerWidth: 50
   ContainerHeight: 1
-  system: {fileID: 0}
+  system: {fileID: 1670308820}
   PetViewPrefab: {fileID: 1191177169943202, guid: ec891656c90253349bce300364a0a2e4,
     type: 2}
   ViewWidth: 50
